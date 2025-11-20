@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Artesanato para Unir - Projetos</title>
+    <meta name="description" content="Projetos sociais, oportunidades de voluntariado e doações">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="../index.html" class="brand">
+                <img src="../img/logo.png" alt="Logo Artesanato para Unir" width="48" height="48" >
+                <span>Artesanato para Unir</span>
+            </a>
+            <button class="hamburger" aria-expanded="false" aria-controls="main-nav"
+                    aria-label="Abrir menu"><span></span><span></span><span></span></button>
+            <nav id="main-nav" class="nav">
+                <ul>
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="projetos.html">Projetos</a></li>
+                    <li><a href="cadastro.html">Cadastre-se</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <main class="container">
+        <h1>Projetos sociais</h1>
+        <p>Veja abaixo os projetos em andamento. Inscreva-se como voluntário ou apoie com uma doação.</p>
+
+
+        <section id="project-list" aria-live="polite">
+            <h6>(Obs: Os projetos serão renderizados via JS a partir do localStorage)</h6>
+            <!-- Projetos serão renderizados via JS a partir do localStorage -->
+        </section>
+
+
+        <section class="donate" aria-labelledby="donate-title">
+            <h2 id="donate-title">Apoie com uma doação</h2>
+            <form id="donation-form">
+                <div>
+                    <label for="donor-name">Nome</label><br >
+                    <input id="donor-name" name="donorName" required>
+                </div>
+
+                <div>
+                    <label for="donation-amount">Valor (R$)</label><br >
+                    <input id="donation-amount" name="amount" type="number" step="0.01" min="5" required>
+                </div>
+
+
+                <div>
+                    <label for="project-select">Destinar para</label><br >
+                    <select id="project-select" name="projectId">
+                        <option value="">(Obs: Os projetos serão inseridos aqui via javacsript)</option>
+                    </select>
+                    
+                </div>
+
+                <button type="submit" class="btn">Doar</button>
+            </form>
+        </section>
+
+
+    </main>
+
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="contact">
+                <h3>Contato</h3>
+                <p>email: contato@artesanatoparaunir.org.br | tel: (11) 99999-9999</p>
+                <p>Endereço: Rua do Artesão, 123 — Araraquara, SP</p>
+            </div>
+            <p>© <span id="ano2"></span> Artesanato para Unir — Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+
+    <script src="assets/js/app.js" defer></script>
+</body>
+
+</html>
