@@ -11,7 +11,6 @@ Possibilita a gerencia das atividades, divulgação de projetos, captação de r
 
 - **Área institucional:** página inicial com missão, visão e valores; histórico e conquistas da organização; equipe e estrutura organizacional; relatórios de transparência;
 
-
 ## Referências nas imagens
 
 - international-origami-day-logo-design.zip
