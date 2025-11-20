@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Artesanato para Unir - Cadastro</title>
+    <meta name="description" content="Formulário de cadastro para voluntários e doadores">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="../index.html" class="brand">
+                <img src="../img/logo.png" alt="Logo Artesanato para Unir" width="48" height="48" >
+                <span>Artesanato para Unir</span>
+            </a>
+            <button class="hamburger" aria-expanded="false" aria-controls="main-nav"
+                    aria-label="Abrir menu"><span></span><span></span><span></span></button>
+            <nav id="main-nav" class="nav">
+                <ul>
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="projetos.html">Projetos</a></li>
+                    <li><a href="cadastro.html">Cadastre-se</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>Cadastro</h1>
+        <p>Escolha o tipo de conta e preencha os dados.</p>
+
+        <form id="signup-form">
+
+            <fieldset>
+                <legend>Tipo de conta</legend>
+                <label><input type="radio" name="role" value="voluntario" checked> Voluntário</label>
+                <label><input type="radio" name="role" value="doador"> Doador</label>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>Dados pessoais</legend>
+
+                <div>
+                    <label for="fullName">Nome completo</label><br >
+                    <input id="fullName" name="fullName" type="text" autocomplete="name" required>
+                </div>
+
+                <div>
+                    <label for="email">E-mail</label><br >
+                    <input id="email" name="email" type="email" autocomplete="email" required>
+                </div>
+
+
+                <div>
+                    <label for="cpf">CPF</label><br >
+                    <input id="cpf" name="cpf" inputmode="numeric"  placeholder="000.000.000-00" 
+                    pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}" required>
+                </div>
+
+
+                <div>
+                    <label for="phone">Telefone</label><br >
+                    <input type="tel" id="phone" name="phone"  
+                    pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}" 
+                    placeholder="(00) 00000-0000"
+                    >
+                </div>
+
+
+                <div>
+                    <label for="birth">Data de nascimento</label><br >
+                    <input id="birth" name="birth" type="date" required>
+                </div>
+
+
+                <div>
+                    <label for="cep">CEP</label><br >
+                    <input id="cep" name="cep" inputmode="numeric" maxlength="9" placeholder="00000-000" 
+                    pattern="[0-9]{5}-[0-9]{3}"
+                    required>
+                </div>
+
+
+                <div>
+                    <label for="address">Endereço (rua, número)</label><br >
+                    <input id="address" name="address" required>
+                </div>
+
+
+                <div>
+                    <label for="district">Bairro</label><br >
+                    <input id="district" name="district" required>
+                </div>
+
+
+                <div>
+                    <label for="city">Cidade</label><br >
+                    <input id="city" name="city" required>
+                </div>
+
+
+                <div>
+                    <label for="state">Estado</label><br >
+                    <select id="state" name="state" required>
+                        <option value="">Selecione</option>
+                        <option value="AC">AC - Acre</option>
+                        <option value="AL">AL - Alagoas</option>
+                        <option value="AP">AP - Amapá</option>
+                        <option value="AM">AM - Amazonas</option>
+                        <option value="BA">BA - Bahia</option>
+                        <option value="CE">CE - Ceará</option>
+                        <option value="DF">DF - Distrito Federal</option>
+                        <option value="ES">ES - Espírito Santo</option>
+                        <option value="GO">GO - Goiás</option>
+                        <option value="MA">MA - Maranhão</option>
+                        <option value="MT">MT - Mat Grosso</option>
+                        <option value="MS">MS - Mato Grosso do Sul</option>
+                        <option value="MG">MG - Minas Gerais</option>
+                        <option value="PA">PA - Pará</option>
+                        <option value="PB">PB - Paraíba</option>
+                        <option value="PE">PE - Pernambuco</option>
+                        <option value="PI">PI - Piauí</option>
+                        <option value="RJ">RJ - Rio de Janeiro</option>
+                        <option value="RN">RN - Rio Grande do Norte</option>
+                        <option value="RS">RS - Rio Grande do Sul</option>
+                        <option value="RO">RO - Rondônia</option>
+                        <option value="RR">RR - Roraima</option>
+                        <option value="SC">SC - Santa Catarina</option>
+                        <option value="SP">SP - São Paulo</option>
+                        <option value="SE">SE - Sergipe</option>
+                        <option value="TO">TO - Tocantins</option>
+                    </select>
+                </div>
+
+
+                <div>
+                    <label for="password">Senha</label><br >
+                    <input id="password" name="password" type="password" minlength="6" required>
+                </div>
+
+            </fieldset>
+
+
+            <button type="submit" class="btn">Cadastrar</button>
+        </form>
+
+
+    </main>
+
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="contact">
+                <h3>Contato</h3>
+                <p>email: contato@artesanatoparaunir.org.br | tel: (11) 99999-9999</p>
+                <p>Endereço: Rua do Artesão, 123 — Araraquara, SP</p>
+            </div>
+            <p>© <span id="ano3"></span> Artesanato para Unir — Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+
+    <script src="assets/js/app.js" defer></script>
+</body>
+
+</html>
