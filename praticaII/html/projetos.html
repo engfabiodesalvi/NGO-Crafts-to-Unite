@@ -7,24 +7,37 @@
     <title>Artesanato para Unir - Projetos</title>
     <meta name="description" content="Projetos sociais, oportunidades de voluntariado e doações">
     <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
     <header class="site-header">
-        <div class="container">
-            <a href="../index.html" class="brand">
-                <img src="../img/logo.png" alt="Logo Artesanato para Unir" width="48" height="48" >
-                <span>Artesanato para Unir</span>
-            </a>
-            <button class="hamburger" aria-expanded="false" aria-controls="main-nav"
-                    aria-label="Abrir menu"><span></span><span></span><span></span></button>
-            <nav id="main-nav" class="nav">
-                <ul>
-                    <li><a href="../index.html">Início</a></li>
-                    <li><a href="projetos.html">Projetos</a></li>
-                    <li><a href="cadastro.html">Cadastre-se</a></li>
-                </ul>
-            </nav>
+        <div class="navbar">
+            <div>
+                <a href="../index.html" class="brand">
+                    <div class="logo">
+                        <img src="../img/logo.png" alt="Logo Artesanato para Unir">
+                    </div>
+                </a>
+            </div>
+            <div class="group-titulo-items">
+                <div class="titulo">
+                    <a href="../index.html" class="brand">
+                        <span>Artesanato para Unir</span>
+                    </a>
+                </div>
+                <button class="hamburguer" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                <nav id="main-nav" class="nav-menu active" role="navigation">
+                    <p>(o menu ficará<br/> escondido com<br/>o javascript)</p>
+                    <a href="../index.html" class="nav-link">Início</a>
+                    <a href="projetos.html" class="nav-link">Projetos</a>
+                    <a href="cadastro.html" class="nav-link">Cadastre-se</a>
+                </nav>
+            </div>
         </div>
     </header>
 
@@ -44,22 +57,22 @@
             <h2 id="donate-title">Apoie com uma doação</h2>
             <form id="donation-form">
                 <div>
-                    <label for="donor-name">Nome</label><br >
+                    <label for="donor-name">Nome</label><br>
                     <input id="donor-name" name="donorName" required>
                 </div>
 
                 <div>
-                    <label for="donation-amount">Valor (R$)</label><br >
+                    <label for="donation-amount">Valor (R$)</label><br>
                     <input id="donation-amount" name="amount" type="number" step="0.01" min="5" required>
                 </div>
 
 
                 <div>
-                    <label for="project-select">Destinar para</label><br >
+                    <label for="project-select">Destinar para</label><br>
                     <select id="project-select" name="projectId">
                         <option value="">(Obs: Os projetos serão inseridos aqui via javacsript)</option>
                     </select>
-                    
+
                 </div>
 
                 <button type="submit" class="btn">Doar</button>
