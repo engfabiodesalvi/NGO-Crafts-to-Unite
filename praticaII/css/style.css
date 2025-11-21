@@ -1,0 +1,295 @@
+
+/* Sizes */
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    
+    --small-spacing: 0.5rem;
+    --x-small-spacing: 0.8rem;
+    --medium-spacing: 1.0rem;
+    --x-medium-spacing: 1.2rem;
+    --xx-medium-spacing:1.5rem;
+    --large-spacing: 2rem;
+    --x-large-spacing: 2.5rem;
+
+    --border-radius: 8px; 
+
+    --logo-size: 100px;
+
+    --border-1: 2px;
+    --border-2: 4px;
+    --border-3: 6px;
+    --border-4: 8px;
+    --border-5: 10px;
+
+
+    /* modular spacing - 5 */
+    --spacing-00: 2px;
+    --spacing-0: 4px;
+    --spacing-1: 8px; 
+    --spacing-2: 16px; 
+    --spacing-3: 24px; 
+    --spacing-4: 32px; 
+    --spacing-5: 40px;    
+
+    /* Light Mode */
+    /* colors - 8 */
+
+    /* Text Colors */
+    --t-color-body: black;  
+
+    --t-color-navbar: black;
+    --t-color-nav: black;
+
+    --t-color-nav-button: black;
+    --t-color-nav-item: black;
+    --t-color-nav-item-holver: black;
+
+    --t-color-h1:#333;
+    --t-color-h2:#555;
+    --t-color-h3:#777;
+    --t-color-h4:#888;
+    --t-color-h5:#999;
+    --t-color-h6:#aaa;
+
+    /* Background Colors */
+    --bg-color-body: rgb(251, 247, 238);
+
+    --bg-color-navbar: rgb(198, 198, 198);
+    --bg-color-nav: rgb(198, 198, 198);
+
+
+    --bg-color-nav-button: rgb(251, 247, 238);
+    --bg-color-nav-button-hover: rgb(251, 230, 182);
+    --bg-color-nav-item: rgb(251, 247, 238);
+    --bg-color-nav-item-hover: rgb(184, 184, 184);
+    
+    /* Border Colors */
+    --b-color-h1: #ccc;
+    --b-color-h3: #eee;
+}
+
+body {
+    color: var(--t-color-body-body);
+    background-color: var(--bg-color-body);
+    margin: 0px;
+    /*Important: Add padding to body equal to navbar height to prevent content overlap */
+    /* Deafult value if JS fails */
+    padding-top: 0px; 
+}
+
+/* hierarchical typography - 5 */
+/* H1 - Most prominent, main page title */
+h1 {
+    font-size: var(--x-large-spacing); /* Larger font size */
+    color: var(--t-color-h1);
+    margin-bottom: var(--spacing-2);
+    border-bottom: var(--border-1) solid var(--b-color-h1);
+    padding-bottom: var(--spacing-1);
+}
+
+/* H2 - Major section headings */
+h2 {
+    font-size: var(--large-spacing);
+    color: var(--t-color-h2);
+    margin-top: var(--spacing-4);
+    margin-bottom: var(--spacing-2);
+}
+
+/* H3 - Sub-section headings */
+h3 {
+    font-size: var(--xx-medium-spacing);
+    color: var(--t-color-h3);
+    margin-top: var(--spacing-3);
+    margin-bottom: var(--spacing-1);
+    border-left: var(--border-3) solid var(--b-color-h3);
+    padding-left: var(--border-5);
+}
+
+/* H4 - Sub-sub-section headings */
+h4 {
+    font-size: var(--x-medium-spacing);
+    color: var(--t-color-h4);
+    margin-top: var(--spacing-3);
+    margin-bottom: var(--spacing-1);
+}
+
+/* H5 - Further levels of detail */
+h5 {
+    font-size: var(--medium-spacing); /* Standard paragraph size */
+    color: var(--t-color-h5);
+    font-style: italic;
+    margin-top: var(--spacing-2);
+    margin-bottom: var(--spacing-1);
+}
+
+/* H6 - Most specific, often used for captions or minor notes */
+h6 {
+    font-size: var(--x-small-spacing);
+    color: var(--t-color-h6);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: var(--spacing-1);
+    margin-bottom: var(--spacing-1);
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-content: center;  
+    justify-items: flex-start;  
+    position: fixed; /* Fixes the navbar to the top of the viewport */
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1000; /* Fixes the number to the top of the viewport */
+    background-color:  var(--bg-color-navbar);
+}
+
+.navbar > div {
+    background-color: none;
+}
+
+.brand {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-decoration: none;    
+    background-color:  none;
+}
+
+.brand img {
+    width: var(--logo-size);
+    height: var(--logo-size);
+    padding: var(--spacing-1);
+}
+
+.logo {
+    display: flex;
+    background-color: none;
+    justify-content: center;
+}
+
+.group-titulo-items {
+    display: flex;
+    flex-direction: column;        
+    width: 100%; 
+    height: calc(var(--logo-size) + 2 * var(--spacing-1));      
+    background-color: none;
+    box-sizing: border-box;
+}
+
+.titulo {
+    display: flex;
+    flex-direction: row;
+    background-color:  none;
+    width: 100%;  
+    height: 100%;  
+    align-items: center;
+    justify-content: center;    
+}
+
+.titulo span {
+    font-size: var(--x-large-spacing);    
+}
+
+.hamburguer {
+    display: none; /* Hide by default on desktop */
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    background-color: var(--bg-color-nav-button);
+    border: none;
+    padding: 5px;
+    /*border: 1px solid white;*/  
+    margin: var(--spacing-2)  
+}
+
+.hamburguer:hover, .nav a:hover {
+    /*border: 1px solid white;*/
+    background-color: var(--bg-color-nav-button-hover);    
+    outline: var(--border-1) solid var(--t-color-nav);
+}
+
+.bar {
+    display: block;
+    width: 100%;
+    height: 3px;
+    margin: 5px 0;
+    background-color: var(--t-color-nav-button);
+}
+
+.nav  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-color-nav);
+    height: 100%;
+
+}
+
+.nav-link {
+    color: var(--t-color-navbar);
+    text-decoration: none;
+    padding: var(--spacing-0) var(--spacing-4);
+}
+
+
+main {
+    margin: 10px;
+    /* Default value if JS fails */
+    margin-top: calc(var(--nav-height, calc(var(--logo-size) + 2 * var(--spacing-1))) + 10px);
+}
+
+/*  */
+@media(prefers-color-scheme: dark) {
+    /* Dark Mode */
+    :root {
+        /* colors - 8 */
+        --primary-color: #ffffff;
+        --secundary-color: #000000;
+        --soft-shading: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Mobile styles - when screen is small */
+@media (max-width: 510px) {
+    .navbar {
+        align-items: flex-start;        
+    }
+
+    .group-titulo-items {
+        flex-direction: row;
+        align-items: center;        
+    }
+
+    .titulo span {
+        font-size: var(--xx-medium-spacing);
+        font-weight: 700;
+    }    
+
+    .hamburguer {
+        display: block; /*Show hamburguer icon */
+        min-width: 30px;
+    }
+
+    .nav {
+        position: fixed; /* Make the menu itself fixed */
+        top: var(--logo-size);
+        height: fit-content;                
+        display: flex;
+        flex-direction: column;
+        align-items: center;   
+        justify-content: center;
+        border: var(--border-1) solid var(--t-color-nav);
+             
+    }
+
+    .nav-link {
+        padding: var(--spacing-1) var(--spacing-4);
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;        
+    }
+}
+
