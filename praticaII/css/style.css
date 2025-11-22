@@ -14,13 +14,19 @@
 
     --border-radius: 8px; 
 
-    --logo-size: 100px;
+    --logo-size-1: 80px;   
+    --logo-size-2: 100px;
+    --logo-size-3: 140px;
+
 
     --border-1: 2px;
     --border-2: 4px;
     --border-3: 6px;
     --border-4: 8px;
     --border-5: 10px;
+    --border-6: 12px;
+    --border-7: 14px;
+    --border-8: 16px;
 
 
     /* modular spacing - 5 */
@@ -31,6 +37,8 @@
     --spacing-3: 24px; 
     --spacing-4: 32px; 
     --spacing-5: 40px;    
+    --spacing-6: 45px;    
+    --spacing-7: 50px;    
 
     /* Light Mode */
     /* colors - 8 */
@@ -41,11 +49,13 @@
     --t-color-navbar: black;
     --t-color-nav: black;
 
-    --t-color-nav-button: black;
+    --t-color-nav-button: rgb(170, 102, 0);
+    --t-color-nav-button-hover:  rgb(65, 48, 0);
+
     --t-color-nav-item: black;
     --t-color-nav-item-holver: black;
 
-    --t-color-brand: black;
+    --t-color-brand: rgb(87, 55, 0);
 
     --t-color-h1:#333;
     --t-color-h2:#555;
@@ -55,24 +65,45 @@
     --t-color-h6:#aaa;
 
     /* Background Colors */
-    --bg-color-logo: white;
-    --bg-color-logo-border: rgb(45, 171, 199);
-    --bg-color-logo-shadow: rgb(45, 171, 199);    
+    --bg-color-logo: white;   
+
+    --bg-color-brand: rgb(248, 220, 137);
 
     --bg-color-body: rgb(251, 247, 238);
 
-    --bg-color-navbar: rgb(198, 198, 198);
-    --bg-color-nav: rgb(198, 198, 198);
+    --bg-color-nav-menu: rgb(249, 224, 181);
+
+    --bg-color-navbar: rgb(249, 230, 167);
+    --bg-color-nav: rgb(144, 1, 1);
 
 
-    --bg-color-nav-button: rgb(251, 247, 238);
-    --bg-color-nav-button-hover: rgb(251, 230, 182);
-    --bg-color-nav-item: rgb(251, 247, 238);
-    --bg-color-nav-item-hover: rgb(184, 184, 184);
+    --bg-color-nav-button: rgb(247, 240, 212);
+    --bg-color-nav-button-hover: rgb(249, 220, 146);
+
+    --bg-color-nav-item: rgb(251, 243, 238);
+    --bg-color-nav-item-hover: rgb(250, 210, 154);
     
     /* Border Colors */
+    --b-color-logo: rgb(45, 171, 199);
+    --b-color-brand: rgb(93, 58, 1);
+
+    --b-color-nav-menu: rgb(57, 59, 7);
+
+    --b-color-nav-button: rgb(160, 113, 2);
+    --b-color-nav-button-hover: rgb(65, 48, 0);    
+
+    --b-color-nav-item: rgb(202, 108, 65);
+    --b-color-nav-item-hover: rgb(161, 60, 6);    
+
+    --b-color-navbar: black;
+
     --b-color-h1: #ccc;
     --b-color-h3: #eee;
+
+    /* Shadow Colors */
+    --shadow-color-logo: rgb(45, 171, 199);
+    --shadow-color-brand: rgb(96, 69, 0); 
+
 }
 
 body {
@@ -150,6 +181,8 @@ h6 {
     box-sizing: border-box;
     z-index: 1000; /* Fixes the number to the top of the viewport */
     background-color:  var(--bg-color-navbar);
+    border-radius: var(--border-radius);
+    border: var(--border-3) solid var(--b-color-navbar);
 }
 
 .navbar > div {
@@ -158,7 +191,7 @@ h6 {
     align-items: center;
 }
 
-.brand {
+.brand, .brand-logo {
     display: flex;
     justify-content: center;
     align-content: center;
@@ -167,27 +200,39 @@ h6 {
     background-color:  none;
 }
 
-.brand img {
-    width: var(--logo-size);
-    height: var(--logo-size);
+.brand-logo img {
+    width: var(--logo-size-3);
+    height: var(--logo-size-3);
     margin: var(--spacing-1);
     background-color: var(--bg-color-logo);
     border-radius: 50%; /* Make the image circular */
-    border: 4px solid var(--bg-color-logo-border); /* Add a border */
-    box-shadow: -20px -0px 100px var(--bg-color-logo-shadow)
+    border: 4px solid var(--b-color-logo); /* Add a border */
+    box-shadow: -20px -0px 100px var(--shadow-color-logo);
+}
+
+.brand span {
+    text-align: center;
+    padding: 0 var(--spacing-1);
+    border-radius: var(--spacing-4);
+    background-color:  var(--bg-color-brand);
+    border: 4px solid var(--b-color-brand); /* Add a border */
+    box-shadow: 0px 10px 50px var(--shadow-color-brand);
+    margin-top: var(--spacing-2);
 }
 
 .logo {
-    display: flex;
+    display: flex;    
     background-color: none;
     justify-content: center;    
 }
 
 .group-titulo-items {
     display: flex;
-    flex-direction: column;        
+    flex-direction: column; 
+    align-items: center;  
+    justify-content: space-around;     
     width: 100%; 
-    height: calc(var(--logo-size) + 2 * var(--spacing-1));      
+    /*height: calc(var(--logo-size-3) + 2 * var(--spacing-1));   */   
     background-color: none;
     box-sizing: border-box;
 }
@@ -199,7 +244,7 @@ h6 {
     width: 100%;  
     height: 100%;  
     align-items: center;
-    justify-content: center;    
+    justify-content: center;        
 }
 
 .titulo span {
@@ -207,24 +252,41 @@ h6 {
 }
 
 .hamburguer {
+    color: var(--t-color-nav-button);
     display: none; /* Hide by default on desktop */
-    height: 40px;
-    width: 40px;
+    height: var(--spacing-5);
+    width: var(--spacing-6);
     cursor: pointer;
     background-color: var(--bg-color-nav-button);
     border: none;
     padding: var(--spacing-0);
     margin: var(--spacing-2);
-    border-radius: 15px 0px 15px 0px;  
-    outline: var(--border-1) solid var(--t-color-nav);
+    border-radius: var(--border-7) 0px var(--border-7) 0px;  
+    outline: var(--border-2) solid var(--b-color-nav-button);
+    box-shadow: 0px 0px 20px var(--b-color-nav-button);
 }
 
-.hamburguer:hover, .nav-menu a:hover {
+.hamburguer:hover {
     /*border: 1px solid white;*/
+    color: var(--t-color-nav-button-hover);
     background-color: var(--bg-color-nav-button-hover);    
-    outline: var(--border-1) solid var(--t-color-nav);
-    font-weight: 600;
+    outline: var(--border-2) solid var(--b-color-nav-button-hover);
+    box-shadow: 0px 0px 20px var(--b-color-nav-button-hover);
+    font-weight: 600;    
 }
+
+.hamburguer:hover .bar {    
+    background-color: var(--t-color-nav-button-hover);       
+}
+
+
+.nav-menu a:hover {
+    /*border: 1px solid white;*/
+    background-color: var(--bg-color-nav-item-hover);    
+    outline: var(--border-2) solid var(--b-color-nav-item-hover);
+    font-weight: 600;    
+}
+
 
 .bar {
     display: block;
@@ -234,10 +296,18 @@ h6 {
     background-color: var(--t-color-nav-button);
 }
 
+.close {
+    display: block;
+    font-size: var(--xx-medium-spacing);
+    width: 100%;
+    height: 3px;
+    margin: 5px 0;    
+}
+
 .nav-menu  {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-end;
+    justify-content: flex-start;
     /*background-color: var(--bg-color-nav);*/
     height: 100%;
 
@@ -248,17 +318,19 @@ h6 {
 }
 
 .nav-link {
-    color: var(--t-color-navbar);
+    color: var(--t-color-nav-item);
     text-decoration: none;
+    margin: var(--spacing-1);
     padding: var(--spacing-0) var(--spacing-3);
-    border-radius: 15px 0px 15px 0px;
+    border-radius: var(--border-7) 0px var(--border-7) 0px;  
+    background-color: var(--bg-color-nav-item);
+    outline: var(--border-2) solid var(--b-color-nav-item);
 }
-
 
 main {
     margin: 10px;
     /* Default value if JS fails */
-    margin-top: calc(var(--nav-height, calc(var(--logo-size) + 2 * var(--spacing-1))) + 10px);
+    margin-top: calc(var(--nav-height, calc(var(--logo-size-3) + 2 * var(--spacing-2))) + 10px);
 }
 
 /*  */
@@ -272,8 +344,48 @@ main {
     }
 }
 
+/* Mobile styles - when screen is  */
+@media (max-width: 768px) { 
+    .titulo span {
+        font-size: var(--large-spacing);
+        font-weight: 700;
+    }   
+}
+
+/* Mobile styles - when screen is  */
+@media (max-width: 600px) {
+    main {
+        /* Default value if JS fails */
+        margin-top: calc(var(--nav-height, calc(var(--logo-size-2) + 2 * var(--spacing-2))) + 10px);
+    }    
+
+    .titulo span {
+        font-size: var(--xx-medium-spacing);
+        font-weight: 700;
+    }   
+
+    .brand-logo img {
+        width: var(--logo-size-2);
+        height: var(--logo-size-2);
+    }    
+
+    .nav-link {
+        padding: var(--spacing-00) var(--spacing-2);
+    }    
+}
+
 /* Mobile styles - when screen is small */
-@media (max-width: 510px) {
+@media (max-width: 480px) {
+    main {
+        /* Default value if JS fails */
+        margin-top: calc(var(--nav-height, calc(var(--logo-size-1) + 2 * var(--spacing-2))) + 10px);
+    }    
+
+    .brand-logo img {
+        width: var(--logo-size-1);
+        height: var(--logo-size-1);
+    }  
+
     .navbar {
         align-items: center;        
     }
@@ -284,13 +396,17 @@ main {
     }
 
     .titulo span {
-        font-size: var(--xx-medium-spacing);
+        font-size: var(--x-medium-spacing);
         font-weight: 700;
+    }    
+
+    .brand span {
+        margin-top: 0px;
     }    
 
     .hamburguer {
         display: block; /*Show hamburguer icon */
-        min-width: 35px;
+        min-width: var(--spacing-4);
     }
 
     .nav-menu {
@@ -303,9 +419,11 @@ main {
         align-items: center;   
         transition: 0.3s;
         justify-content: center;
-        border: var(--border-1) solid var(--t-color-nav);
-        border-radius: 15px 0px 15px 0px;  
-        background-color: var(--bg-color-nav);   
+        padding: var(--spacing-0);
+        border: var(--border-2) solid var(--b-color-nav-menu);
+        border-radius: var(--border-8) 0px var(--border-8) 0px;  
+        background-color: var(--bg-color-nav-menu);   
+        box-sizing: border-box; 
     }
 
     .nav-menu p {
@@ -316,11 +434,19 @@ main {
         right: 0; /* Slide in the menu when active class is aded by JS */
     }
 
-    .nav-link {
-        padding: var(--spacing-1) var(--spacing-4);
+    .nav-link {   
+        margin: var(--spacing-0);     
+        padding: var(--spacing-1) var(--spacing-3);
         width: 100%;
         text-align: center;
         box-sizing: border-box;        
     }
-}
 
+    .nav-link:first-child {
+        margin-top: 0px;
+    }
+
+    .nav-link:last-child {
+        margin-bottom: 0px;
+    }
+}
