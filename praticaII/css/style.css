@@ -18,6 +18,11 @@
     --logo-size-2: 100px;
     --logo-size-3: 140px;
 
+    --section-minWidth: 300px;
+    --section-maxWidth: 600px;
+
+    --section-minHeight: 250px;
+    --section-maxHeight: 400px;
 
     --border-1: 2px;
     --border-2: 4px;
@@ -27,6 +32,10 @@
     --border-6: 12px;
     --border-7: 14px;
     --border-8: 16px;
+    --border-9: 18px;
+    --border-10: 22px;
+    --border-11: 26px;
+    --border-12: 30px;
 
 
     /* modular spacing - 5 */
@@ -64,6 +73,8 @@
     --t-color-h5:#999;
     --t-color-h6:#aaa;
 
+    --t-color-section-1: black;
+
     /* Background Colors */
     --bg-color-logo: white;   
 
@@ -76,15 +87,24 @@
     --bg-color-navbar: rgb(249, 230, 167);
     --bg-color-nav: rgb(144, 1, 1);
 
-
     --bg-color-nav-button: rgb(247, 240, 212);
     --bg-color-nav-button-hover: rgb(249, 220, 146);
 
     --bg-color-nav-item: rgb(251, 243, 238);
     --bg-color-nav-item-hover: rgb(250, 210, 154);
     
+    --bg-color-h1:#ffffff;
+    --bg-color-h2:#ffffff;
+    --bg-color-h3:#ffffff;
+    --bg-color-h4:#ffffff;
+    --bg-color-h5:#ffffff;
+    --bg-color-h6:#ffffff;
+
+    --bg-t-section-hero: rgba(255, 255, 255, 0.812);
+    --bg-t-section-hero-hover: rgba(238, 213, 213, 0.926);
+
     /* Border Colors */
-    --b-color-logo: rgb(45, 171, 199);
+    --b-color-logo: rgb(21, 136, 162);
     --b-color-brand: rgb(93, 58, 1);
 
     --b-color-nav-menu: rgb(57, 59, 7);
@@ -101,7 +121,7 @@
     --b-color-h3: #eee;
 
     /* Shadow Colors */
-    --shadow-color-logo: rgb(45, 171, 199);
+    --shadow-color-logo: rgb(14, 73, 87);
     --shadow-color-brand: rgb(96, 69, 0); 
 
 }
@@ -275,10 +295,9 @@ h6 {
     font-weight: 600;    
 }
 
-.hamburguer:hover .bar {    
+.hamburguer:hover .bar {        
     background-color: var(--t-color-nav-button-hover);       
 }
-
 
 .nav-menu a:hover {
     /*border: 1px solid white;*/
@@ -287,21 +306,19 @@ h6 {
     font-weight: 600;    
 }
 
-
 .bar {
     display: block;
     width: 100%;
     height: 3px;
-    margin: 5px 0;
+    margin: var(--spacing-0) 0;
     background-color: var(--t-color-nav-button);
 }
 
 .close {
     display: block;
     font-size: var(--xx-medium-spacing);
-    width: 100%;
-    height: 3px;
-    margin: 5px 0;    
+    width: 100%;        
+    margin: var(--spacing-0) 0;
 }
 
 .nav-menu  {
@@ -309,8 +326,7 @@ h6 {
     align-items: flex-end;
     justify-content: flex-start;
     /*background-color: var(--bg-color-nav);*/
-    height: 100%;
-
+    height: 100%;    
 }
 
 .nav-menu p {
@@ -328,9 +344,134 @@ h6 {
 }
 
 main {
-    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;    
     /* Default value if JS fails */
     margin-top: calc(var(--nav-height, calc(var(--logo-size-3) + 2 * var(--spacing-2))) + 10px);
+}
+
+/* Index page only */
+.hero, .about {
+    position: relative; 
+    text-align: center;  
+    background-color: none; /*var(--bg-color-navbar);*/
+    min-width: var(--section-minWidth);
+    max-width: var(--section-maxWidth);
+    min-height: var(--section-minHeight);
+    max-height: var(--section-maxHeight);
+    box-sizing: border-box;              
+}
+
+.hero img, .about img {            
+    width: 100%;    
+    min-width: var(--section-minWidth);
+    max-width: var(--section-maxWidth);
+    min-height: var(--section-minHeight);
+    max-height: var(--section-maxHeight);
+    border-radius: var(--border-11);
+    object-fit: cover;
+    object-position: center;
+    opacity: 1;
+}
+
+#hero-content-h1, #hero-content-p, #hero-content-a,
+#about-h2, #about-mission, #about-vision, #about-values {
+    position: absolute;
+}    
+
+#hero-content-h1 {
+    top: var(--spacing-1);
+    left: var(--spacing-0);
+}
+
+#hero-content-p {        
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;    
+}
+
+#hero-content-a {
+    bottom: var(--spacing-3);
+    right: var(--spacing-0);
+}
+
+#hero-content-h1 h1, #hero-content-p p, #hero-content-a a {
+    background-color: var(--bg-t-section-hero);
+    width: fit-content;
+    margin: 0;    
+    border-radius: var(--spacing-5);  
+    border: none;
+}
+
+#hero-content-h1 h1 {
+    padding: var(--spacing-2);
+}
+
+#hero-content-p p {  
+    padding: var(--spacing-2);      
+    color: var(--t-color-section-1);
+}
+
+#hero-content-a a{      
+    padding: var(--spacing-2) var(--spacing-2);  
+    color: var(--t-color-section-1);
+    text-decoration: none;
+}
+
+#hero-content-a a:hover {
+    text-decoration: none;
+    font-weight: 600;
+    background-color: var(--bg-t-section-hero-hover);
+}
+
+#about-h2 {
+    top: var(--spacing-1);
+    left: var(--spacing-0);
+}
+
+#about-mission {
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -35%);
+    width: 90%;
+    background-color: none;
+}
+
+#about-vision {
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -65%);
+    width: 90%;
+    background-color: none;
+}
+
+#about-values {
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -95%);
+    width: 90%;
+    background-color: none;
+}
+
+#about-h2 h2, #about-mission p,
+#about-vision p, #about-values p {
+    background-color: var(--bg-t-section-hero);
+    width: fit-content;
+    margin: 0;    
+    border-radius: var(--spacing-5);  
+    border: none;
+}
+
+#about-h2 h2 {
+    padding: var(--spacing-2);
+}
+
+#about-mission p, #about-vision p, #about-values p {
+    padding: var(--spacing-1);
+    color: var(--t-color-section-1);
 }
 
 /*  */
@@ -350,6 +491,15 @@ main {
         font-size: var(--large-spacing);
         font-weight: 700;
     }   
+
+    /* Index page only */
+    .hero-content-h1 h1 {
+        font-size: var(--large-spacing);
+    }
+
+    #about-h2 h2 {
+        font-size: var(--xx-medium-spacing);
+    }
 }
 
 /* Mobile styles - when screen is  */
@@ -372,6 +522,19 @@ main {
     .nav-link {
         padding: var(--spacing-00) var(--spacing-2);
     }    
+
+    /* Index page only */
+    #hero-content-h1 h1 {
+        font-size: var(--xx-medium-spacing);
+    } 
+
+    #about-h2 h2 {
+        font-size: var(--x-medium-spacing);
+    }   
+    
+    #about-mission p, #about-vision p, #about-values p {        
+        padding: var(--spacing-00) var(--spacing-2);        
+    }       
 }
 
 /* Mobile styles - when screen is small */
@@ -449,4 +612,52 @@ main {
     .nav-link:last-child {
         margin-bottom: 0px;
     }
+
+    /* Index page only */
+    #hero-content-h1 h1 {
+        font-size: var(--x-medium-spacing);        
+    }   
+
+    #about-h2 {
+        top: 2%;
+        left: 50%;
+        transform: translate(-50%, -2%);
+
+    }
+
+    #about-mission {
+        top: 29%;
+        left: 50%;
+        transform: translate(-50%, -29%);
+        width: 95%;
+        background-color: none;
+    }
+
+    #about-vision {
+        top: 62%;
+        left: 50%;
+        transform: translate(-50%, -62%);
+        width: 95%;
+        background-color: none;
+    }
+
+    #about-values {
+        top: 95%;
+        left: 50%;
+        transform: translate(-50%, -95%);
+        width: 95%;
+        background-color: none;
+    }
+
+    #about-h2 h2 {
+        font-size: var(--x-medium-spacing);
+        padding: var(--spacing-0) var(--spacing-0);
+        width:max-content;
+    }    
+
+    #about-mission p, #about-vision p, #about-values p {
+        line-height: var(--x-medium-spacing);
+        padding: var(--spacing-00) var(--spacing-2);
+        color: var(--t-color-section-1);
+    }    
 }
