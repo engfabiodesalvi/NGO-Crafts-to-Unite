@@ -663,7 +663,7 @@ main {
     border-radius: var(--spacing-4);    
 }
 
-.container-title > h1, .container-title p, #project-list > h6, #donate-title {
+.container-title > h1,  #project-list > h2, #project-list p, #donate-title {
     background-color: #f9f3e4;
     margin: var(--spacing-0);
     padding: var(--spacing-1) var(--spacing-1);
@@ -830,6 +830,15 @@ button:hover {
     #about-h2 h2 {
         font-size: var(--xx-medium-spacing);
     }
+
+    /* Projects page only */
+    .container-title > h1 {
+        font-size: var(--large-spacing);
+    }  
+    
+    #project-list > h2 {
+        font-size: var(--xx-medium-spacing);
+    }       
 }
 
 /* Mobile styles - when screen is  */
@@ -864,6 +873,15 @@ button:hover {
     
     #about-mission p, #about-vision p, #about-values p {        
         padding: var(--spacing-00) var(--spacing-2);        
+    }        
+    
+    /* Projects page only */
+    .container-title > h1 {
+        font-size: var(--xx-medium-spacing);
+    }  
+    
+    #project-list > h2 {
+        font-size: var(--x-medium-spacing);
     }       
 }
 
@@ -982,12 +1000,21 @@ button:hover {
     #about-h2 h2 {
         font-size: var(--x-medium-spacing);
         padding: var(--spacing-0) var(--spacing-0);
-        width:max-content;
+        width: max-content;
     }    
 
     #about-mission p, #about-vision p, #about-values p {
         line-height: var(--x-medium-spacing);
         padding: var(--spacing-00) var(--spacing-2);
         color: var(--t-color-section-1);
+    }    
+
+    /* Projects page only */
+    .container-title > h1 {
+        font-size: var(--x-medium-spacing);
+    }  
+    
+    #project-list > h2 {
+        font-size: var(--medium-spacing);
     }    
 }
