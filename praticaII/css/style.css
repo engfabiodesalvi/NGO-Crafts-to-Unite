@@ -26,8 +26,10 @@
     --section-maxHeight: 400px;
 
     --card-width: 250px;
+    --card-project-width: 200px;
     
-    --card-img-heigh: 200px;
+    --card-img-height: 200px;
+    --card-project-img-height: 200px;
 
     --border-1: 2px;
     --border-2: 4px;
@@ -509,10 +511,6 @@ main {
     color: var(--t-color-section-1);
 }
 
-.site-footer {
-    
-}
-
 .container-footer {
     background-color: var(--bg-color-footer-container);
     padding: var(--spacing-1);
@@ -597,7 +595,7 @@ main {
 }
 
 .card {
-    flex: 1 1 var(--card-width); /* Flex-grow, flex-shrink, flex-basics for respnsive width */
+    flex: 1 1 var(--card-width); /* Flex-grow, flex-shrink, flex-basics for responsive width */
     /* THis makes cards at least 300px wide, and they grow/shrink to fill the space */
     box-sizing: border-box; /* Ensures padding/border are included in width calculation */
     border: var(--spacing-0) solid none;
@@ -610,20 +608,20 @@ main {
     justify-content:space-evenly;
 }
 
+.card > img {
+    width: 100%;
+    height: var(--card-img-height);
+    object-fit: cover;
+    object-position: center;
+    border-radius: var(--spacing-3) var(--spacing-3) 0 0; 
+}
+
 .card > div {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background-color: none;
     flex-grow: 1;    
-}
-
-.card > img {
-    width: 100%;
-    height: var(--card-img-heigh);
-    object-fit: cover;
-    object-position: center;
-    border-radius: var(--spacing-3) var(--spacing-3) 0 0; 
 }
 
 .card h3 {
@@ -655,6 +653,154 @@ main {
 
 
 /* Projects page only */
+.container-title, #project-list, .donate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(185, 130, 3);
+    margin: var(--spacing-1);
+    padding: var(--spacing-1);
+    border-radius: var(--spacing-4);    
+}
+
+.container-title > h1, .container-title p, #project-list > h6, #donate-title {
+    background-color: #f9f3e4;
+    margin: var(--spacing-0);
+    padding: var(--spacing-1) var(--spacing-1);
+    border-radius: var(--spacing-3);
+}
+
+.container-title > h1 {
+    border-bottom: none;
+    /*border-bottom: var(--spacing-0) solid rgb(198, 42, 42);*/
+}
+
+.cards-project {
+    display: flex; /* Make the list a flex container */
+    flex-wrap: wrap; /* Allows cards to wrap to the next line */
+    gap: var(--spacing-1); /* Adds space between cards (supported in modern browsers) */
+    list-style: none; /* Remove efault list bullets */
+    padding: var(--spacing-1);
+    margin: 0;
+    justify-content: center;   
+}
+
+.card-project {
+    flex: 0 1 var(--card-project-width); /* Flex-grow, flex-shrink, flex-basics for responsive width */
+    /* THis makes cards at least 300px wide, and they grow/shrink to fill the space */
+    box-sizing: border-box; /* Ensures padding/border are included in width calculation */
+    border: var(--spacing-0) solid none;
+    border-radius: var(--spacing-3);
+    padding: var(--spacing-1);
+    background-color: var(--bg-color-section-highlights-card);
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.029);*/
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+}
+
+.card-project > img {
+    width: 100%;
+    height: var(--card-project-img-height);
+    object-fit: cover;
+    object-position: center;
+    border-radius: var(--spacing-3) var(--spacing-3) 0 0; 
+}
+
+.card-project > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: none;
+    flex-grow: 1;    
+}
+
+.card-project h6 {
+    color: var(--t-color-card-title);
+    border-left: var(--spacing-0) solid var(--t-color-card-title);        
+    padding-left: var(--spacing-1);
+}
+
+.card-project-item {
+    display: flex;    
+    align-items: end;
+    justify-content: space-around;
+    width: 100%;    
+    background-color: none;
+}
+
+.card-project-item a {
+    text-decoration: none;
+    color: var(--t-color-card-button);
+    background-color: var(--bg-color-card-button);
+    border-radius: var(--spacing-2);
+    padding: var(--spacing-1);
+}
+
+.card-project-item a:hover {
+    background-color: var(--bg-color-card-button-hover);
+    font-weight: 600;
+    outline: var(--spacing-0) solid var(--b-color-card-button-hover);
+}
+
+#donation-form {
+    box-sizing: border-box;
+}
+
+#donation-form div {
+    margin: var(--spacing-1);
+}
+
+#donation-form div:first-child  {
+    margin-top: var(--spacing-3);
+}
+
+#donation-form div:last-child  {
+    text-align: center;
+    background-color: none;
+}
+
+label, input, select {
+    background-color: #f9f3e4;
+    margin: var(--spacing-0);
+    padding: var(--spacing-1) var(--spacing-1);
+    border-radius: var(--spacing-3);
+    
+}
+
+label, input, select, button {
+    font-size: var(--medium-spacing);
+}
+
+label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0;
+    width: fit-content;
+}
+
+#donor-name, #donor-email {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100px;
+    text-decoration: none;
+    color: var(--t-color-card-button);
+    background-color: var(--bg-color-card-button);
+    border-radius: var(--spacing-2);
+    padding: var(--spacing-1);
+
+    border: var(--spacing-0) solid rgb(113, 112, 111);;
+    outline: var(--spacing-0) solid rgb(255, 239, 223);
+}
+
+button:hover {
+    background-color: var(--bg-color-card-button-hover);
+    font-weight: 600;
+    border: var(--spacing-0) solid var(--b-color-card-button-hover);
+}
 
 
 /*  */
