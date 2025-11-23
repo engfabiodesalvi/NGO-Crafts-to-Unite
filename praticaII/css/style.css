@@ -155,6 +155,10 @@
 
 }
 
+html {
+    scroll-padding-top: 210px;
+}
+
 body {
     color: var(--t-color-body-body);
     background-color: var(--bg-color-body);
@@ -817,6 +821,10 @@ button:hover {
 
 /* Mobile styles - when screen is  */
 @media (max-width: 768px) { 
+    html {
+        scroll-padding-top: 210px;
+    }
+
     .titulo span {
         font-size: var(--large-spacing);
         font-weight: 700;
@@ -843,6 +851,10 @@ button:hover {
 
 /* Mobile styles - when screen is  */
 @media (max-width: 600px) {
+    html {
+        scroll-padding-top: 170px;
+    }   
+
     main {
         /* Default value if JS fails */
         margin-top: calc(var(--nav-height, calc(var(--logo-size-2) + 2 * var(--spacing-2))) + 10px);
@@ -887,6 +899,10 @@ button:hover {
 
 /* Mobile styles - when screen is small */
 @media (max-width: 480px) {
+    html {
+        scroll-padding-top: 150px;
+    }    
+
     main {
         /* Default value if JS fails */
         margin-top: calc(var(--nav-height, calc(var(--logo-size-1) + 2 * var(--spacing-2))) + 10px);

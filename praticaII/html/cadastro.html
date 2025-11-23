@@ -45,17 +45,17 @@
 
     <main class="container">
         <h1>Cadastro</h1>
-        <p>Escolha o tipo de conta e preencha os dados.</p>
-
+        
         <form id="signup-form">
-
+            
+            <h2>Escolha o tipo de conta:</h2>
             <fieldset>
                 <legend>Tipo de conta</legend>
-                <label><input type="radio" name="role" value="voluntario" checked> Voluntário</label>
-                <label><input type="radio" name="role" value="doador"> Doador</label>
+                <label><input type="radio" name="role" value="voluntario" checked required> Voluntário</label>
+                <label><input type="radio" name="role" value="doador" required> Doador</label>
             </fieldset>
 
-
+            <h2>Preencha os seguintes dados:</h2>
             <fieldset>
                 <legend>Dados pessoais</legend>
 
