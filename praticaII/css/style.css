@@ -1,6 +1,7 @@
 
 /* Sizes */
-:root {
+:root {    
+
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
     
@@ -23,6 +24,10 @@
 
     --section-minHeight: 250px;
     --section-maxHeight: 400px;
+
+    --card-width: 250px;
+    
+    --card-img-heigh: 200px;
 
     --border-1: 2px;
     --border-2: 4px;
@@ -75,12 +80,20 @@
 
     --t-color-section-1: black;
 
+    --t-color-footer: black;
+
+    --t-color-footer-contact: rgb(93, 58, 1);
+
+    --t-color-card-title: rgb(112, 10, 10);
+
+    --t-color-card-button: rgb(91, 17, 0);    
+
     /* Background Colors */
     --bg-color-logo: white;   
 
     --bg-color-brand: rgb(248, 220, 137);
 
-    --bg-color-body: rgb(251, 247, 238);
+    --bg-color-body: rgb(244, 221, 167);
 
     --bg-color-nav-menu: rgb(249, 224, 181);
 
@@ -92,6 +105,9 @@
 
     --bg-color-nav-item: rgb(251, 243, 238);
     --bg-color-nav-item-hover: rgb(250, 210, 154);
+
+    --bg-color-card-button: #edddbe;    
+    --bg-color-card-button-hover: #eeb162;    
     
     --bg-color-h1:#ffffff;
     --bg-color-h2:#ffffff;
@@ -102,6 +118,15 @@
 
     --bg-t-section-hero: rgba(255, 255, 255, 0.812);
     --bg-t-section-hero-hover: rgba(238, 213, 213, 0.926);
+
+    --bg-t-color-footer-contact: rgb(249, 244, 179);
+
+    --bg-color-footer-container: rgb(95, 56, 5);
+    --bg-color-footer-contact: rgb(155, 142, 0);
+
+    --bg-color-section-highlights: rgb(142, 87, 10);
+    --bg-color-section-highlights-title: #fffef1;
+    --bg-color-section-highlights-card: #f9f3e4;
 
     /* Border Colors */
     --b-color-logo: rgb(21, 136, 162);
@@ -116,6 +141,8 @@
     --b-color-nav-item-hover: rgb(161, 60, 6);    
 
     --b-color-navbar: black;
+
+    --b-color-card-button-hover: rgb(138, 41, 0);
 
     --b-color-h1: #ccc;
     --b-color-h3: #eee;
@@ -343,13 +370,20 @@ h6 {
     outline: var(--border-2) solid var(--b-color-nav-item);
 }
 
-main {
+main, footer, .container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin: 10px;    
+    align-items: center;        
+}
+
+main {
+    margin: 10px;
     /* Default value if JS fails */
     margin-top: calc(var(--nav-height, calc(var(--logo-size-3) + 2 * var(--spacing-2))) + 10px);
+}
+
+#ano::after {
+    content: "2025";    
 }
 
 /* Index page only */
@@ -361,7 +395,8 @@ main {
     max-width: var(--section-maxWidth);
     min-height: var(--section-minHeight);
     max-height: var(--section-maxHeight);
-    box-sizing: border-box;              
+    box-sizing: border-box;  
+    margin: var(--spacing-0);            
 }
 
 .hero img, .about img {            
@@ -474,6 +509,143 @@ main {
     color: var(--t-color-section-1);
 }
 
+.container {
+    background-color: var(--bg-color-footer-container);
+    padding: var(--spacing-1);
+    width: 100%;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bg-t-color-footer-contact);
+    border-radius: var(--spacing-4);
+    padding: var(--spacing-0) var(--spacing-3);
+}    
+
+.contact h3 {
+    width: 100%;
+    color: var(--t-color-footer-contact);
+    background-color:  var(--bg-t-color-footer-contact);
+    border-left: var(--spacing-1) solid var(--t-color-footer-contact);
+}
+
+.contact p {
+    text-align: center;
+    color: var(--t-color-footer-contact);
+    background-color:  var(--bg-t-color-footer-contact);
+    border-radius: var(--spacing-1);
+    padding: var(--spacing-1);
+    margin: 0;
+}
+
+.container p {
+    background-color: var(--bg-t-color-footer-contact);    
+    padding: var(--spacing-1);
+    border-radius: var(--spacing-2);
+}
+
+.highlights {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: none; 
+    padding: var(--spacing-0);   
+}
+
+
+.highlights > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-color-section-highlights);
+    width: 100%;
+    min-width: var(--section-minWidth);
+    max-width: var(--section-maxWidth);    
+    box-sizing: border-box;
+    border-radius: var(--spacing-3);    
+}
+
+#highlights-title {
+    background-color: var(--bg-color-section-highlights-title);
+    padding: var(--spacing-0);
+    border-radius: var(--spacing-3);
+    margin-top: var(--spacing-2);
+    margin-bottom: var(--spacing-1);
+}
+
+.cards {
+    display: flex; /* Make the list a flex container */
+    flex-wrap: wrap; /* Allows cards to wrap to the next line */
+    gap: var(--spacing-1); /* Adds space between cards (supported in modern browsers) */
+    list-style: none; /* Remove efault list bullets */
+    padding: var(--spacing-1);
+    margin: 0;
+    justify-content: center;
+}
+
+.card {
+    flex: 1 1 var(--card-width); /* Flex-grow, flex-shrink, flex-basics for respnsive width */
+    /* THis makes cards at least 300px wide, and they grow/shrink to fill the space */
+    box-sizing: border-box; /* Ensures padding/border are included in width calculation */
+    border: var(--spacing-0) solid none;
+    border-radius: var(--spacing-3);
+    padding: var(--spacing-1);
+    background-color: var(--bg-color-section-highlights-card);
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.029);*/
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+}
+
+.card > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: none;
+    flex-grow: 1;    
+}
+
+.card > img {
+    width: 100%;
+    height: var(--card-img-heigh);
+    object-fit: cover;
+    object-position: center;
+    border-radius: var(--spacing-3) var(--spacing-3) 0 0; 
+}
+
+.card h3 {
+    color: var(--t-color-card-title);
+    border-left: var(--spacing-1) solid var(--t-color-card-title);        
+}
+
+.card-item {
+    display: flex;    
+    align-items: end;
+    justify-content: end;
+    width: 100%;    
+    background-color: none;
+}
+
+.card-item a {
+    text-decoration: none;
+    color: var(--t-color-card-button);
+    background-color: var(--bg-color-card-button);
+    border-radius: var(--spacing-2);
+    padding: var(--spacing-1);
+}
+
+.card-item:hover a {
+    background-color: var(--bg-color-card-button-hover);
+    font-weight: 600;
+    outline: var(--spacing-0) solid var(--b-color-card-button-hover);
+}
+
 /*  */
 @media(prefers-color-scheme: dark) {
     /* Dark Mode */
@@ -481,7 +653,8 @@ main {
         /* colors - 8 */
         --primary-color: #ffffff;
         --secundary-color: #000000;
-        --soft-shading: 0 2px 10px rgba(0, 0, 0, 0.1);
+        --soft-shading: 0 2px 10px rgba(0, 0, 0, 0.1);            
+        --bg-color-body: rgb(255, 255, 255);    
     }
 }
 
