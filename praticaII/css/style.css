@@ -836,7 +836,7 @@ button:hover {
         font-size: var(--large-spacing);
     }  
     
-    #project-list > h2 {
+    #project-list > h2, .donate > h2 {
         font-size: var(--xx-medium-spacing);
     }       
 }
@@ -880,7 +880,7 @@ button:hover {
         font-size: var(--xx-medium-spacing);
     }  
     
-    #project-list > h2 {
+    #project-list > h2, .donate > h2 {
         font-size: var(--x-medium-spacing);
     }       
 }
@@ -1014,7 +1014,7 @@ button:hover {
         font-size: var(--x-medium-spacing);
     }  
     
-    #project-list > h2 {
+    #project-list > h2, .donate > h2 {
         font-size: var(--medium-spacing);
     }    
 }
