@@ -222,7 +222,7 @@ h6 {
     flex-direction: row;
     align-content: center;  
     justify-items: flex-start;  
-    position: fixed; /* Fixes the navbar to the top of the viewport */
+    position: fixed; /* Use "fixed" to fixes the navbar to the top of the viewport */
     top: 0;
     width: 100%;
     box-sizing: border-box;
@@ -370,7 +370,7 @@ h6 {
     outline: var(--border-2) solid var(--b-color-nav-item);
 }
 
-main, footer, .container {
+main, .site-footer, .container {
     display: flex;
     flex-direction: column;
     align-items: center;        
@@ -509,10 +509,14 @@ main {
     color: var(--t-color-section-1);
 }
 
-.container {
+.site-footer {
+    
+}
+
+.container-footer {
     background-color: var(--bg-color-footer-container);
     padding: var(--spacing-1);
-    width: 100%;
+    width: 100%;    
 }
 
 .contact {
@@ -522,6 +526,7 @@ main {
     background-color: var(--bg-t-color-footer-contact);
     border-radius: var(--spacing-4);
     padding: var(--spacing-0) var(--spacing-3);
+    margin: var(--spacing-2);
 }    
 
 .contact h3 {
@@ -540,10 +545,12 @@ main {
     margin: 0;
 }
 
-.container p {
+.container-footer p {
+    text-align: center;
     background-color: var(--bg-t-color-footer-contact);    
     padding: var(--spacing-1);
     border-radius: var(--spacing-2);
+    margin: var(--spacing-2);
 }
 
 .highlights {
@@ -645,6 +652,10 @@ main {
     font-weight: 600;
     outline: var(--spacing-0) solid var(--b-color-card-button-hover);
 }
+
+
+/* Projects page only */
+
 
 /*  */
 @media(prefers-color-scheme: dark) {
