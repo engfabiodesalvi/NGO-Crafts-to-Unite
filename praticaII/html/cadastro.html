@@ -43,129 +43,126 @@
         </div>
     </header>
 
-    <main class="container">
-        <h1>Cadastro</h1>
-        
-        <form id="signup-form">
-            
-            <h2>Escolha o tipo de conta:</h2>
-            <fieldset>
-                <legend>Tipo de conta</legend>
-                <label><input type="radio" name="role" value="voluntario" checked required> Voluntário</label>
-                <label><input type="radio" name="role" value="doador" required> Doador</label>
-            </fieldset>
+    <main class="container-main">
+        <div class="container-title">
+            <h1>Cadastro</h1>
+        </div>
 
-            <h2>Preencha os seguintes dados:</h2>
-            <fieldset>
-                <legend>Dados pessoais</legend>
+        <section class="register" aria-labelledby="donate-title">
+
+
+            <form id="signup-form">
+
+                <h2>Escolha o tipo de conta:</h2>
+                <fieldset>
+                    <legend>Tipo de conta</legend>
+                    <label><input type="radio" name="role" value="voluntario" checked required> Voluntário</label>
+                    <label><input type="radio" name="role" value="doador" required> Doador</label>
+                </fieldset>
+
+                <h2>Preencha os seguintes dados:</h2>
+                <fieldset>
+                    <legend>Dados pessoais</legend>
+
+                    <div>
+                        <label for="fullName">Nome completo</label>
+                        <input id="fullName" name="fullName" type="text" autocomplete="name" required>
+                    </div>
+
+                    <div>
+                        <label for="email">E-mail</label>
+                        <input id="email" name="email" type="email" autocomplete="email" required>
+                    </div>
+
+                    <div>
+                        <label for="cpf">CPF</label>
+                        <input id="cpf" name="cpf" inputmode="numeric" placeholder="000.000.000-00"
+                               pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}" required>
+                    </div>
+
+                    <div>
+                        <label for="phone">Telefone</label>
+                        <input type="tel" id="phone" name="phone" pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}"
+                               placeholder="(00) 00000-0000" required>
+                    </div>
+
+                    <div>
+                        <label for="birth">Data de nascimento</label>
+                        <input id="birth" name="birth" type="date" required>
+                    </div>
+
+                    <div>
+                        <label for="cep">CEP</label>
+                        <input id="cep" name="cep" inputmode="numeric" maxlength="9" placeholder="00000-000"
+                               pattern="[0-9]{5}-[0-9]{3}" required>
+                    </div>
+
+                    <div>
+                        <label for="address">Endereço (rua, número)</label>
+                        <input id="address" name="address" required>
+                    </div>
+
+                    <div>
+                        <label for="district">Bairro</label>
+                        <input id="district" name="district" required>
+                    </div>
+
+                    <div>
+                        <label for="city">Cidade</label>
+                        <input id="city" name="city" required>
+                    </div>
+
+                    <div>
+                        <label for="state">Estado</label>
+                        <select id="state" name="state" required>
+                            <option value="">Selecione</option>
+                            <option value="AC">AC - Acre</option>
+                            <option value="AL">AL - Alagoas</option>
+                            <option value="AP">AP - Amapá</option>
+                            <option value="AM">AM - Amazonas</option>
+                            <option value="BA">BA - Bahia</option>
+                            <option value="CE">CE - Ceará</option>
+                            <option value="DF">DF - Distrito Federal</option>
+                            <option value="ES">ES - Espírito Santo</option>
+                            <option value="GO">GO - Goiás</option>
+                            <option value="MA">MA - Maranhão</option>
+                            <option value="MT">MT - Mat Grosso</option>
+                            <option value="MS">MS - Mato Grosso do Sul</option>
+                            <option value="MG">MG - Minas Gerais</option>
+                            <option value="PA">PA - Pará</option>
+                            <option value="PB">PB - Paraíba</option>
+                            <option value="PE">PE - Pernambuco</option>
+                            <option value="PI">PI - Piauí</option>
+                            <option value="RJ">RJ - Rio de Janeiro</option>
+                            <option value="RN">RN - Rio Grande do Norte</option>
+                            <option value="RS">RS - Rio Grande do Sul</option>
+                            <option value="RO">RO - Rondônia</option>
+                            <option value="RR">RR - Roraima</option>
+                            <option value="SC">SC - Santa Catarina</option>
+                            <option value="SP">SP - São Paulo</option>
+                            <option value="SE">SE - Sergipe</option>
+                            <option value="TO">TO - Tocantins</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="password">Senha</label>
+                        <input id="password" name="password" type="password" minlength="6" required>
+                    </div>
+
+                </fieldset>
 
                 <div>
-                    <label for="fullName">Nome completo</label><br>
-                    <input id="fullName" name="fullName" type="text" autocomplete="name" required>
+                    <button type="submit" class="btn"><span>Cadastrar</span></button>
                 </div>
-
-                <div>
-                    <label for="email">E-mail</label><br>
-                    <input id="email" name="email" type="email" autocomplete="email" required>
-                </div>
-
-
-                <div>
-                    <label for="cpf">CPF</label><br>
-                    <input id="cpf" name="cpf" inputmode="numeric" placeholder="000.000.000-00"
-                           pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}" required>
-                </div>
-
-
-                <div>
-                    <label for="phone">Telefone</label><br>
-                    <input type="tel" id="phone" name="phone" pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}"
-                           placeholder="(00) 00000-0000" required>
-                </div>
-
-
-                <div>
-                    <label for="birth">Data de nascimento</label><br>
-                    <input id="birth" name="birth" type="date" required>
-                </div>
-
-
-                <div>
-                    <label for="cep">CEP</label><br>
-                    <input id="cep" name="cep" inputmode="numeric" maxlength="9" placeholder="00000-000"
-                           pattern="[0-9]{5}-[0-9]{3}" required>
-                </div>
-
-
-                <div>
-                    <label for="address">Endereço (rua, número)</label><br>
-                    <input id="address" name="address" required>
-                </div>
-
-
-                <div>
-                    <label for="district">Bairro</label><br>
-                    <input id="district" name="district" required>
-                </div>
-
-
-                <div>
-                    <label for="city">Cidade</label><br>
-                    <input id="city" name="city" required>
-                </div>
-
-
-                <div>
-                    <label for="state">Estado</label><br>
-                    <select id="state" name="state" required>
-                        <option value="">Selecione</option>
-                        <option value="AC">AC - Acre</option>
-                        <option value="AL">AL - Alagoas</option>
-                        <option value="AP">AP - Amapá</option>
-                        <option value="AM">AM - Amazonas</option>
-                        <option value="BA">BA - Bahia</option>
-                        <option value="CE">CE - Ceará</option>
-                        <option value="DF">DF - Distrito Federal</option>
-                        <option value="ES">ES - Espírito Santo</option>
-                        <option value="GO">GO - Goiás</option>
-                        <option value="MA">MA - Maranhão</option>
-                        <option value="MT">MT - Mat Grosso</option>
-                        <option value="MS">MS - Mato Grosso do Sul</option>
-                        <option value="MG">MG - Minas Gerais</option>
-                        <option value="PA">PA - Pará</option>
-                        <option value="PB">PB - Paraíba</option>
-                        <option value="PE">PE - Pernambuco</option>
-                        <option value="PI">PI - Piauí</option>
-                        <option value="RJ">RJ - Rio de Janeiro</option>
-                        <option value="RN">RN - Rio Grande do Norte</option>
-                        <option value="RS">RS - Rio Grande do Sul</option>
-                        <option value="RO">RO - Rondônia</option>
-                        <option value="RR">RR - Roraima</option>
-                        <option value="SC">SC - Santa Catarina</option>
-                        <option value="SP">SP - São Paulo</option>
-                        <option value="SE">SE - Sergipe</option>
-                        <option value="TO">TO - Tocantins</option>
-                    </select>
-                </div>
-
-
-                <div>
-                    <label for="password">Senha</label><br>
-                    <input id="password" name="password" type="password" minlength="6" required>
-                </div>
-
-            </fieldset>
-
-
-            <button type="submit" class="btn">Cadastrar</button>
-        </form>
-
+            </form>
+        </section>
 
     </main>
 
 
     <footer class="site-footer">
-        <div class="container">
+        <div class="container-footer">
             <div class="contact">
                 <h3>Contato</h3>
                 <p>email: contato@artesanatoparaunir.org.br | tel: (11) 99999-9999</p>

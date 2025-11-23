@@ -88,7 +88,7 @@
 
     --t-color-card-title: rgb(112, 10, 10);
 
-    --t-color-card-button: rgb(91, 17, 0);    
+    --t-color-card-button: black;/*rgb(91, 17, 0);    */
 
     /* Background Colors */
     --bg-color-logo: white;   
@@ -102,14 +102,11 @@
     --bg-color-navbar: rgb(249, 230, 167);
     --bg-color-nav: rgb(144, 1, 1);
 
-    --bg-color-nav-button: rgb(247, 240, 212);
-    --bg-color-nav-button-hover: rgb(249, 220, 146);
-
     --bg-color-nav-item: rgb(251, 243, 238);
     --bg-color-nav-item-hover: rgb(250, 210, 154);
 
-    --bg-color-card-button: #edddbe;    
-    --bg-color-card-button-hover: #eeb162;    
+    --bg-color-card-button: rgb(246, 219, 156);/*rgb(255, 234, 184);/*#edddbe;    */
+    --bg-color-card-button-hover: rgb(255, 227, 160); /*rgb(255, 234, 184);/*#eeb162; */
     
     --bg-color-h1:#ffffff;
     --bg-color-h2:#ffffff;
@@ -117,6 +114,9 @@
     --bg-color-h4:#ffffff;
     --bg-color-h5:#ffffff;
     --bg-color-h6:#ffffff;
+
+    --bg-t-color-h1-h2: #f9f3e4;
+    --bg-t-color-label-input-select: var(--bg-t-color-h1-h2);
 
     --bg-t-section-hero: rgba(255, 255, 255, 0.812);
     --bg-t-section-hero-hover: rgba(238, 213, 213, 0.926);
@@ -130,6 +130,7 @@
     --bg-color-section-highlights-title: #fffef1;
     --bg-color-section-highlights-card: #f9f3e4;
 
+    --bg-color-container-project-form: rgb(185, 130, 3);
     /* Border Colors */
     --b-color-logo: rgb(21, 136, 162);
     --b-color-brand: rgb(93, 58, 1);
@@ -144,7 +145,14 @@
 
     --b-color-navbar: black;
 
-    --b-color-card-button-hover: rgb(138, 41, 0);
+    --b-color-card-button: rgb(154, 154, 154); /*rgb(113, 112, 111);*/
+    --b-color-card-button-inner:rgb(252, 245, 239);
+    --b-color-card-button-outer:rgb(248, 242, 231);       
+
+    --b-color-card-button-hover: rgb(188, 94, 0);/*rgb(138, 41, 0);*/
+    --b-color-card-button-hover-inner: rgb(252, 206, 160); /*rgb(242, 204, 171);*/
+    --b-color-card-button-hover-outer: rgb(255, 201, 148);/*rgb(242, 204, 171); */       
+    --b-color-fieldset-1: #f9f3e4;
 
     --b-color-h1: #ccc;
     --b-color-h3: #eee;
@@ -516,8 +524,12 @@ main {
 }
 
 .container-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: var(--bg-color-footer-container);
-    padding: var(--spacing-1);
+    padding: var(--spacing-1);    
     width: 100%;    
 }
 
@@ -528,7 +540,7 @@ main {
     background-color: var(--bg-t-color-footer-contact);
     border-radius: var(--spacing-4);
     padding: var(--spacing-0) var(--spacing-3);
-    margin: var(--spacing-2);
+    margin: var(--spacing-2);       
 }    
 
 .contact h3 {
@@ -657,18 +669,23 @@ main {
 
 
 /* Projects page only */
-.container-title, #project-list, .donate {
+.container-title, #project-list, .donate, .register {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(185, 130, 3);
+    background-color: var(--bg-color-container-project-form);
     margin: var(--spacing-1);
     padding: var(--spacing-1);
-    border-radius: var(--spacing-4);    
+    border-radius: var(--spacing-4);  
+    width: 100%;
+    min-width: var(--section-minWidth);  
+    max-width: var(--section-maxWidth);
+    box-sizing: border-box;
+    overflow-wrap: break-word;
 }
 
-.container-title > h1,  #project-list > h2, #project-list p, #donate-title {
-    background-color: #f9f3e4;
+.container-title > h1,  #project-list > h2, #project-list p, #donate-title, .register h2 {
+    background-color: var(--bg-t-color-h1-h2);
     margin: var(--spacing-0);
     padding: var(--spacing-1) var(--spacing-1);
     border-radius: var(--spacing-3);
@@ -748,6 +765,7 @@ main {
 }
 
 #donation-form {
+    width: 100%;  
     box-sizing: border-box;
 }
 
@@ -759,20 +777,23 @@ main {
     margin-top: var(--spacing-3);
 }
 
-#donation-form div:last-child  {
+#donation-form > div:last-child, #signup-form > div:last-child  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     background-color: none;
 }
 
 label, input, select {
-    background-color: #f9f3e4;
+    background-color: var(--bg-t-color-label-input-select);
     margin: var(--spacing-0);
     padding: var(--spacing-1) var(--spacing-1);
     border-radius: var(--spacing-3);
     
 }
 
-label, input, select, button {
+label, input, select, #donation-form button, #signup-form button {
     font-size: var(--medium-spacing);
 }
 
@@ -780,7 +801,7 @@ label {
     font-weight: 600;
     display: block;
     margin-bottom: 0;
-    width: fit-content;
+    width: fit-content;    
 }
 
 #donor-name, #donor-email {
@@ -788,25 +809,79 @@ label {
     box-sizing: border-box;
 }
 
-button {
-    width: 100px;
+#donation-form button, #signup-form button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 60px;
     text-decoration: none;
     color: var(--t-color-card-button);
     background-color: var(--bg-color-card-button);
-    border-radius: var(--spacing-2);
+    border-radius: var(--spacing-3);
+    padding: var(--spacing-2);
+    font-size: var(--x-medium-spacing);
+    border: var(--spacing-0) solid var(--b-color-card-button);
+    /*outline: var(--spacing-0) solid rgb(255, 239, 223);*/
+    box-shadow:
+        0 0 0 var(--spacing-0) var(--b-color-card-button-outer),
+        inset 0 0 0 var(--spacing-0) var(--b-color-card-button-inner);
+}
+
+/*
+#donation-form button  span, #signup-form button span {
+    background-color: var(--bg-t-color-label-input-select);
     padding: var(--spacing-1);
-
-    border: var(--spacing-0) solid rgb(113, 112, 111);;
-    outline: var(--spacing-0) solid rgb(255, 239, 223);
+    border-radius: var(--spacing-2);
 }
+*/
 
-button:hover {
+#donation-form button:hover, #signup-form button:hover {    
     background-color: var(--bg-color-card-button-hover);
+    /*font-size: var(--x-medium-spacing);*/
     font-weight: 600;
-    border: var(--spacing-0) solid var(--b-color-card-button-hover);
+    border: var(--spacing-0) solid var(--b-color-card-button-hover);    
+    box-shadow:
+        0 0 0 var(--spacing-0) var(--b-color-card-button-hover-outer),
+        inset 0 0 0 var(--spacing-0) var(--b-color-card-button-hover-inner);         
+    cursor: pointer;   
 }
 
+/* Register page only */
+#signup-form {
+    background-color: none;
+    width: 100%;
+    box-sizing: border-box;
+}
 
+#signup-form > h2 {
+    width: fit-content;
+}
+
+#signup-form > fieldset, #donation-form > fieldset {
+    border: var(--spacing-0) solid var(--bg-color-section-highlights);
+    box-shadow: 
+        0 0 0  var(--spacing-0) var(--b-color-fieldset-1),    
+        inset 0 0 0  var(--spacing-0) var(--b-color-fieldset-1);    
+    border-radius: var(--spacing-4);   
+    margin: var(--spacing-2) var(--spacing-3) var(--spacing-3)  var(--spacing-3);     
+}
+
+#signup-form > fieldset > legend {
+    background-color: var(--bg-t-color-h1-h2);
+    border: var(--spacing-0) solid var(--bg-color-section-highlights);
+    box-shadow: 
+        0 0 0  var(--spacing-0) var(--b-color-fieldset-1),    
+        inset 0 0 0  var(--spacing-0) var(--b-color-fieldset-1);     
+    border-radius: var(--spacing-1);
+    padding: var(--spacing-0) var(--spacing-2);
+    font-weight: 600;
+}
+
+#fullName, #email, #address, #district {
+    width: 100%;
+    box-sizing: border-box;
+}
 /*  */
 @media(prefers-color-scheme: dark) {
     /* Dark Mode */
@@ -844,8 +919,8 @@ button:hover {
         font-size: var(--large-spacing);
     }  
     
-    #project-list > h2, .donate > h2 {
-        font-size: var(--xx-medium-spacing);
+    #project-list > h2, .donate > h2, #signup-form > h2 {
+        font-size: var(--xx-medium-spacing);        
     }       
 }
 
@@ -892,8 +967,8 @@ button:hover {
         font-size: var(--xx-medium-spacing);
     }  
     
-    #project-list > h2, .donate > h2 {
-        font-size: var(--x-medium-spacing);
+    #project-list > h2, .donate > h2, #signup-form > h2 {
+        font-size: var(--x-medium-spacing);        
     }       
 }
 
@@ -1025,12 +1100,16 @@ button:hover {
         color: var(--t-color-section-1);
     }    
 
+    .donate {
+        padding: var(--spacing-1) 0;
+    }
+
     /* Projects page only */
     .container-title > h1 {
         font-size: var(--x-medium-spacing);
     }  
     
-    #project-list > h2, .donate > h2 {
-        font-size: var(--medium-spacing);
+    #project-list > h2, .donate > h2, #signup-form > h2 {
+        font-size: var(--medium-spacing);        
     }    
 }
