@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Artesanato para Unir — Início</title>
+    <meta name="description" content="ONG Artesanato para unir — projetos sociais, voluntariado e doações">
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="js/app.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="navbar">
+            <div>
+                <a href="index.html" class="brand-logo">
+                    <div class="logo">
+                        <img src="./img/logo.png" alt="Logo Artesanato para Unir">
+                    </div>
+                </a>
+            </div>
+            <div class="group-titulo-items">
+                <div class="titulo">
+                    <a href="index.html" class="brand">
+                        <span>Artesanato para Unir</span>
+                    </a>
+                </div>
+                <button class="hamburguer" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="close">X</span>
+                </button>
+                <!-- use class "active" to show menu -->
+                <!-- unnecessary for element nav: role="navigation" -->
+                <nav id="main-nav" class="nav-menu active" >
+                    <p>(o menu ficará<br>escondido com<br>o javascript)</p>
+                    <a href="index.html" class="nav-link">Início</a>
+                    <a href="./html/projetos.html" class="nav-link">Projetos</a>
+                    <a href="./html/cadastro.html" class="nav-link">Cadastre-se</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+        <section class="hero" aria-labelledby="hero-title">
+            <img src="./img/quino-al-jsWVItac5Tw-unsplash.jpg"
+                 alt="Artesão fazendo um vaso de barro sobre uma base rotativa" width="300" loading="lazy">
+
+            <div id="hero-content-h1">
+                <h1 id="hero-title">Artesanato para Unir</h1>
+            </div>
+            <div id="hero-content-p">
+                <p>Transformando talento em oportunidades — arte, renda e comunidade.</p>
+            </div>
+            <div id="hero-content-a">
+                <a class="btn" href="./html/projetos.html">Conheça nossos projetos</a>
+            </div>
+        </section>
+
+        <section class="about" aria-labelledby="about-title">
+            <img src="./img/annie-spratt-TywjkDHf0Ps-unsplash.jpg"
+                 alt="Artesão fazendo um vaso de barro sobre uma base rotativa" width="300" loading="lazy">
+            <div id="about-h2">
+                <h2 id="about-title">Missão, Visão e Valores</h2>
+            </div>
+            <div id="about-mission">
+                <p><strong>Missão:</strong> Promover inclusão social através do artesanato, gerando renda e
+                    fortalecimento
+                    comunitário.</p>
+            </div>
+            <div id="about-vision">
+                <p><strong>Visão:</strong> Comunidades sustentáveis e autônomas com cultura do artesanato valorizada.
+                </p>
+            </div>
+            <div id="about-values">
+                <p><strong>Valores:</strong> Transparência, cooperação, valorização cultural e sustentabilidade.</p>
+            </div>
+
+        </section>
+
+
+        <section class="highlights" aria-labelledby="highlights-title">
+            <div>
+                <h2 id="highlights-title">Nossos destaques</h2>
+                <ul class="cards">
+                    <li class="card">
+                        <img src="./img/earl-wilcox--aebrWVmr80-unsplash.jpg" width="200" alt="Projeto de capacitação"
+                             loading="lazy">
+                        <div>
+                            <h3>Capacitação em vasos de barro</h3>
+                            <p>Curso gratuito para a comunidade com certificação.</p>
+                            <div class="card-item">
+                                <a href="#">Saiba mais</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="card">
+                        <img src="./img/cristi-tohatan-XIBIC21QeZQ-unsplash.jpg" width="200" alt="Equipe voluntária"
+                             loading="lazy">
+                        <div>
+                            <h3>Rede de voluntários</h3>
+                            <p>Voluntariado local e remoto para apoio em design e vendas.</p>
+                            <div class="card-item">
+                                <a href="#">Saiba mais</a>
+                            </div>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+
+    <footer class="site-footer">
+        <div class="container-footer">
+            <div class="contact">
+                <h3>Contato</h3>
+                <p>email: contato@artesanatoparaunir.org.br | tel: (11) 99999-9999</p>
+                <p>Endereço: Rua do Artesão, 123 — Araraquara, SP</p>
+            </div>
+            <p>© <span id="ano"></span> Artesanato para Unir — Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
