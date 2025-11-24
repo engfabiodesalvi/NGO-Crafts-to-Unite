@@ -33,8 +33,9 @@
                     <span class="close">X</span>
                 </button>
                 <!-- use class "active" to show menu -->
-                <nav id="main-nav" class="nav-menu" role="navigation">
-                    <p>(o menu ficará<br /> escondido com<br />o javascript)</p>
+                <!-- unnecessary for element nav: role="navigation" -->                 
+                <nav id="main-nav" class="nav-menu active">
+                    <p>(o menu ficará<br>escondido com<br>o javascript)</p>
                     <a href="../index.html" class="nav-link">Início</a>
                     <a href="projetos.html" class="nav-link">Projetos</a>
                     <a href="cadastro.html" class="nav-link">Cadastre-se</a>
@@ -49,7 +50,7 @@
         </div>
 
         <section class="register" aria-labelledby="donate-title">
-
+        <span id="donate-title" class="visually-hidden">Página para cadastrar um doador ou um vluntário</span>
 
             <form id="signup-form">
 
@@ -66,12 +67,12 @@
 
                     <div>
                         <label for="fullName">Nome completo</label>
-                        <input id="fullName" name="fullName" type="text" autocomplete="name" required>
+                        <input id="fullName" name="fullName" type="text" autocomplete="name" placeholder="Digite o seu nome completo" required>
                     </div>
 
                     <div>
                         <label for="email">E-mail</label>
-                        <input id="email" name="email" type="email" autocomplete="email" required>
+                        <input id="email" name="email" type="email" autocomplete="email" placeholder="Digite o seu e-mail" required>
                     </div>
 
                     <div>
@@ -99,17 +100,17 @@
 
                     <div>
                         <label for="address">Endereço (rua, número)</label>
-                        <input id="address" name="address" required>
+                        <input id="address" name="address" placeholder="Digite o seu endereço completo, com número" required>
                     </div>
 
                     <div>
                         <label for="district">Bairro</label>
-                        <input id="district" name="district" required>
+                        <input id="district" name="district" placeholder="Digite o seu bairro" required>
                     </div>
 
                     <div>
                         <label for="city">Cidade</label>
-                        <input id="city" name="city" required>
+                        <input id="city" name="city" placeholder="Digite a sua cidade" required>
                     </div>
 
                     <div>
