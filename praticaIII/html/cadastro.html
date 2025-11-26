@@ -7,6 +7,8 @@
     <title>Artesanato para Unir - Cadastro</title>
     <meta name="description" content="Formulário de cadastro para voluntários e doadores">
     <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">    
     <script src="../js/app.js" defer></script>
 </head>
 
@@ -22,18 +24,33 @@
             </div>
             <div class="group-titulo-items">
                 <div class="titulo">
+                    <div></div>
                     <a href="../index.html" class="brand">
                         <span>Artesanato para Unir</span>
                     </a>
+                    <div>
+                        <button class="color-mode-row" aria-label="Define o thema de cores do site">
+                            <span class="material-symbols-outlined" id="light-mode-row">light_mode</span>
+                            <span class="material-symbols-outlined" id="dark-mode-row">dark_mode</span>
+                            <span class="material-symbols-outlined" id="system-mode-row">computer</span>
+                        </button>
+                    </div>
                 </div>
-                <button class="hamburguer" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menu">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="close">X</span>
-                </button>
+                <div>
+                    <button class="color-mode-col" aria-label="Define o thema de cores do site">
+                        <span class="material-symbols-outlined" id="light-mode-row">light_mode</span>
+                        <span class="material-symbols-outlined" id="dark-mode-row">dark_mode</span>
+                        <span class="material-symbols-outlined" id="system-mode-row">computer</span>
+                    </button>
+                    <button class="hamburguer" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menu">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="close">X</span>
+                    </button>
+                </div>
                 <!-- use class "active" to show menu -->
-                <!-- unnecessary for element nav: role="navigation" -->                 
+                <!-- unnecessary for element nav: role="navigation" -->
                 <nav id="main-nav" class="nav-menu">
                     <!--
                     <p>(o menu ficará<br>escondido com<br>o javascript)</p>
@@ -52,7 +69,7 @@
         </div>
 
         <section class="register" aria-labelledby="donate-title">
-        <span id="donate-title" class="visually-hidden">Página para cadastrar um doador ou um vluntário</span>
+            <span id="donate-title" class="visually-hidden">Página para cadastrar um doador ou um vluntário</span>
 
             <form id="signup-form">
 
@@ -69,24 +86,26 @@
 
                     <div>
                         <label for="fullName">Nome completo</label>
-                        <input id="fullName" name="fullName" type="text" autocomplete="name" placeholder="Digite o seu nome completo" required>
+                        <input id="fullName" name="fullName" type="text" autocomplete="name"
+                               placeholder="Digite o seu nome completo" required>
                     </div>
 
                     <div>
                         <label for="email">E-mail</label>
-                        <input id="email" name="email" type="email" autocomplete="email" placeholder="Digite o seu e-mail" required>
+                        <input id="email" name="email" type="email" autocomplete="email"
+                               placeholder="Digite o seu e-mail" required>
                     </div>
 
                     <div>
                         <label for="cpf">CPF</label>
-                        <input id="cpf" name="cpf" type="text" autocomplete="name" inputmode="cpf" placeholder="000.000.000-00"
-                               pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}" required>
+                        <input id="cpf" name="cpf" type="text" autocomplete="name" inputmode="cpf"
+                               placeholder="000.000.000-00" pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}" required>
                     </div>
 
                     <div>
                         <label for="phone">Telefone</label>
-                        <input type="tel" id="phone" name="phone" autocomplete="phone" pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}"
-                               placeholder="(00) 00000-0000" required>
+                        <input type="tel" id="phone" name="phone" autocomplete="phone"
+                               pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}" placeholder="(00) 00000-0000" required>
                     </div>
 
                     <div>
@@ -96,23 +115,26 @@
 
                     <div>
                         <label for="cep">CEP</label>
-                        <input id="cep" name="cep" type="text" autocomplete="cep" inputmode="numeric" maxlength="9" placeholder="00000-000"
-                               pattern="[0-9]{5}-[0-9]{3}" required>
+                        <input id="cep" name="cep" type="text" autocomplete="cep" inputmode="numeric" maxlength="9"
+                               placeholder="00000-000" pattern="[0-9]{5}-[0-9]{3}" required>
                     </div>
 
                     <div>
                         <label for="address">Endereço (rua, número)</label>
-                        <input id="address" name="address" type="text" autocomplete="address" placeholder="Digite o seu endereço completo, com número" required>
+                        <input id="address" name="address" type="text" autocomplete="address"
+                               placeholder="Digite o seu endereço completo, com número" required>
                     </div>
 
                     <div>
                         <label for="district">Bairro</label>
-                        <input id="district" name="district" type="text" autocomplete="district" placeholder="Digite o seu bairro" required>
+                        <input id="district" name="district" type="text" autocomplete="district"
+                               placeholder="Digite o seu bairro" required>
                     </div>
 
                     <div>
                         <label for="city">Cidade</label>
-                        <input id="city" name="city" type="text" autocomplete="city" placeholder="Digite a sua cidade" required>
+                        <input id="city" name="city" type="text" autocomplete="city" placeholder="Digite a sua cidade"
+                               required>
                     </div>
 
                     <div>
@@ -150,7 +172,8 @@
 
                     <div>
                         <label for="password">Senha</label>
-                        <input id="password" name="password" type="password" autocomplete="password" minlength="6" required>
+                        <input id="password" name="password" type="password" autocomplete="password" minlength="6"
+                               required>
                     </div>
 
                 </fieldset>

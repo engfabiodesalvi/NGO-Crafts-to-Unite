@@ -57,30 +57,38 @@ function toggleMenu() {
   );
 }
 
+function showMenu() {
+  // Turn menu on
+  menu.classList.add("active");
+  // Set bar display style to none
+  barsHamburguer.forEach((barHamburguer) => {
+    barHamburguer.style.display = "none";
+  });
+  // Set close display style to block
+  closeHamburguer.style.display = "block";
+  // Set title hamburguer menu
+  hamburguer.setAttribute('title', 'Ocultar menu');  
+}
+
+function hiddenMenu() {
+  // Turn menu ff
+  menu.classList.remove("active");
+  // Set bars display style to block
+  barsHamburguer.forEach((barHamburguer) => {
+    barHamburguer.style.display = "block";
+  });
+  // Set close display style to none
+  closeHamburguer.style.display = "none";
+  // Set title hamburguer menu
+  hamburguer.setAttribute('title', 'Mostrar menu');
+}
+
 // Verify the menu aria-expanded attribute
 function showHiddenMenu() {
   if (hamburguer.getAttribute("aria-expanded") === "true") {
-    // Turn menu off
-    menu.classList.add("active");
-    // Set bar display style to none
-    barsHamburguer.forEach((barHamburguer) => {
-      barHamburguer.style.display = "none";
-    });
-    // Set close display style to block
-    closeHamburguer.style.display = "block";
-    // Set title hamburguer menu
-    hamburguer.setAttribute('title', 'Ocultar menu');    
+    showMenu();
   } else {
-    // Turn menu on
-    menu.classList.remove("active");
-    // Set bars display style to block
-    barsHamburguer.forEach((barHamburguer) => {
-      barHamburguer.style.display = "block";
-    });
-    // Set close display style to none
-    closeHamburguer.style.display = "none";
-    // Set title hamburguer menu
-    hamburguer.setAttribute('title', 'Mostrar menu');
+    hiddenMenu();
   }
 }
 
@@ -223,24 +231,34 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     const heightRef = document.querySelector('.navbar').offsetHeight;
 
+  
     if (prevScrollpos > currentScrollPos ) {
+      // Page scrolling up and scroll bar scrolling down.
+
       // Show navbar
       document.querySelector('.navbar').style.top = "0px";
     } else {
       // Hide navbar 
       if (currentScrollPos > heightRef) {         
         document.querySelector('.navbar').style.top = `-${heightRef}px`;
-        console.log(1);
+        //console.log(1);
       } else {
-        document.querySelector('.navbar').style.top = `${Math.round(parseInt( ( - currentScrollPos)))}px`;
-        console.log(2);
+        document.querySelector('.navbar').style.top = `${-currentScrollPos}px`;
+        //console.log(2);
         //document.querySelector('.navbar').style.top = `${0}px`;
       }
     }
-    prevScrollpos = currentScrollPos;
-    console.log(currentScrollPos,`${scrollPaddingTopValue}`,`${Math.round(parseInt(heightRef -( currentScrollPos - heightRef)))}px`);
-    console.log(window.getComputedStyle(document.querySelector('.navbar')).height);
-    console.log(document.querySelector('.navbar').offsetHeight);
+
+    // Hidden menu
+    //hiddenMenu();
+
+    if (hamburguer.getAttribute("aria-expanded") === "true") {
+      toggleMenu();
+    }
+    // prevScrollpos = currentScrollPos;
+    // console.log(currentScrollPos,`${scrollPaddingTopValue}`,`${Math.round(parseInt(heightRef -( currentScrollPos - heightRef)))}px`);
+    // console.log(window.getComputedStyle(document.querySelector('.navbar')).height);
+    // console.log(document.querySelector('.navbar').offsetHeight);
     
   }    
 
