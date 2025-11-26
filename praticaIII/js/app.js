@@ -1,5 +1,8 @@
 // Inline Javascript
 
+// Document element
+const htmlElement = document.documentElement;
+
 // Menu class
 const menu = document.querySelector("#main-nav");
 // Hamburguer button class
@@ -8,8 +11,9 @@ const hamburguer = document.querySelector(".hamburguer");
 const barsHamburguer = document.querySelectorAll(".bar");
 // Menu item close class
 const closeHamburguer = document.querySelector(".close");
-// Document element
-const htmlElement = document.documentElement;
+
+
+
 // Color scheme button
 const colorSchemeButtons = document.querySelectorAll(".color-mode-row, .color-mode-col");
 // Color scheme light icons
@@ -19,7 +23,10 @@ const colorSchemeDarkIcons = document.querySelectorAll("#dark-mode-row, #dark-mo
 // Color scheme System icons
 const colorSchemeSystemIcons = document.querySelectorAll("#system-mode-row, #system-mode-col");
 
-// retrieving data
+// PageYOffSet
+let prevScrollpos = window.pageYOffset;
+
+// Retrieving data
 let colorScheme = localStorage.getItem('color-scheme');
 
 
@@ -201,9 +208,42 @@ document.addEventListener("DOMContentLoaded", (event) => {
         default:
           console.log(`${action} link clicked! Load ${action} content.`);
           break;
+
       }
     }
   });
+
+  // Change the top position of the navigation bar while scrolling.
+  window.onscroll = function() {
+    let currentScrollPos = window.pageYOffset;
+    // Computed style of the html element
+    const computedStyle = window.getComputedStyle(htmlElement);  
+    // Value of scroll-padding-top
+    const scrollPaddingTopValue = computedStyle.scrollPaddingTop;  
+
+    const heightRef = document.querySelector('.navbar').offsetHeight;
+
+    if (prevScrollpos > currentScrollPos ) {
+      // Show navbar
+      document.querySelector('.navbar').style.top = "0px";
+    } else {
+      // Hide navbar 
+      if (currentScrollPos > heightRef) {         
+        document.querySelector('.navbar').style.top = `-${heightRef}px`;
+        console.log(1);
+      } else {
+        document.querySelector('.navbar').style.top = `${Math.round(parseInt( ( - currentScrollPos)))}px`;
+        console.log(2);
+        //document.querySelector('.navbar').style.top = `${0}px`;
+      }
+    }
+    prevScrollpos = currentScrollPos;
+    console.log(currentScrollPos,`${scrollPaddingTopValue}`,`${Math.round(parseInt(heightRef -( currentScrollPos - heightRef)))}px`);
+    console.log(window.getComputedStyle(document.querySelector('.navbar')).height);
+    console.log(document.querySelector('.navbar').offsetHeight);
+    
+  }    
+
 });
 
 // Hello message!
@@ -224,3 +264,4 @@ showHiddenMenu();
 
 // Update color scheme visibility
 setColorScheme('block');
+
