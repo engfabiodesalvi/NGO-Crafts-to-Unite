@@ -55,6 +55,13 @@
     --spacing-5: 40px;    
     --spacing-6: 45px;    
     --spacing-7: 50px;    
+    --spacing-8: 55px;    
+    --spacing-9: 65px;    
+    --spacing-10: 70px;    
+    --spacing-11: 75px;    
+    --spacing-12: 80px;    
+    --spacing-13: 85px;    
+    --spacing-14: 90px;    
 
     /* Light Mode */
     /* colors - 8 */
@@ -163,9 +170,9 @@
 
     /* Shadow Colors */
     --shadow-color-logo: rgb(14, 73, 87);
-    --shadow-color-brand: rgb(96, 69, 0); 
-
+    --shadow-color-brand: rgb(96, 69, 0);     
 }
+
 
 html {
     scroll-padding-top: 210px;
@@ -294,12 +301,28 @@ h6 {
 .group-titulo-items {
     display: flex;
     flex-direction: column; 
-    align-items: center;  
+    /*align-items: center;  */
     justify-content: space-around;     
     width: 100%; 
     /*height: calc(var(--logo-size-3) + 2 * var(--spacing-1));   */   
     background-color: none;
     box-sizing: border-box;
+}
+
+.group-titulo-items div:nth-child(1) {
+    background-color: none;
+}
+
+.group-titulo-items div:nth-child(2) {
+    display: flex;
+    flex-direction: column;       
+    justify-content: space-evenly;
+    background-color: none;
+    box-sizing: border-box;
+}
+
+.group-titulo-items > div > button:nth-child(1) {
+    background-color: none;    
 }
 
 .titulo {
@@ -309,39 +332,66 @@ h6 {
     width: 100%;  
     height: 100%;  
     align-items: center;
-    justify-content: center;        
+    justify-content:space-between;        
 }
 
-.titulo span {
+.titulo div {
+    display: flex;
+    padding-top: var(--spacing-0);
+    padding-right: var(--spacing-0);
+    background-color: none;
+    height: 100%;
+}
+
+.titulo a span {
     font-size: var(--x-large-spacing);    
 }
 
-.hamburguer {
-    color: var(--t-color-nav-button);
+.hamburguer, .color-mode-col {
     display: none; /* Hide by default on desktop */
+}    
+
+.color-mode-row {
+    display: block; /*Show icon */
+    color: var(--t-color-nav-button);    
     height: var(--spacing-5);
-    width: var(--spacing-6);
+    width: var(--spacing-5);
     cursor: pointer;
     background-color: var(--bg-color-nav-button);
     border: none;
     padding: var(--spacing-0);
-    margin: var(--spacing-2);
+    margin: calc(var(--spacing-0) + var(--spacing-00));
     border-radius: var(--border-7) 0px var(--border-7) 0px;  
     outline: var(--border-2) solid var(--b-color-nav-button);
     box-shadow: 0px 0px 20px var(--b-color-nav-button);
+    min-width: var(--spacing-2);    
 }
 
-.hamburguer:hover {
+.color-mode-row:hover {
     /*border: 1px solid white;*/
     color: var(--t-color-nav-button-hover);
     background-color: var(--bg-color-nav-button-hover);    
     outline: var(--border-2) solid var(--b-color-nav-button-hover);
     box-shadow: 0px 0px 20px var(--b-color-nav-button-hover);
     font-weight: 600;    
+}    
+
+.color-mode-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    /*border-radius: var(--border-7); */    
 }
 
-.hamburguer:hover .bar {        
-    background-color: var(--t-color-nav-button-hover);       
+.color-mode-row span {    
+    font-size: var(--large-spacing);
+}
+
+/*  */
+#light-mode-row, #dark-mode-row, #system-mode-row,
+#light-mode-col, #dark-mode-col, #system-mode-col {
+    display: none;    
 }
 
 .bar {
@@ -1097,7 +1147,7 @@ label {
         scroll-padding-top: 210px;
     }
 
-    .titulo span {
+    .titulo a span {
         font-size: var(--large-spacing);
         font-weight: 700;
     }   
@@ -1132,7 +1182,7 @@ label {
         margin-top: calc(var(--nav-height, calc(var(--logo-size-2) + 2 * var(--spacing-2))) + 10px);
     }    
 
-    .titulo span {
+    .titulo a span {
         font-size: var(--xx-medium-spacing);
         font-weight: 700;
     }   
@@ -1186,7 +1236,8 @@ label {
     }  
  
     .navbar {
-        align-items: center;        
+        align-items: center;     
+        height: calc(var(--spacing-7) + var(--spacing-7) + var(--spacing-2));   
     }    
 
     .group-titulo-items {
@@ -1194,7 +1245,7 @@ label {
         align-items: center;        
     }
 
-    .titulo span {
+    .titulo a span {
         font-size: var(--x-medium-spacing);
         font-weight: 700;
     }    
@@ -1202,15 +1253,55 @@ label {
     .brand span {
         margin-top: 0px;
     }    
-
-    .hamburguer {
+    
+    .hamburguer, .color-mode-col {
         display: block; /*Show hamburguer icon */
-        min-width: var(--spacing-4);
+        color: var(--t-color-nav-button);    
+        height: var(--spacing-5);
+        width: var(--spacing-5);
+        cursor: pointer;
+        background-color: var(--bg-color-nav-button);
+        border: none;
+        padding: var(--spacing-0);
+        margin: calc(var(--spacing-0) + var(--spacing-00));
+        border-radius: var(--border-7) 0px var(--border-7) 0px;  
+        outline: var(--border-2) solid var(--b-color-nav-button);
+        box-shadow: 0px 0px 20px var(--b-color-nav-button);
+        min-width: var(--spacing-2);
+    }
+
+    .hamburguer:hover, .color-mode-col:hover {
+        /*border: 1px solid white;*/
+        color: var(--t-color-nav-button-hover);
+        background-color: var(--bg-color-nav-button-hover);    
+        outline: var(--border-2) solid var(--b-color-nav-button-hover);
+        box-shadow: 0px 0px 20px var(--b-color-nav-button-hover);
+        font-weight: 600;    
+    }    
+
+    .hamburguer:hover .bar {        
+        background-color: var(--t-color-nav-button-hover);       
+    }
+
+    .color-mode-col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; 
+        /*border-radius: var(--border-7); */
+    }
+
+    .color-mode-col span {    
+        font-size: var(--large-spacing);
+    }    
+
+    .color-mode-row {
+        display: none;
     }
 
     .nav-menu {
         position: fixed; /* Make the menu itself fixed */
-        top: 85px; /* Position below the fixed navbar */
+        top: calc(var(--spacing-7) + var(--spacing-7) + var(--spacing-1)); /* Position below the fixed navbar */
         right: -100%; /* Hide off-screen by default */       
         height: fit-content;                
         display: flex;
@@ -1310,4 +1401,295 @@ label {
     #project-list > h2, .donate > h2, #signup-form > h2 {
         font-size: var(--medium-spacing);        
     }    
+}
+
+
+/* User choise - Light Color Scheme */
+[data-theme="light-mode"] {
+    /* Light Mode */
+    /* colors - 8 */
+
+    /* Text Colors */
+    --t-color-body: black;  
+
+    --t-color-navbar: black;
+    --t-color-nav: black;
+
+    --t-color-nav-button: rgb(170, 102, 0);
+    --t-color-nav-button-hover:  rgb(65, 48, 0);
+
+    --t-color-nav-item: black;
+    --t-color-nav-item-holver: black;
+
+    --t-color-brand: rgb(87, 55, 0);
+
+    --t-color-h1:#333;
+    --t-color-h2:#555;
+    --t-color-h3:#777;
+    --t-color-h4:#888;
+    --t-color-h5:#999;
+    --t-color-h6:#aaa;
+
+    --t-color-section-1: black;
+
+    --t-color-footer: black;
+
+    --t-color-footer-contact: rgb(93, 58, 1);
+
+    --t-color-card-title: rgb(112, 10, 10);
+
+    --t-color-card-button: black;/*rgb(91, 17, 0);    */
+
+    --t-color-input-placeholder: rgb(132, 132, 132);     
+
+    /* Background Colors */
+    --bg-color-logo: white;   
+
+    --bg-color-brand: rgb(248, 220, 137);
+
+    --bg-color-body: rgb(244, 221, 167);
+
+    --bg-color-nav-menu: rgb(249, 224, 181);
+
+    --bg-color-navbar: rgb(249, 230, 167);
+    --bg-color-nav: rgb(144, 1, 1);
+
+    --bg-color-nav-item: rgb(251, 243, 238);
+    --bg-color-nav-item-hover: rgb(250, 210, 154);
+
+    --bg-color-card-button: rgb(246, 219, 156);/*rgb(255, 234, 184);/*#edddbe;    */
+    --bg-color-card-button-hover: rgb(255, 227, 160); /*rgb(255, 234, 184);/*#eeb162; */
+    
+    --bg-color-h1:#ffffff;
+    --bg-color-h2:#ffffff;
+    --bg-color-h3:#ffffff;
+    --bg-color-h4:#ffffff;
+    --bg-color-h5:#ffffff;
+    --bg-color-h6:#ffffff;
+
+    --bg-t-color-h1-h2: #f9f3e4;
+    --bg-t-color-label-input-select: var(--bg-t-color-h1-h2);
+
+    --bg-t-section-hero: rgba(255, 255, 255, 0.812);
+    --bg-t-section-hero-hover: rgba(238, 213, 213, 0.926);
+
+    --bg-t-color-footer-contact: rgb(249, 244, 179);
+
+    --bg-color-footer-container: rgb(95, 56, 5);
+    --bg-color-footer-contact: rgb(155, 142, 0);
+
+    --bg-color-section-highlights: rgb(142, 87, 10);
+    --bg-color-section-highlights-title: #fffef1;
+    --bg-color-section-highlights-card: #f9f3e4;
+
+    --bg-color-container-project-form: rgb(185, 130, 3);
+    /* Border Colors */
+    --b-color-logo: rgb(21, 136, 162);
+    --b-color-brand: rgb(93, 58, 1);
+
+    --b-color-nav-menu: rgb(57, 59, 7);
+
+    --b-color-nav-button: rgb(160, 113, 2);
+    --b-color-nav-button-hover: rgb(65, 48, 0);    
+
+    --b-color-nav-item: rgb(202, 108, 65);
+    --b-color-nav-item-hover: rgb(161, 60, 6);    
+
+    --b-color-navbar: black;
+
+    --b-color-card-button: rgb(154, 154, 154); /*rgb(113, 112, 111);*/
+    --b-color-card-button-inner:rgb(252, 245, 239);
+    --b-color-card-button-outer:rgb(248, 242, 231);       
+
+    --b-color-card-button-hover: rgb(188, 94, 0);/*rgb(138, 41, 0);*/
+    --b-color-card-button-hover-inner: rgb(252, 206, 160); /*rgb(242, 204, 171);*/
+    --b-color-card-button-hover-outer: rgb(255, 201, 148);/*rgb(242, 204, 171); */       
+    --b-color-fieldset-1: #f9f3e4;
+
+    --b-color-h1: #ccc;
+    --b-color-h3: #eee;
+    
+    --b-color-focus: orange;   
+
+    /* Shadow Colors */
+    --shadow-color-logo: rgb(14, 73, 87);
+    --shadow-color-brand: rgb(96, 69, 0); 
+}
+
+/* User choise - Light Color Scheme */
+[data-theme="dark-mode"] {
+        /* Dark Mode */
+        /* Text Colors */
+        --t-color-body: black;  
+        --t-color-body: rgb(255, 255, 255);  
+
+        --t-color-navbar: black;
+        --t-color-navbar: rgb(255, 255, 255);        
+        --t-color-nav: black;
+        --t-color-nav: rgb(255, 255, 255);        
+
+        --t-color-nav-button: rgb(170, 102, 0);
+        --t-color-nav-button: rgb(255, 177, 61);
+        --t-color-nav-button-hover:  rgb(65, 48, 0);
+        --t-color-nav-button-hover:  rgb(255, 255, 255);
+
+        --t-color-nav-item: black;
+        --t-color-nav-item: rgb(255, 255, 255);
+        --t-color-nav-item-holver: black;
+        --t-color-nav-item-holver: rgb(255, 255, 255);
+
+        --t-color-brand: rgb(87, 55, 0);
+        --t-color-brand: rgb(255, 162, 0);
+
+        --t-color-h1:#333;
+        --t-color-h1:#ffffff;
+        --t-color-h2:#555;
+        --t-color-h2:#ffffff;
+        --t-color-h3:#777;
+        --t-color-h3:#ffffff;
+        --t-color-h4:#888;
+        --t-color-h4:#ffffff;
+        --t-color-h5:#999;
+        --t-color-h5:#ffffff;
+        --t-color-h6:#aaa;
+        --t-color-h6:#ffffff;
+
+        --t-color-section-1: black;
+        --t-color-section-1: rgb(255, 255, 255);
+
+        --t-color-footer: black;
+        --t-color-footer: rgb(255, 255, 255);
+
+        --t-color-footer-contact: rgb(93, 58, 1);
+        --t-color-footer-contact: rgb(255, 243, 152);
+
+        --t-color-card-title: rgb(112, 10, 10);
+        --t-color-card-title: rgb(255, 166, 166);
+
+        --t-color-card-button: black;/*rgb(91, 17, 0);    */
+        --t-color-card-button: rgb(255, 255, 255);/*rgb(91, 17, 0);    */
+
+        --t-color-input-placeholder: rgb(132, 132, 132);        
+        --t-color-input-placeholder: rgb(247, 200, 72);
+
+        /* Background Colors */
+        --bg-color-logo: white;   
+        --bg-color-logo: rgb(0, 0, 0);   
+
+        --bg-color-brand: rgb(248, 220, 137);
+        --bg-color-brand: rgb(91, 91, 0);
+
+        --bg-color-body: rgb(244, 221, 167);
+        --bg-color-body: rgb(113, 79, 1);
+
+        --bg-color-nav-menu: rgb(249, 224, 181);
+        --bg-color-nav-menu: rgb(142, 90, 0);
+
+        --bg-color-navbar: rgb(249, 230, 167);
+        --bg-color-navbar: rgb(113, 87, 2);
+        --bg-color-nav: rgb(144, 1, 1);
+        --bg-color-nav: rgb(242, 164, 164);
+
+        --bg-color-nav-item: rgb(251, 243, 238);
+        --bg-color-nav-item: rgb(117, 45, 0);
+        --bg-color-nav-item-hover: rgb(250, 210, 154);
+        --bg-color-nav-item-hover: rgb(170, 99, 0);
+
+        --bg-color-card-button: rgb(246, 219, 156);/*rgb(255, 234, 184);/*#edddbe;    */
+        --bg-color-card-button: rgb(118, 83, 0);
+
+        --bg-color-card-button-hover: rgb(255, 227, 160); /*rgb(255, 234, 184);/*#eeb162; */
+        --bg-color-card-button-hover: rgb(84, 59, 0);        
+        
+        --bg-color-h1:#ffffff;
+        --bg-color-h2:#ffffff;
+        --bg-color-h3:#ffffff;
+        --bg-color-h4:#ffffff;
+        --bg-color-h5:#ffffff;
+        --bg-color-h6:#ffffff;
+
+        --bg-color-h1:#000000;
+        --bg-color-h2:#000000;
+        --bg-color-h3:#000000;
+        --bg-color-h4:#000000;
+        --bg-color-h5:#000000;
+        --bg-color-h6:#000000;        
+
+        --bg-t-color-h1-h2: #f9f3e4;
+        --bg-t-color-h1-h2: #5b4201;
+        --bg-t-color-label-input-select: var(--bg-t-color-h1-h2);
+        --bg-t-color-label-input-select: var(--bg-t-color-h1-h2);
+
+        --bg-t-section-hero: rgb(255, 255, 255, 0.812);
+        --bg-t-section-hero: rgba(0, 0, 0, 0.812);
+        --bg-t-section-hero-hover: rgba(238, 213, 213, 0.926);
+        --bg-t-section-hero-hover: rgba(138, 21, 21, 0.926);
+
+        --bg-t-color-footer-contact: rgb(249, 244, 179);
+        --bg-t-color-footer-contact: rgb(72, 69, 26);
+
+        --bg-color-footer-container: rgb(95, 56, 5);
+        --bg-color-footer-container: rgb(74, 44, 5);
+        --bg-color-footer-contact: rgb(155, 142, 0);
+        --bg-color-footer-contact: rgb(82, 76, 10);
+
+        --bg-color-section-highlights: rgb(142, 87, 10);
+        --bg-color-section-highlights: rgb(174, 149, 110);
+        --bg-color-section-highlights-title: #fffef1;
+        --bg-color-section-highlights-title: #010100;
+        --bg-color-section-highlights-card: #f9f3e4;
+        --bg-color-section-highlights-card: #000000;
+
+        --bg-color-container-project-form: rgb(185, 130, 3);
+        --bg-color-container-project-form: rgb(177, 166, 139);
+        /* Border Colors */
+        --b-color-logo: rgb(21, 136, 162);
+        --b-color-logo: rgb(148, 205, 217);
+        --b-color-brand: rgb(93, 58, 1);
+        --b-color-brand: rgb(214, 186, 141);
+
+        --b-color-nav-menu: rgb(57, 59, 7);
+        --b-color-nav-menu: rgb(226, 193, 31);
+
+        --b-color-nav-button: rgb(160, 113, 2);
+        --b-color-nav-button: rgb(249, 183, 31);
+        --b-color-nav-button-hover: rgb(65, 48, 0);    
+        --b-color-nav-button-hover: rgb(252, 227, 227);    
+
+        --b-color-nav-item: rgb(202, 108, 65);
+        --b-color-nav-item: rgb(255, 221, 205);
+        --b-color-nav-item-hover: rgb(161, 60, 6);    
+        --b-color-nav-item-hover: rgb(213, 125, 77);    
+
+        --b-color-navbar: black;
+        --b-color-navbar: rgb(255, 255, 255);
+
+        --b-color-card-button: rgb(154, 154, 154); /*rgb(113, 112, 111);*/
+        --b-color-card-button: rgb(82, 82, 82); /*rgb(113, 112, 111);*/
+        --b-color-card-button-inner:rgb(252, 245, 239);
+        --b-color-card-button-inner:rgb(255, 255, 255);
+        --b-color-card-button-outer:rgb(248, 242, 231);       
+        --b-color-card-button-outer:rgb(255, 255, 255);       
+
+        --b-color-card-button-hover: rgb(188, 94, 0);/*rgb(138, 41, 0);*/
+        --b-color-card-button-hover: rgb(205, 31, 0);/*rgb(138, 41, 0);*/
+        --b-color-card-button-hover-inner: rgb(252, 206, 160); /*rgb(242, 204, 171);*/
+        --b-color-card-button-hover-inner: rgb(252, 206, 160); /*rgb(242, 204, 171);*/
+        --b-color-card-button-hover-outer: rgb(255, 201, 148);/*rgb(242, 204, 171); */    
+        --b-color-card-button-hover-outer: rgb(255, 201, 148);   
+        --b-color-fieldset-1: #f9f3e4;
+        --b-color-fieldset-1: #f6ebd0;
+
+        --b-color-h1: #ccc;
+        --b-color-h1: #050505;
+        --b-color-h3: #eee;
+        --b-color-h3: #000000;
+
+        --b-color-focus: greenyellow; 
+
+        /* Shadow Colors */
+        --shadow-color-logo: rgb(14, 73, 87);
+        --shadow-color-logo: rgb(162, 228, 245);
+        --shadow-color-brand: rgb(96, 69, 0); 
+        --shadow-color-brand: rgb(247, 198, 74); 
 }

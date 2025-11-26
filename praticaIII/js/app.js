@@ -8,6 +8,20 @@ const hamburguer = document.querySelector(".hamburguer");
 const barsHamburguer = document.querySelectorAll(".bar");
 // Menu item close class
 const closeHamburguer = document.querySelector(".close");
+// Document element
+const htmlElement = document.documentElement;
+// Color scheme button
+const colorSchemeButtons = document.querySelectorAll(".color-mode-row, .color-mode-col");
+// Color scheme light icons
+const colorSchemeLightIcons = document.querySelectorAll("#light-mode-row, #light-mode-col");
+// Color scheme dark icons
+const colorSchemeDarkIcons = document.querySelectorAll("#dark-mode-row, #dark-mode-col");
+// Color scheme System icons
+const colorSchemeSystemIcons = document.querySelectorAll("#system-mode-row, #system-mode-col");
+
+// retrieving data
+let colorScheme = localStorage.getItem('color-scheme');
+
 
 // function to turn on/off the menu
 function toggleMenu() {
@@ -30,9 +44,9 @@ function toggleMenu() {
 
   // For developer analysis
   console.log(
-    "Hamburguer menu button clicked!",
-    hamburguer.getAttribute("aria-expanded"),
-    hamburguer.getAttribute("aria-expanded") === "true"
+    "function toggleMenu()\n",
+    "hamburguer.getAttribute\(\"aria-expanded\"\):", hamburguer.getAttribute("aria-expanded"), "\n",
+    "hamburguer.getAttribute\(\"aria-expanded\"\) === \"true\":", hamburguer.getAttribute("aria-expanded") === "true"
   );
 }
 
@@ -47,6 +61,8 @@ function showHiddenMenu() {
     });
     // Set close display style to block
     closeHamburguer.style.display = "block";
+    // Set title hamburguer menu
+    hamburguer.setAttribute('title', 'Ocultar menu');    
   } else {
     // Turn menu on
     menu.classList.remove("active");
@@ -56,17 +72,106 @@ function showHiddenMenu() {
     });
     // Set close display style to none
     closeHamburguer.style.display = "none";
+    // Set title hamburguer menu
+    hamburguer.setAttribute('title', 'Mostrar menu');
   }
 }
 
-// Menu button click event listener
-hamburguer.addEventListener("click", toggleMenu);
+// Hamburguer menu button cliked!
+function hamburguerClicked(){    
+    console.log(
+    "Hamburguer menu button clicked!\n",
+    "hamburguer.getAttribute\(\"aria-expanded\"\):", hamburguer.getAttribute("aria-expanded"), "\n",
+    "hamburguer.getAttribute\(\"aria-expanded\"\) === \"true\":", hamburguer.getAttribute("aria-expanded") === "true"
+    );    
+    toggleMenu();
+}
+
+// set color scheme
+function setColorScheme(displayType) {
+  let titleColorScheme;
+
+  if (colorScheme) {
+    console.log(`Stored: ${colorScheme}.`);
+    console.log('Light Icons', colorSchemeLightIcons);
+    console.log('Dark Icons', colorSchemeDarkIcons);
+    console.log('System Icons', colorSchemeSystemIcons);
+
+    switch(colorScheme) {
+      case 'light-mode':
+        colorSchemeLightIcons.forEach(colorSchemeLightIcon => {
+          colorSchemeLightIcon.style.display = displayType;
+        })
+        titleColorScheme = 'Modo claro';
+        // Set the theme
+        htmlElement.setAttribute('data-theme', 'light-mode');        
+        break;
+
+      case 'dark-mode':
+        colorSchemeDarkIcons.forEach(colorSchemeDarkIcon => {
+          colorSchemeDarkIcon.style.display = displayType;
+        })
+        titleColorScheme = 'Modo escuro';
+        // Set the theme
+        htmlElement.setAttribute('data-theme', 'dark-mode');             
+        break;        
+
+      case 'system-mode':
+      default:
+        colorSchemeSystemIcons.forEach(colorSchemeSystemIcon => {
+          colorSchemeSystemIcon.style.display = displayType;
+        });    
+        titleColorScheme = 'Modo do dispositivo';    
+        // Set the theme
+        htmlElement.removeAttribute('data-theme');             
+        break;        
+    }
+
+    colorSchemeButtons.forEach(colorSchemeButton => {
+      colorSchemeButton.setAttribute('title', titleColorScheme);
+    });     
+
+  } else {
+    console.log('Don\'t stored!');
+    colorScheme = "system-mode";
+  }  
+  
+  // Storing data
+  localStorage.setItem('color-scheme',colorScheme);
+
+}
+
+function setColorSchemeClicked() {
+  setColorScheme('none');
+  if (colorScheme) {
+    switch (colorScheme) {
+      case 'light-mode':
+        colorScheme = 'dark-mode';               
+        break;
+      
+      case 'dark-mode':
+        colorScheme = "system-mode";        
+        break;
+        
+      case 'system-mode':
+        colorScheme = "light-mode";
+        break;
+
+      default:
+        colorScheme = 'system-mode';        
+        break;
+    }
+  }
+   
+  setColorScheme('block');
+}
 
 // Listen for an event after loading DOM content.
 document.addEventListener("DOMContentLoaded", (event) => {
   menu.addEventListener("click", function (e) {
     console.log(`${e.target} - ${e.target.nodeName}`);
-    // Checj if the clicked element (e.target) is a link
+
+    // Check if the clicked element (e.target) is a link
     if (e.target && e.target.nodeName === "A") {
       // Default action would not been taken
       // This is used to process data before calling an anchoring target
@@ -104,11 +209,18 @@ document.addEventListener("DOMContentLoaded", (event) => {
 // Hello message!
 console.log("Hi! This is the PraticaIII Project!");
 
+// Hamburguer Menu button click event listener
+hamburguer.addEventListener("click", hamburguerClicked);
+
+
+console.log(colorSchemeButtons);
+// Color scheme button click event listener 
+colorSchemeButtons.forEach(colorSchemeButton => {
+  colorSchemeButton.addEventListener('click', setColorSchemeClicked);
+});
+
 // Update menu visibility
 showHiddenMenu();
 
-console.log(
-  "Hamburguer menu button clicked!",
-  hamburguer.getAttribute("aria-expanded"),
-  hamburguer.getAttribute("aria-expanded") === "true"
-);
+// Update color scheme visibility
+setColorScheme('block');

@@ -8,6 +8,7 @@
     <meta name="description" content="ONG Artesanato para unir — projetos sociais, voluntariado e doações">
     <link rel="stylesheet" href="./css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     <script src="./js/app.js" defer></script>
 </head>
 
@@ -23,19 +24,34 @@
             </div>
             <div class="group-titulo-items">
                 <div class="titulo">
+                    <div></div>
                     <a href="index.html" class="brand">
                         <span>Artesanato para Unir</span>
                     </a>
+                    <div>
+                        <button class="color-mode-row" aria-label="Define o thema de cores do site">
+                            <span class="material-symbols-outlined" id="light-mode-row">light_mode</span>
+                            <span class="material-symbols-outlined" id="dark-mode-row">dark_mode</span>
+                            <span class="material-symbols-outlined" id="system-mode-row">computer</span>
+                        </button>
+                    </div>
                 </div>
-                <button class="hamburguer" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menu">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="close">X</span>
-                </button>
+                <div>
+                    <button class="color-mode-col" aria-label="Define o thema de cores do site">
+                        <span class="material-symbols-outlined" id="light-mode-row">light_mode</span>
+                        <span class="material-symbols-outlined" id="dark-mode-row">dark_mode</span>
+                        <span class="material-symbols-outlined" id="system-mode-row">computer</span>
+                    </button>
+                    <button class="hamburguer" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menu">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="close">X</span>
+                    </button>
+                </div>
                 <!-- use class "active" to show menu -->
                 <!-- unnecessary for element nav: role="navigation" -->
-                <nav id="main-nav" class="nav-menu" >
+                <nav id="main-nav" class="nav-menu">
                     <!--
                     <p>(o menu ficará<br>escondido com<br>o javascript)</p>
                     -->
