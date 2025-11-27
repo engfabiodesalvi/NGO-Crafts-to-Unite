@@ -185,53 +185,55 @@ function hamburguerClicked(){
 function setColorScheme(displayType) {
   let titleColorScheme;
 
-  if (colorScheme) {
-    console.log(`Stored: ${colorScheme}.`);
-    console.log('Light Icons', colorSchemeLightIcons);
-    console.log('Dark Icons', colorSchemeDarkIcons);
-    console.log('System Icons', colorSchemeSystemIcons);
-
-    switch(colorScheme) {
-      case 'light-mode':
-        colorSchemeLightIcons.forEach(colorSchemeLightIcon => {
-          colorSchemeLightIcon.style.display = displayType;
-        })
-        titleColorScheme = 'Modo claro';
-        // Set the theme
-        htmlElement.setAttribute('data-theme', 'light-mode');        
-        break;
-
-      case 'dark-mode':
-        colorSchemeDarkIcons.forEach(colorSchemeDarkIcon => {
-          colorSchemeDarkIcon.style.display = displayType;
-        })
-        titleColorScheme = 'Modo escuro';
-        // Set the theme
-        htmlElement.setAttribute('data-theme', 'dark-mode');             
-        break;        
-
-      case 'system-mode':
-      default:
-        colorSchemeSystemIcons.forEach(colorSchemeSystemIcon => {
-          colorSchemeSystemIcon.style.display = displayType;
-        });    
-        titleColorScheme = 'Modo do dispositivo';    
-        // Set the theme
-        htmlElement.removeAttribute('data-theme');             
-        break;        
-    }
-
-    colorSchemeButtons.forEach(colorSchemeButton => {
-      colorSchemeButton.setAttribute('title', titleColorScheme);
-    });     
-
-  } else {
+  if (!colorScheme) {
     console.log('Don\'t stored!');
+    
+    // Defining the new color schema
     colorScheme = "system-mode";
-  }  
-  
-  // Storing data
-  localStorage.setItem('color-scheme',colorScheme);
+
+    // Storing data
+    localStorage.setItem('color-scheme',colorScheme);
+
+  }      
+
+  console.log(`Stored: ${colorScheme}.`);
+  console.log('Light Icons', colorSchemeLightIcons);
+  console.log('Dark Icons', colorSchemeDarkIcons);
+  console.log('System Icons', colorSchemeSystemIcons);
+
+  switch(colorScheme) {
+    case 'light-mode':
+      colorSchemeLightIcons.forEach(colorSchemeLightIcon => {
+        colorSchemeLightIcon.style.display = displayType;
+      })
+      titleColorScheme = 'Modo claro';
+      // Set the theme
+      htmlElement.setAttribute('data-theme', 'light-mode');        
+      break;
+
+    case 'dark-mode':
+      colorSchemeDarkIcons.forEach(colorSchemeDarkIcon => {
+        colorSchemeDarkIcon.style.display = displayType;
+      })
+      titleColorScheme = 'Modo escuro';
+      // Set the theme
+      htmlElement.setAttribute('data-theme', 'dark-mode');             
+      break;        
+
+    case 'system-mode':
+    default:
+      colorSchemeSystemIcons.forEach(colorSchemeSystemIcon => {
+        colorSchemeSystemIcon.style.display = displayType;
+      });    
+      titleColorScheme = 'Modo do dispositivo';    
+      // Set the theme
+      htmlElement.removeAttribute('data-theme');             
+      break;        
+  }
+
+  colorSchemeButtons.forEach(colorSchemeButton => {
+    colorSchemeButton.setAttribute('title', titleColorScheme);
+  });     
 
 }
 
@@ -452,3 +454,5 @@ if (ulCardsProject)
 // Adding items to the select
 if (projectSelect)
   addItemsProjectSelect();
+
+//localStorage.removeItem('color-scheme');

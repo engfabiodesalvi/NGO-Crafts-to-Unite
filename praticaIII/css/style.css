@@ -255,6 +255,7 @@ h6 {
     background-color:  var(--bg-color-navbar);
     border-radius: var(--border-radius);
     border: var(--border-3) solid var(--b-color-navbar);
+    transition: 1s;
 }
 
 .navbar > div {
