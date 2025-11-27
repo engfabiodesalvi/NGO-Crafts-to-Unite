@@ -12,7 +12,86 @@ const barsHamburguer = document.querySelectorAll(".bar");
 // Menu item close class
 const closeHamburguer = document.querySelector(".close");
 
+// Unordered list Highlights Cards
+const ulHighlightsCard = document.querySelector(".cards");
 
+// Highlights card repository
+const highlightsCardRepository = `{
+  "highlight1": {
+    "img": {
+      "src": "./img/earl-wilcox--aebrWVmr80-unsplash.jpg",
+      "width": 200,
+      "alt": "Projeto de capacitação"
+    },
+    "h3": "Capacitação em vasos de barro",
+    "p": "Curso gratuito para a comunidade com certificação."
+  },
+  "highlight2": {
+    "img": {
+      "src": "./img/cristi-tohatan-XIBIC21QeZQ-unsplash.jpg",
+      "width": 200,
+      "alt": "Equipe voluntária"
+    },
+    "h3": "Rede de voluntários",
+    "p": "Voluntariado local e remoto para apoio em design e vendas."
+  }
+}`;
+
+// Unordered list Cards Project
+const ulCardsProject = document.querySelector(".cards-project");
+
+// Cards project repository
+const cardsProjectRepository = `{
+  "project1": {
+    "img": {
+      "src": "../img/quino-al-jsWVItac5Tw-unsplash.jpg",
+      "width": 200,
+      "alt": "Confecção de vaso de barro - 1"
+    },
+    "h6": "Projeto 1",
+    "p": "Modelagem de vasos de barro - 1."
+  },
+  "project2": {
+    "img": {
+      "src": "../img/annie-spratt-TywjkDHf0Ps-unsplash.jpg",
+      "width": 200,
+      "alt": "Modelagem de objetos em biscuit."
+    },
+    "h6": "Projeto 2",
+    "p": "Modelagem de objetos em biscuit."
+  },
+  "project3": {
+    "img": {
+      "src": "../img/earl-wilcox--aebrWVmr80-unsplash.jpg",
+      "width": 200,
+      "alt": "Confecção de vasos de barro - 2."
+    },
+    "h6": "Projeto 3",
+    "p": "Modelagem de vasos de barro - 2."
+  },
+  "project4": {
+    "img": {
+      "src": "../img/jessica-tan-i0bSx789ITU-unsplash.jpg",
+      "width": 200,
+      "alt": "Cozinha divertida."
+    },
+    "h6": "Projeto 4",
+    "p": "Cozinha divertida."
+  },
+  "project5": {
+    "img": {
+      "src": "../img/juego-tangram-diferentes-tipos-juego-de-madera.jpg",
+      "width": 200,
+      "alt": "Jogos divertidos de montar (tangrans de vários formatos)."
+    },
+    "h6": "Projeto 5",
+    "p": "Jogos divertidos de montar (tangrans de vários formatos)."
+  },
+  "empty": {}       
+}`
+
+// Project select
+const projectSelect = document.querySelector("#project-select");
 
 // Color scheme button
 const colorSchemeButtons = document.querySelectorAll(".color-mode-row, .color-mode-col");
@@ -181,6 +260,82 @@ function setColorSchemeClicked() {
   setColorScheme('block');
 }
 
+// Function to add items to the highlights section
+function AddItemsHighlightsSection() {  
+  const parsedHighlightsCard = JSON.parse(highlightsCardRepository);
+  console.log(parsedHighlightsCard);
+  
+  let liHighlightsCard = "";
+  //parsedCardHighlights
+  for (const key in parsedHighlightsCard) {
+      liHighlightsCard += `
+      <li class="card">
+          <img src="${parsedHighlightsCard[key].img.src}" width="${parsedHighlightsCard[key].img.width}" alt="${parsedHighlightsCard[key].img.alt}"
+                loading="lazy">
+          <div>
+              <h3>${parsedHighlightsCard[key].h3}</h3>
+              <p>${parsedHighlightsCard[key].p}</p>
+              <div class="card-item">
+                  <a href="#">Saiba mais</a>
+              </div>
+          </div>
+      </li>`
+  }
+  console.log(liHighlightsCard);
+  ulHighlightsCard.innerHTML = liHighlightsCard;
+
+}  
+
+// Function to add items to the projects section
+function AddItemsProjectsSection() {  
+  const parsedProjectsCard = JSON.parse(cardsProjectRepository);
+  console.log(parsedProjectsCard);
+  
+  let liProjectsCard = "";
+  //parsedCardHighlights
+  for (const key in parsedProjectsCard) {
+    if (key !== "empty" ) {
+      liProjectsCard += `
+      <li class="card-project">
+          <img src="${parsedProjectsCard[key].img.src}" width="${parsedProjectsCard[key].img.width}" alt="${parsedProjectsCard[key].img.alt}"
+                loading="lazy">
+          <div>
+              <h6>${parsedProjectsCard[key].h6}</h3>
+              <div>
+                <p>${parsedProjectsCard[key].p}</p>
+                <div class="card-project-item">
+                    <a href="#" id="proj-2-doar">Doar</a>
+                    <a href="#">Saiba mais</a>
+                </div>
+              </div>
+          </div>
+      </li>`
+    } else {
+      liProjectsCard += `
+      <li class="card-project"> 
+            </li>`     
+    }
+  }
+  console.log(liProjectsCard);
+  ulCardsProject.innerHTML = liProjectsCard;
+}  
+
+// Function to Add items t the project select
+function addItemsProjectSelect() {
+  const parsedProjectsCard = JSON.parse(cardsProjectRepository);
+
+  let optionProject = "";
+  for (const key in parsedProjectsCard) {
+    if (key !== "empty" ) {
+      optionProject += `
+      <option value="${key}">${parsedProjectsCard[key].h6}</option>`
+    }  
+  }
+  optionProject += `<option value="ong">Deixar a critério da ONG</option>`
+  console.log(optionProject);
+  projectSelect.innerHTML = optionProject;
+}
+
 // Listen for an event after loading DOM content.
 document.addEventListener("DOMContentLoaded", (event) => {
   menu.addEventListener("click", function (e) {
@@ -231,7 +386,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     const heightRef = document.querySelector('.navbar').offsetHeight;
 
-  
+
     if (prevScrollpos > currentScrollPos ) {
       // Page scrolling up and scroll bar scrolling down.
 
@@ -255,21 +410,22 @@ document.addEventListener("DOMContentLoaded", (event) => {
     if (hamburguer.getAttribute("aria-expanded") === "true") {
       toggleMenu();
     }
-    // prevScrollpos = currentScrollPos;
+    // Updating previous scroll position
+    prevScrollpos = currentScrollPos;
+
     // console.log(currentScrollPos,`${scrollPaddingTopValue}`,`${Math.round(parseInt(heightRef -( currentScrollPos - heightRef)))}px`);
     // console.log(window.getComputedStyle(document.querySelector('.navbar')).height);
     // console.log(document.querySelector('.navbar').offsetHeight);
     
-  }    
+  };   
 
-});
+}); 
 
 // Hello message!
 console.log("Hi! This is the PraticaIII Project!");
 
 // Hamburguer Menu button click event listener
 hamburguer.addEventListener("click", hamburguerClicked);
-
 
 console.log(colorSchemeButtons);
 // Color scheme button click event listener 
@@ -283,3 +439,16 @@ showHiddenMenu();
 // Update color scheme visibility
 setColorScheme('block');
 
+// Adding items to the highlights section
+//console.log(ulHighlightsCard);
+if (ulHighlightsCard)
+  AddItemsHighlightsSection();
+
+// Adding items to the projects section
+//console.log(ulCardsProject);
+if (ulCardsProject)
+  AddItemsProjectsSection();
+
+// Adding items to the select
+if (projectSelect)
+  addItemsProjectSelect();

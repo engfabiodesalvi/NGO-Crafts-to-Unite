@@ -38,9 +38,9 @@
                 </div>
                 <div>
                     <button class="color-mode-col" aria-label="Define o thema de cores do site">
-                        <span class="material-symbols-outlined" id="light-mode-row">light_mode</span>
-                        <span class="material-symbols-outlined" id="dark-mode-row">dark_mode</span>
-                        <span class="material-symbols-outlined" id="system-mode-row">computer</span>
+                        <span class="material-symbols-outlined" id="light-mode-col">light_mode</span>
+                        <span class="material-symbols-outlined" id="dark-mode-col">dark_mode</span>
+                        <span class="material-symbols-outlined" id="system-mode-col">computer</span>
                     </button>
                     <button class="hamburguer" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menu">
                         <span class="bar"></span>
@@ -71,92 +71,13 @@
         <section id="project-list" aria-live="polite">
             <h2>Veja abaixo os projetos em andamento</h2>
             <p>Inscreva-se como voluntário ou apoie com uma doação.</p>
+            <!--
             <p>(Obs: Os projetos serão renderizados via JS a partir do localStorage)</p>
+            -->
 
             <ul class="cards-project">
-                <li class="card-project">
-                    <img src="../img/quino-al-jsWVItac5Tw-unsplash.jpg" width="200" alt="Confecção de vaso de barro - 1"
-                         loading="lazy">
-                    <div>
-                        <h6>
-                            Projeto 1
-                        </h6>
-                        <p>
-                            Modelagem de vasos de barro - 1.
-                        </p>
-                        <div class="card-project-item">
-                            <a href="#" id="proj-1-doar">Doar</a>
-                            <a href="#">Saiba mais</a>
-                        </div>
-                    </div>
-
-                </li>
-                <li class="card-project">
-                    <img src="../img/annie-spratt-TywjkDHf0Ps-unsplash.jpg" width="200"
-                         alt="Modelagem de objetos em biscuit." loading="lazy">
-                    <div>
-                        <h6>
-                            Projeto 2
-                        </h6>
-                        <p>
-                            Modelagem de objetos em biscuit.
-                        </p>
-                        <div class="card-project-item">
-                            <a href="#" id="proj-2-doar">Doar</a>
-                            <a href="#">Saiba mais</a>
-                        </div>
-                    </div>
-                </li>
-                <li class="card-project">
-                    <img src="../img/earl-wilcox--aebrWVmr80-unsplash.jpg" width="200"
-                         alt="Confecção de vasos de barro - 2." loading="lazy">
-                    <div>
-                        <h6>
-                            Projeto 3
-                        </h6>
-                        <p>
-                            Modelagem de vasos de barro - 2.
-                        </p>
-                        <div class="card-project-item">
-                            <a href="#" id="proj-3-doar">Doar</a>
-                            <a href="#">Saiba mais</a>
-                        </div>
-                    </div>
-                </li>
-                <li class="card-project">
-                    <img src="../img/jessica-tan-i0bSx789ITU-unsplash.jpg" width="200" alt="Cozinha divertida."
-                         loading="lazy">
-                    <div>
-                        <h6>
-                            Projeto 4
-                        </h6>
-                        <p>
-                            Cozinha divertida.
-                        </p>
-                        <div class="card-project-item">
-                            <a href="#" id="proj-4-doar">Doar</a>
-                            <a href="#">Saiba mais</a>
-                        </div>
-                    </div>
-                </li>
-                <li class="card-project">
-                    <img src="../img/juego-tangram-diferentes-tipos-juego-de-madera.jpg" width="200"
-                         alt="Jogos divertidos de montar (tangrans de vários formatos)." loading="lazy">
-                    <div>
-                        <h6>
-                            Projeto 5
-                        </h6>
-                        <p>
-                            Jogos divertidos de montar (tangrans de vários formatos).
-                        </p>
-                        <div class="card-project-item">
-                            <a href="#" id="proj-5-doar">Doar</a>
-                            <a href="#">Saiba mais</a>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-            <!-- Projetos serão renderizados via JS a partir do localStorage -->
+                <!-- Projetos serão renderizados via JS a partir do localStorage -->
+            </ul>            
         </section>
 
 
@@ -192,13 +113,7 @@
                     <div>
                         <label for="project-select">Destinar para</label>
                         <select id="project-select" name="projectId">
-                            <option value="">(inseridos via javacsript)</option>
-                            <option value="1">Projeto 1</option>
-                            <option value="2">Projeto 2</option>
-                            <option value="3">Projeto 3</option>
-                            <option value="4">Projeto 4</option>
-                            <option value="5">Projeto 5</option>
-                            <option value="6">Deixar a ONG escolher</option>
+                            <!-- Itens inseridos através do javascript -->
                         </select>
 
                     </div>
@@ -211,9 +126,7 @@
             </form>
         </section>
 
-
     </main>
-
 
     <footer class="site-footer">
         <div class="container-footer">
