@@ -1,0 +1,1717 @@
+
+/* Sizes */
+:root {    
+
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    
+    --small-spacing: 0.5rem;
+    --x-small-spacing: 0.8rem;
+    --medium-spacing: 1.0rem;
+    --x-medium-spacing: 1.2rem;
+    --xx-medium-spacing:1.5rem;
+    --large-spacing: 2rem;
+    --x-large-spacing: 2.5rem;
+
+    --border-radius: 8px; 
+
+    --logo-size-1: 80px;   
+    --logo-size-2: 100px;
+    --logo-size-3: 140px;
+
+    --section-minWidth: 300px;
+    --section-maxWidth: 600px;
+
+    --section-minHeight: 250px;
+    --section-maxHeight: 400px;
+
+    --card-width: 250px;
+    --card-project-width: 200px;
+    
+    --card-img-height: 200px;
+    --card-project-img-height: 200px;
+
+    --border-1: 2px;
+    --border-2: 4px;
+    --border-3: 6px;
+    --border-4: 8px;
+    --border-5: 10px;
+    --border-6: 12px;
+    --border-7: 14px;
+    --border-8: 16px;
+    --border-9: 18px;
+    --border-10: 22px;
+    --border-11: 26px;
+    --border-12: 30px;
+
+
+    /* modular spacing - 5 */
+    --spacing-00: 2px;
+    --spacing-0: 4px;
+    --spacing-1: 8px; 
+    --spacing-2: 16px; 
+    --spacing-3: 24px; 
+    --spacing-4: 32px; 
+    --spacing-5: 40px;    
+    --spacing-6: 45px;    
+    --spacing-7: 50px;    
+    --spacing-8: 55px;    
+    --spacing-9: 65px;    
+    --spacing-10: 70px;    
+    --spacing-11: 75px;    
+    --spacing-12: 80px;    
+    --spacing-13: 85px;    
+    --spacing-14: 90px;    
+
+    /* Light Mode */
+    /* colors - 8 */
+
+    /* Text Colors */
+    --t-color-body: black;  
+
+    --t-color-navbar: black;
+    --t-color-nav: black;
+
+    --t-color-nav-button: rgb(170, 102, 0);
+    --t-color-nav-button-hover:  rgb(65, 48, 0);
+
+    --t-color-nav-item: black;
+    --t-color-nav-item-holver: black;
+
+    --t-color-brand: rgb(87, 55, 0);
+
+    --t-color-h1:#333;
+    --t-color-h2:#555;
+    --t-color-h3:#777;
+    --t-color-h4:#888;
+    --t-color-h5:#999;
+    --t-color-h6:#aaa;
+
+    --t-color-section-1: black;
+
+    --t-color-footer: black;
+
+    --t-color-footer-contact: rgb(93, 58, 1);
+
+    --t-color-card-title: rgb(112, 10, 10);
+
+    --t-color-card-button: black;/*rgb(91, 17, 0);    */
+
+    --t-color-input-placeholder: rgb(132, 132, 132);     
+
+    /* Background Colors */
+    --bg-color-logo: white;   
+
+    --bg-color-brand: rgb(248, 220, 137);
+
+    --bg-color-body: rgb(244, 221, 167);
+
+    --bg-color-nav-menu: rgb(249, 224, 181);
+
+    --bg-color-navbar: rgb(249, 230, 167);
+    --bg-color-nav: rgb(144, 1, 1);
+
+    --bg-color-nav-item: rgb(251, 243, 238);
+    --bg-color-nav-item-hover: rgb(250, 210, 154);
+
+    --bg-color-card-button: rgb(246, 219, 156);/*rgb(255, 234, 184);/*#edddbe;    */
+    --bg-color-card-button-hover: rgb(255, 227, 160); /*rgb(255, 234, 184);/*#eeb162; */
+    
+    --bg-color-h1:#ffffff;
+    --bg-color-h2:#ffffff;
+    --bg-color-h3:#ffffff;
+    --bg-color-h4:#ffffff;
+    --bg-color-h5:#ffffff;
+    --bg-color-h6:#ffffff;
+
+    --bg-t-color-h1-h2: #f9f3e4;
+    --bg-t-color-label-input-select: var(--bg-t-color-h1-h2);
+
+    --bg-t-section-hero: rgba(255, 255, 255, 0.812);
+    --bg-t-section-hero-hover: rgba(238, 213, 213, 0.926);
+
+    --bg-t-color-footer-contact: rgb(249, 244, 179);
+
+    --bg-color-footer-container: rgb(95, 56, 5);
+    --bg-color-footer-contact: rgb(155, 142, 0);
+
+    --bg-color-section-highlights: rgb(142, 87, 10);
+    --bg-color-section-highlights-title: #fffef1;
+    --bg-color-section-highlights-card: #f9f3e4;
+
+    --bg-color-container-project-form: rgb(185, 130, 3);
+    /* Border Colors */
+    --b-color-logo: rgb(21, 136, 162);
+    --b-color-brand: rgb(93, 58, 1);
+
+    --b-color-nav-menu: rgb(57, 59, 7);
+
+    --b-color-nav-button: rgb(160, 113, 2);
+    --b-color-nav-button-hover: rgb(65, 48, 0);    
+
+    --b-color-nav-item: rgb(202, 108, 65);
+    --b-color-nav-item-hover: rgb(161, 60, 6);    
+
+    --b-color-navbar: black;
+
+    --b-color-card-button: rgb(154, 154, 154); /*rgb(113, 112, 111);*/
+    --b-color-card-button-inner:rgb(252, 245, 239);
+    --b-color-card-button-outer:rgb(248, 242, 231);       
+
+    --b-color-card-button-hover: rgb(188, 94, 0);/*rgb(138, 41, 0);*/
+    --b-color-card-button-hover-inner: rgb(252, 206, 160); /*rgb(242, 204, 171);*/
+    --b-color-card-button-hover-outer: rgb(255, 201, 148);/*rgb(242, 204, 171); */       
+    --b-color-fieldset-1: #f9f3e4;
+
+    --b-color-h1: #ccc;
+    --b-color-h3: #eee;
+    
+    --b-color-focus: orange;   
+
+    /* Shadow Colors */
+    --shadow-color-logo: rgb(14, 73, 87);
+    --shadow-color-brand: rgb(96, 69, 0);     
+}
+
+
+html {
+    scroll-padding-top: 210px;
+}
+
+body {
+    color: var(--t-color-body-body);
+    background-color: var(--bg-color-body);
+    margin: 0px;
+    /*Important: Add padding to body equal to navbar height to prevent content overlap */
+    /* Deafult value if JS fails */
+    padding-top: 0px; 
+}
+
+/* hierarchical typography - 5 */
+/* H1 - Most prominent, main page title */
+h1 {
+    font-size: var(--x-large-spacing); /* Larger font size */
+    color: var(--t-color-h1);
+    margin-bottom: var(--spacing-2);
+    border-bottom: var(--border-1) solid var(--b-color-h1);
+    padding-bottom: var(--spacing-1);
+}
+
+/* H2 - Major section headings */
+h2 {
+    font-size: var(--large-spacing);
+    color: var(--t-color-h2);
+    margin-top: var(--spacing-4);
+    margin-bottom: var(--spacing-2);
+}
+
+/* H3 - Sub-section headings */
+h3 {
+    font-size: var(--xx-medium-spacing);
+    color: var(--t-color-h3);
+    margin-top: var(--spacing-3);
+    margin-bottom: var(--spacing-1);
+    border-left: var(--border-3) solid var(--b-color-h3);
+    padding-left: var(--border-5);
+}
+
+/* H4 - Sub-sub-section headings */
+h4 {
+    font-size: var(--x-medium-spacing);
+    color: var(--t-color-h4);
+    margin-top: var(--spacing-3);
+    margin-bottom: var(--spacing-1);
+}
+
+/* H5 - Further levels of detail */
+h5 {
+    font-size: var(--medium-spacing); /* Standard paragraph size */
+    color: var(--t-color-h5);
+    font-style: italic;
+    margin-top: var(--spacing-2);
+    margin-bottom: var(--spacing-1);
+}
+
+/* H6 - Most specific, often used for captions or minor notes */
+h6 {
+    font-size: var(--x-small-spacing);
+    color: var(--t-color-h6);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: var(--spacing-1);
+    margin-bottom: var(--spacing-1);
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-content: center;  
+    justify-items: flex-start;  
+    position: fixed; /* Use "fixed" to fixes the navbar to the top of the viewport */
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1000; /* Fixes the number to the top of the viewport */
+    background-color:  var(--bg-color-navbar);
+    border-radius: var(--border-radius);
+    border: var(--border-3) solid var(--b-color-navbar);
+    transition: 1s;
+}
+
+.navbar > div {
+    display: flex;
+    background-color: none;
+    align-items: center;
+}
+
+.brand, .brand-logo {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-decoration: none;    
+    color: var(--t-color-brand);    
+    background-color:  none;
+}
+
+.brand-logo img {
+    width: var(--logo-size-3);
+    height: var(--logo-size-3);
+    margin: var(--spacing-1);
+    background-color: var(--bg-color-logo);
+    border-radius: 50%; /* Make the image circular */
+    border: 4px solid var(--b-color-logo); /* Add a border */
+    box-shadow: -20px -0px 100px var(--shadow-color-logo);
+}
+
+.brand span {
+    text-align: center;
+    padding: 0 var(--spacing-1);
+    border-radius: var(--spacing-4);
+    background-color:  var(--bg-color-brand);
+    border: 4px solid var(--b-color-brand); /* Add a border */
+    box-shadow: 0px 10px 50px var(--shadow-color-brand);
+    margin-top: var(--spacing-2);
+}
+
+.logo {
+    display: flex;    
+    background-color: none;
+    justify-content: center;    
+}
+
+.group-titulo-items {
+    display: flex;
+    flex-direction: column; 
+    /*align-items: center;  */
+    justify-content: space-around;     
+    width: 100%; 
+    /*height: calc(var(--logo-size-3) + 2 * var(--spacing-1));   */   
+    background-color: none;
+    box-sizing: border-box;
+}
+
+.group-titulo-items div:nth-child(1) {
+    background-color: none;
+}
+
+.group-titulo-items div:nth-child(2) {
+    display: flex;
+    flex-direction: column;       
+    justify-content: space-evenly;
+    background-color: none;
+    box-sizing: border-box;
+}
+
+.group-titulo-items > div > button:nth-child(1) {
+    background-color: none;    
+}
+
+.titulo {
+    display: flex;
+    flex-direction: row;
+    background-color:  none;
+    width: 100%;  
+    height: 100%;  
+    align-items: center;
+    justify-content:space-between;        
+}
+
+.titulo div {
+    display: flex;
+    padding-top: var(--spacing-0);
+    padding-right: var(--spacing-0);
+    background-color: none;
+    height: 100%;
+}
+
+.titulo a span {
+    font-size: var(--x-large-spacing);    
+}
+
+.hamburguer, .color-mode-col {
+    display: none; /* Hide by default on desktop */
+}    
+
+.color-mode-row {
+    display: block; /*Show icon */
+    color: var(--t-color-nav-button);    
+    height: var(--spacing-5);
+    width: var(--spacing-5);
+    cursor: pointer;
+    background-color: var(--bg-color-nav-button);
+    border: none;
+    padding: var(--spacing-0);
+    margin: calc(var(--spacing-0) + var(--spacing-00));
+    border-radius: var(--border-7) 0px var(--border-7) 0px;  
+    outline: var(--border-2) solid var(--b-color-nav-button);
+    box-shadow: 0px 0px 20px var(--b-color-nav-button);
+    min-width: var(--spacing-2);    
+}
+
+.color-mode-row:hover {
+    /*border: 1px solid white;*/
+    color: var(--t-color-nav-button-hover);
+    background-color: var(--bg-color-nav-button-hover);    
+    outline: var(--border-2) solid var(--b-color-nav-button-hover);
+    box-shadow: 0px 0px 20px var(--b-color-nav-button-hover);
+    font-weight: 600;    
+}    
+
+.color-mode-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    /*border-radius: var(--border-7); */    
+}
+
+.color-mode-row span {    
+    font-size: var(--large-spacing);
+}
+
+/*  */
+#light-mode-row, #dark-mode-row, #system-mode-row,
+#light-mode-col, #dark-mode-col, #system-mode-col {
+    display: none;    
+}
+
+.bar {
+    display: block;
+    width: 100%;
+    height: 3px;
+    margin: var(--spacing-0) 0;
+    background-color: var(--t-color-nav-button);
+}
+
+.close {
+    display: none;
+    font-size: var(--xx-medium-spacing);
+    width: 100%;        
+    margin: var(--spacing-0) 0;
+}   
+
+.nav-menu a:hover {
+    /*border: 1px solid white;*/
+    background-color: var(--bg-color-nav-item-hover);    
+    outline: var(--border-2) solid var(--b-color-nav-item-hover);
+    font-weight: 600;    
+}
+
+.nav-menu  {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    /*background-color: var(--bg-color-nav);*/
+    height: 100%;    
+}
+
+.nav-menu p {
+    display: none;
+}
+
+.nav-link {
+    color: var(--t-color-nav-item);
+    text-decoration: none;
+    margin: var(--spacing-1);
+    padding: var(--spacing-0) var(--spacing-3);
+    border-radius: var(--border-7) 0px var(--border-7) 0px;  
+    background-color: var(--bg-color-nav-item);
+    outline: var(--border-2) solid var(--b-color-nav-item);
+}
+
+main, .site-footer, .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;        
+}
+
+main {
+    margin: 10px;
+    /* Default value if JS fails */
+    margin-top: calc(var(--nav-height, calc(var(--logo-size-3) + 2 * var(--spacing-2))) + 10px);
+}
+
+#ano::after {
+    content: "2025";    
+}
+
+.visually-hidden {
+    display: none;
+}
+/* Index page only */
+.hero, .about {
+    position: relative; 
+    text-align: center;  
+    background-color: none; /*var(--bg-color-navbar);*/
+    min-width: var(--section-minWidth);
+    max-width: var(--section-maxWidth);
+    min-height: var(--section-minHeight);
+    max-height: var(--section-maxHeight);
+    box-sizing: border-box;  
+    margin: var(--spacing-0);            
+}
+
+.hero img, .about img {            
+    width: 100%;    
+    min-width: var(--section-minWidth);
+    max-width: var(--section-maxWidth);
+    min-height: var(--section-minHeight);
+    max-height: var(--section-maxHeight);
+    border-radius: var(--border-11);
+    object-fit: cover;
+    object-position: center;
+    opacity: 1;
+}
+
+#hero-content-h1, #hero-content-p, #hero-content-a,
+#about-h2, #about-mission, #about-vision, #about-values {
+    position: absolute;
+}    
+
+#hero-content-h1 {
+    top: var(--spacing-1);
+    left: var(--spacing-0);
+}
+
+#hero-content-p {        
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;    
+}
+
+#hero-content-a {
+    bottom: var(--spacing-3);
+    right: var(--spacing-0);
+}
+
+#hero-content-h1 h1, #hero-content-p p, #hero-content-a a {
+    background-color: var(--bg-t-section-hero);
+    width: fit-content;
+    margin: 0;    
+    border-radius: var(--spacing-5);  
+    border: none;
+}
+
+#hero-content-h1 h1 {
+    padding: var(--spacing-2);
+}
+
+#hero-content-p p {  
+    padding: var(--spacing-2);      
+    color: var(--t-color-section-1);
+}
+
+#hero-content-a a{      
+    padding: var(--spacing-2) var(--spacing-2);  
+    color: var(--t-color-section-1);
+    text-decoration: none;
+}
+
+#hero-content-a a:hover {
+    text-decoration: none;
+    font-weight: 600;
+    background-color: var(--bg-t-section-hero-hover);
+}
+
+#about-h2 {
+    top: var(--spacing-1);
+    left: var(--spacing-0);
+}
+
+#about-mission {
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -35%);
+    width: 90%;
+    background-color: none;
+}
+
+#about-vision {
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -65%);
+    width: 90%;
+    background-color: none;
+}
+
+#about-values {
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -95%);
+    width: 90%;
+    background-color: none;
+}
+
+#about-h2 h2, #about-mission p,
+#about-vision p, #about-values p {
+    background-color: var(--bg-t-section-hero);
+    width: fit-content;
+    margin: 0;    
+    border-radius: var(--spacing-5);  
+    border: none;
+}
+
+#about-h2 h2 {
+    padding: var(--spacing-2);
+}
+
+#about-mission p, #about-vision p, #about-values p {
+    padding: var(--spacing-1);
+    color: var(--t-color-section-1);
+}
+
+.container-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-color-footer-container);
+    padding: var(--spacing-1);    
+    width: 100%;    
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bg-t-color-footer-contact);
+    border-radius: var(--spacing-4);
+    padding: var(--spacing-0) var(--spacing-3);
+    margin: var(--spacing-2);       
+}    
+
+.contact h3 {
+    width: 100%;
+    color: var(--t-color-footer-contact);
+    background-color:  var(--bg-t-color-footer-contact);
+    border-left: var(--spacing-1) solid var(--t-color-footer-contact);
+}
+
+.contact p {
+    text-align: center;
+    color: var(--t-color-footer-contact);
+    background-color:  var(--bg-t-color-footer-contact);
+    border-radius: var(--spacing-1);
+    padding: var(--spacing-1);
+    margin: 0;
+}
+
+.container-footer p {
+    text-align: center;
+    color: var(--t-color-footer-contact);
+    background-color: var(--bg-t-color-footer-contact);    
+    padding: var(--spacing-1);
+    border-radius: var(--spacing-2);
+    margin: var(--spacing-2);
+}
+
+.highlights {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: none; 
+    padding: var(--spacing-0);   
+}
+
+
+.highlights > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-color-section-highlights);
+    width: 100%;
+    min-width: var(--section-minWidth);
+    max-width: var(--section-maxWidth);    
+    box-sizing: border-box;
+    border-radius: var(--spacing-3);    
+}
+
+#highlights-title {
+    background-color: var(--bg-color-section-highlights-title);
+    padding: var(--spacing-0);
+    border-radius: var(--spacing-3);
+    margin-top: var(--spacing-2);
+    margin-bottom: var(--spacing-1);
+}
+
+.cards {
+    display: flex; /* Make the list a flex container */
+    flex-wrap: wrap; /* Allows cards to wrap to the next line */
+    gap: var(--spacing-1); /* Adds space between cards (supported in modern browsers) */
+    list-style: none; /* Remove efault list bullets */
+    padding: var(--spacing-1);
+    margin: 0;
+    justify-content: center;
+}
+
+.card {
+    flex: 1 1 var(--card-width); /* Flex-grow, flex-shrink, flex-basics for responsive width */
+    /* THis makes cards at least 300px wide, and they grow/shrink to fill the space */
+    box-sizing: border-box; /* Ensures padding/border are included in width calculation */
+    border: var(--spacing-0) solid none;
+    border-radius: var(--spacing-3);
+    padding: var(--spacing-1);
+    background-color: var(--bg-color-section-highlights-card);
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.029);*/
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+}
+
+.card > img {
+    width: 100%;
+    height: var(--card-img-height);
+    object-fit: cover;
+    object-position: center;
+    border-radius: var(--spacing-3) var(--spacing-3) 0 0; 
+}
+
+.card > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: none;
+    flex-grow: 1;    
+}
+
+.card h3 {
+    color: var(--t-color-card-title);
+    border-left: var(--spacing-1) solid var(--t-color-card-title);        
+}
+
+.card p {
+    color: var(--t-color-body);
+}
+
+.card-item {
+    display: flex;    
+    align-items: end;
+    justify-content: end;
+    width: 100%;    
+    background-color: none;
+}
+
+.card-item a {
+    text-decoration: none;
+    color: var(--t-color-card-button);
+    background-color: var(--bg-color-card-button);
+    border-radius: var(--spacing-2);
+    padding: var(--spacing-1);
+}
+
+.card-item:hover a {
+    background-color: var(--bg-color-card-button-hover);
+    font-weight: 600;
+    outline: var(--spacing-0) solid var(--b-color-card-button-hover);
+}
+
+
+/* Projects page only */
+.container-title, #project-list, .donate, .register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--t-color-body);
+    background-color: var(--bg-color-container-project-form);
+    margin: var(--spacing-1);
+    padding: var(--spacing-1);
+    border-radius: var(--spacing-4);  
+    width: 100%;
+    min-width: var(--section-minWidth);  
+    max-width: var(--section-maxWidth);
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+}
+
+.container-title > h1,  #project-list > h2, #project-list > p, #donate-title, .register h2 {
+    background-color: var(--bg-t-color-h1-h2);
+    margin: var(--spacing-0);
+    padding: var(--spacing-1) var(--spacing-1);
+    border-radius: var(--spacing-3);
+}
+
+.container-title > h1 {
+    border-bottom: none;
+    /*border-bottom: var(--spacing-0) solid rgb(198, 42, 42);*/
+}
+
+.cards-project {
+    display: flex; /* Make the list a flex container */
+    flex-wrap: wrap; /* Allows cards to wrap to the next line */
+    gap: var(--spacing-1); /* Adds space between cards (supported in modern browsers) */
+    list-style: none; /* Remove efault list bullets */
+    padding: var(--spacing-1);
+    margin: 0;    
+    /*justify-content: center;   */
+}
+
+.card-project {
+    /*flex: 1 1 var(--card-project-width);/* /* Flex-grow, flex-shrink, flex-basics for 
+    responsive width */
+    flex-grow: 1;
+    flex-basis: var(--card-project-width);
+    flex-shrink: 1;
+    /* THis makes cards at least 300px wide, and they grow/shrink to fill the space */
+    box-sizing: border-box; /* Ensures padding/border are included in width calculation */
+    border: var(--spacing-0) solid none;
+    border-radius: var(--spacing-3);
+    padding: var(--spacing-1);
+    background-color: var(--bg-color-section-highlights-card);
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.029);*/
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-items: flex-start;    
+}
+
+.card-project:last-child {
+    background-color: none;
+    height: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.card-project > img {
+    width: 100%;
+    height: var(--card-project-img-height);
+    object-fit: cover;
+    object-position: center;
+    border-radius: var(--spacing-3) var(--spacing-3) 0 0; 
+}
+
+.card-project > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: none;
+    width: 100%; 
+    flex-grow: 1;           
+}
+
+.card-project > div > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    background-color:  none;    
+}
+
+.card-project h6 {
+    color: var(--t-color-card-title);
+    border-left: var(--spacing-0) solid var(--t-color-card-title);        
+    padding-left: var(--spacing-1);
+}
+
+.card-project-item {
+    display: flex;    
+    align-items: end;
+    justify-content: space-around;
+    width: 100%;    
+    background-color: none;
+}
+
+.card-project-item a {
+    text-decoration: none;
+    color: var(--t-color-card-button);
+    background-color: var(--bg-color-card-button);
+    border-radius: var(--spacing-2);
+    padding: var(--spacing-1);
+}
+
+.card-project-item a:hover {
+    background-color: var(--bg-color-card-button-hover);
+    font-weight: 600;
+    outline: var(--spacing-0) solid var(--b-color-card-button-hover);
+}
+
+#donation-form {
+    width: 100%;  
+    box-sizing: border-box;
+}
+
+#donation-form div {
+    margin: var(--spacing-1);
+}
+
+#donation-form div:first-child  {
+    margin-top: var(--spacing-3);
+}
+
+#donation-form > div:last-child, #signup-form > div:last-child  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: none;
+}
+
+label, input, select {
+    color: var(--t-color-body);
+    background-color: var(--bg-t-color-label-input-select);
+    margin: var(--spacing-0);
+    padding: var(--spacing-1) var(--spacing-1);
+    border-radius: var(--spacing-3);
+    
+}
+
+input::placeholder {
+    color: var(--t-color-input-placeholder);
+}
+
+input, select {
+    border-width: 3px;
+    border-style: solid;
+    border-color: black gray  gray black;
+}
+
+input:focus, select:focus {
+    border: 3px solid var(--b-color-focus);      
+    outline: 2px solid white;  
+}
+
+label, input, select, #donation-form button, #signup-form button {
+    font-size: var(--medium-spacing);
+}
+
+label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0;
+    width: fit-content;    
+}
+
+#donor-name, #donor-email {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#donation-form button, #signup-form button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 60px;
+    text-decoration: none;
+    color: var(--t-color-card-button);
+    background-color: var(--bg-color-card-button);
+    border-radius: var(--spacing-3);
+    padding: var(--spacing-2);
+    font-size: var(--x-medium-spacing);
+    border: var(--spacing-0) solid var(--b-color-card-button);
+    /*outline: var(--spacing-0) solid rgb(255, 239, 223);*/
+    box-shadow:
+        0 0 0 var(--spacing-0) var(--b-color-card-button-outer),
+        inset 0 0 0 var(--spacing-0) var(--b-color-card-button-inner);
+}
+
+/*
+#donation-form button  span, #signup-form button span {
+    background-color: var(--bg-t-color-label-input-select);
+    padding: var(--spacing-1);
+    border-radius: var(--spacing-2);
+}
+*/
+
+#donation-form button:hover, #signup-form button:hover {    
+    background-color: var(--bg-color-card-button-hover);
+    /*font-size: var(--x-medium-spacing);*/
+    font-weight: 600;
+    border: var(--spacing-0) solid var(--b-color-card-button-hover);    
+    box-shadow:
+        0 0 0 var(--spacing-0) var(--b-color-card-button-hover-outer),
+        inset 0 0 0 var(--spacing-0) var(--b-color-card-button-hover-inner);         
+    cursor: pointer;   
+}
+
+/* Register page only */
+#signup-form {
+    background-color: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#signup-form > h2 {
+    width: fit-content;
+}
+
+#signup-form > fieldset, #donation-form > fieldset {
+    border: var(--spacing-0) solid var(--bg-color-section-highlights);
+    box-shadow: 
+        0 0 0  var(--spacing-0) var(--b-color-fieldset-1),    
+        inset 0 0 0  var(--spacing-0) var(--b-color-fieldset-1);    
+    border-radius: var(--spacing-4);   
+    margin: var(--spacing-2) var(--spacing-3) var(--spacing-3)  var(--spacing-3);     
+}
+
+#signup-form > fieldset > legend {
+    background-color: var(--bg-t-color-h1-h2);
+    border: var(--spacing-0) solid var(--bg-color-section-highlights);
+    box-shadow: 
+        0 0 0  var(--spacing-0) var(--b-color-fieldset-1),    
+        inset 0 0 0  var(--spacing-0) var(--b-color-fieldset-1);     
+    border-radius: var(--spacing-1);
+    padding: var(--spacing-0) var(--spacing-2);
+    font-weight: 600;
+}
+
+#fullName, #email, #address, #district {
+    width: 100%;
+    box-sizing: border-box;
+}
+/*  */
+@media(prefers-color-scheme: dark) {    
+    :root {
+        /* Dark Mode */
+        /* Text Colors */
+        --t-color-body: black;  
+        --t-color-body: rgb(255, 255, 255);  
+
+        --t-color-navbar: black;
+        --t-color-navbar: rgb(255, 255, 255);        
+        --t-color-nav: black;
+        --t-color-nav: rgb(255, 255, 255);        
+
+        --t-color-nav-button: rgb(170, 102, 0);
+        --t-color-nav-button: rgb(255, 177, 61);
+        --t-color-nav-button-hover:  rgb(65, 48, 0);
+        --t-color-nav-button-hover:  rgb(255, 255, 255);
+
+        --t-color-nav-item: black;
+        --t-color-nav-item: rgb(255, 255, 255);
+        --t-color-nav-item-holver: black;
+        --t-color-nav-item-holver: rgb(255, 255, 255);
+
+        --t-color-brand: rgb(87, 55, 0);
+        --t-color-brand: rgb(255, 162, 0);
+
+        --t-color-h1:#333;
+        --t-color-h1:#ffffff;
+        --t-color-h2:#555;
+        --t-color-h2:#ffffff;
+        --t-color-h3:#777;
+        --t-color-h3:#ffffff;
+        --t-color-h4:#888;
+        --t-color-h4:#ffffff;
+        --t-color-h5:#999;
+        --t-color-h5:#ffffff;
+        --t-color-h6:#aaa;
+        --t-color-h6:#ffffff;
+
+        --t-color-section-1: black;
+        --t-color-section-1: rgb(255, 255, 255);
+
+        --t-color-footer: black;
+        --t-color-footer: rgb(255, 255, 255);
+
+        --t-color-footer-contact: rgb(93, 58, 1);
+        --t-color-footer-contact: rgb(255, 243, 152);
+
+        --t-color-card-title: rgb(112, 10, 10);
+        --t-color-card-title: rgb(255, 166, 166);
+
+        --t-color-card-button: black;/*rgb(91, 17, 0);    */
+        --t-color-card-button: rgb(255, 255, 255);/*rgb(91, 17, 0);    */
+
+        --t-color-input-placeholder: rgb(132, 132, 132);        
+        --t-color-input-placeholder: rgb(247, 200, 72);
+
+        /* Background Colors */
+        --bg-color-logo: white;   
+        --bg-color-logo: rgb(0, 0, 0);   
+
+        --bg-color-brand: rgb(248, 220, 137);
+        --bg-color-brand: rgb(91, 91, 0);
+
+        --bg-color-body: rgb(244, 221, 167);
+        --bg-color-body: rgb(113, 79, 1);
+
+        --bg-color-nav-menu: rgb(249, 224, 181);
+        --bg-color-nav-menu: rgb(142, 90, 0);
+
+        --bg-color-navbar: rgb(249, 230, 167);
+        --bg-color-navbar: rgb(113, 87, 2);
+        --bg-color-nav: rgb(144, 1, 1);
+        --bg-color-nav: rgb(242, 164, 164);
+
+        --bg-color-nav-item: rgb(251, 243, 238);
+        --bg-color-nav-item: rgb(117, 45, 0);
+        --bg-color-nav-item-hover: rgb(250, 210, 154);
+        --bg-color-nav-item-hover: rgb(170, 99, 0);
+
+        --bg-color-card-button: rgb(246, 219, 156);/*rgb(255, 234, 184);/*#edddbe;    */
+        --bg-color-card-button: rgb(118, 83, 0);
+
+        --bg-color-card-button-hover: rgb(255, 227, 160); /*rgb(255, 234, 184);/*#eeb162; */
+        --bg-color-card-button-hover: rgb(84, 59, 0);        
+        
+        --bg-color-h1:#ffffff;
+        --bg-color-h2:#ffffff;
+        --bg-color-h3:#ffffff;
+        --bg-color-h4:#ffffff;
+        --bg-color-h5:#ffffff;
+        --bg-color-h6:#ffffff;
+
+        --bg-color-h1:#000000;
+        --bg-color-h2:#000000;
+        --bg-color-h3:#000000;
+        --bg-color-h4:#000000;
+        --bg-color-h5:#000000;
+        --bg-color-h6:#000000;        
+
+        --bg-t-color-h1-h2: #f9f3e4;
+        --bg-t-color-h1-h2: #5b4201;
+        --bg-t-color-label-input-select: var(--bg-t-color-h1-h2);
+        --bg-t-color-label-input-select: var(--bg-t-color-h1-h2);
+
+        --bg-t-section-hero: rgb(255, 255, 255, 0.812);
+        --bg-t-section-hero: rgba(0, 0, 0, 0.812);
+        --bg-t-section-hero-hover: rgba(238, 213, 213, 0.926);
+        --bg-t-section-hero-hover: rgba(138, 21, 21, 0.926);
+
+        --bg-t-color-footer-contact: rgb(249, 244, 179);
+        --bg-t-color-footer-contact: rgb(72, 69, 26);
+
+        --bg-color-footer-container: rgb(95, 56, 5);
+        --bg-color-footer-container: rgb(74, 44, 5);
+        --bg-color-footer-contact: rgb(155, 142, 0);
+        --bg-color-footer-contact: rgb(82, 76, 10);
+
+        --bg-color-section-highlights: rgb(142, 87, 10);
+        --bg-color-section-highlights: rgb(174, 149, 110);
+        --bg-color-section-highlights-title: #fffef1;
+        --bg-color-section-highlights-title: #010100;
+        --bg-color-section-highlights-card: #f9f3e4;
+        --bg-color-section-highlights-card: #000000;
+
+        --bg-color-container-project-form: rgb(185, 130, 3);
+        --bg-color-container-project-form: rgb(177, 166, 139);
+        /* Border Colors */
+        --b-color-logo: rgb(21, 136, 162);
+        --b-color-logo: rgb(148, 205, 217);
+        --b-color-brand: rgb(93, 58, 1);
+        --b-color-brand: rgb(214, 186, 141);
+
+        --b-color-nav-menu: rgb(57, 59, 7);
+        --b-color-nav-menu: rgb(226, 193, 31);
+
+        --b-color-nav-button: rgb(160, 113, 2);
+        --b-color-nav-button: rgb(249, 183, 31);
+        --b-color-nav-button-hover: rgb(65, 48, 0);    
+        --b-color-nav-button-hover: rgb(252, 227, 227);    
+
+        --b-color-nav-item: rgb(202, 108, 65);
+        --b-color-nav-item: rgb(255, 221, 205);
+        --b-color-nav-item-hover: rgb(161, 60, 6);    
+        --b-color-nav-item-hover: rgb(213, 125, 77);    
+
+        --b-color-navbar: black;
+        --b-color-navbar: rgb(255, 255, 255);
+
+        --b-color-card-button: rgb(154, 154, 154); /*rgb(113, 112, 111);*/
+        --b-color-card-button: rgb(82, 82, 82); /*rgb(113, 112, 111);*/
+        --b-color-card-button-inner:rgb(252, 245, 239);
+        --b-color-card-button-inner:rgb(255, 255, 255);
+        --b-color-card-button-outer:rgb(248, 242, 231);       
+        --b-color-card-button-outer:rgb(255, 255, 255);       
+
+        --b-color-card-button-hover: rgb(188, 94, 0);/*rgb(138, 41, 0);*/
+        --b-color-card-button-hover: rgb(205, 31, 0);/*rgb(138, 41, 0);*/
+        --b-color-card-button-hover-inner: rgb(252, 206, 160); /*rgb(242, 204, 171);*/
+        --b-color-card-button-hover-inner: rgb(252, 206, 160); /*rgb(242, 204, 171);*/
+        --b-color-card-button-hover-outer: rgb(255, 201, 148);/*rgb(242, 204, 171); */    
+        --b-color-card-button-hover-outer: rgb(255, 201, 148);   
+        --b-color-fieldset-1: #f9f3e4;
+        --b-color-fieldset-1: #f6ebd0;
+
+        --b-color-h1: #ccc;
+        --b-color-h1: #050505;
+        --b-color-h3: #eee;
+        --b-color-h3: #000000;
+
+        --b-color-focus: greenyellow; 
+
+        /* Shadow Colors */
+        --shadow-color-logo: rgb(14, 73, 87);
+        --shadow-color-logo: rgb(162, 228, 245);
+        --shadow-color-brand: rgb(96, 69, 0); 
+        --shadow-color-brand: rgb(247, 198, 74); 
+    }
+}
+
+/* Mobile styles - when screen is  */
+@media (max-width: 768px) { 
+    html {
+        scroll-padding-top: 210px;
+    }
+
+    .titulo a span {
+        font-size: var(--large-spacing);
+        font-weight: 700;
+    }   
+
+    /* Index page only */
+    .hero-content-h1 h1 {
+        font-size: var(--large-spacing);
+    }
+
+    #about-h2 h2 {
+        font-size: var(--xx-medium-spacing);
+    }
+
+    /* Projects page only */
+    .container-title > h1 {
+        font-size: var(--large-spacing);
+    }  
+    
+    #project-list > h2, .donate > h2, #signup-form > h2 {
+        font-size: var(--xx-medium-spacing);        
+    }       
+}
+
+/* Mobile styles - when screen is  */
+@media (max-width: 600px) {
+    html {
+        scroll-padding-top: 170px;
+    }   
+
+    main {
+        /* Default value if JS fails */
+        margin-top: calc(var(--nav-height, calc(var(--logo-size-2) + 2 * var(--spacing-2))) + 10px);
+    }    
+
+    .titulo a span {
+        font-size: var(--xx-medium-spacing);
+        font-weight: 700;
+    }   
+
+    .brand-logo img {
+        width: var(--logo-size-2);
+        height: var(--logo-size-2);
+    }    
+
+    .nav-link {
+        padding: var(--spacing-00) var(--spacing-2);
+    }    
+
+    /* Index page only */
+    #hero-content-h1 h1 {
+        font-size: var(--xx-medium-spacing);
+    } 
+
+    #about-h2 h2 {
+        font-size: var(--x-medium-spacing);
+    }   
+    
+    #about-mission p, #about-vision p, #about-values p {        
+        padding: var(--spacing-00) var(--spacing-2);        
+    }        
+    
+    /* Projects page only */
+    .container-title > h1 {
+        font-size: var(--xx-medium-spacing);
+    }  
+    
+    #project-list > h2, .donate > h2, #signup-form > h2 {
+        font-size: var(--x-medium-spacing);        
+    }       
+}
+
+/* Mobile styles - when screen is small */
+@media (max-width: 480px) {
+    html {
+        scroll-padding-top: 150px;
+    }    
+
+    main {
+        /* Default value if JS fails */
+        margin-top: calc(var(--nav-height, calc(var(--logo-size-1) + 2 * var(--spacing-2))) + 10px);
+    }    
+
+    .brand-logo img {
+        width: var(--logo-size-1);
+        height: var(--logo-size-1);
+    }  
+ 
+    .navbar {
+        align-items: center;     
+        height: calc(var(--spacing-7) + var(--spacing-7) + var(--spacing-2));   
+    }    
+
+    .group-titulo-items {
+        flex-direction: row;
+        align-items: center;        
+    }
+
+    .titulo a span {
+        font-size: var(--x-medium-spacing);
+        font-weight: 700;
+    }    
+
+    .brand span {
+        margin-top: 0px;
+    }    
+    
+    .hamburguer, .color-mode-col {
+        display: block; /*Show hamburguer icon */
+        color: var(--t-color-nav-button);    
+        height: var(--spacing-5);
+        width: var(--spacing-5);
+        cursor: pointer;
+        background-color: var(--bg-color-nav-button);
+        border: none;
+        padding: var(--spacing-0);
+        margin: calc(var(--spacing-0) + var(--spacing-00));
+        border-radius: var(--border-7) 0px var(--border-7) 0px;  
+        outline: var(--border-2) solid var(--b-color-nav-button);
+        box-shadow: 0px 0px 20px var(--b-color-nav-button);
+        min-width: var(--spacing-2);
+    }
+
+    .hamburguer:hover, .color-mode-col:hover {
+        /*border: 1px solid white;*/
+        color: var(--t-color-nav-button-hover);
+        background-color: var(--bg-color-nav-button-hover);    
+        outline: var(--border-2) solid var(--b-color-nav-button-hover);
+        box-shadow: 0px 0px 20px var(--b-color-nav-button-hover);
+        font-weight: 600;    
+    }    
+
+    .hamburguer:hover .bar {        
+        background-color: var(--t-color-nav-button-hover);       
+    }
+
+    .color-mode-col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; 
+        /*border-radius: var(--border-7); */
+    }
+
+    .color-mode-col span {    
+        font-size: var(--large-spacing);
+    }    
+
+    .color-mode-row {
+        display: none;
+    }
+
+    .nav-menu {
+        position: fixed; /* Make the menu itself fixed */
+        top: calc(var(--spacing-7) + var(--spacing-7) + var(--spacing-1)); /* Position below the fixed navbar */
+        right: -100%; /* Hide off-screen by default */       
+        height: fit-content;                
+        display: flex;
+        flex-direction: column;
+        align-items: center;   
+        transition: 0.3s;
+        justify-content: center;
+        padding: var(--spacing-0);
+        border: var(--border-2) solid var(--b-color-nav-menu);
+        border-radius: var(--border-8) 0px var(--border-8) 0px;  
+        background-color: var(--bg-color-nav-menu);   
+        box-sizing: border-box; 
+    }
+
+    .nav-menu p {
+        color: var(--t-color-body);
+        display: block;
+    }    
+
+    .nav-menu.active {
+        right: 0; /* Slide in the menu when active class is aded by JS */
+    }
+
+    .nav-link {   
+        margin: var(--spacing-0);     
+        padding: var(--spacing-1) var(--spacing-3);
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;        
+    }
+
+    .nav-link:first-child {
+        margin-top: 0px;
+    }
+
+    .nav-link:last-child {
+        margin-bottom: 0px;
+    }
+
+    /* Index page only */
+    #hero-content-h1 h1 {
+        font-size: var(--x-medium-spacing);        
+    }   
+
+    #about-h2 {
+        top: 2%;
+        left: 50%;
+        transform: translate(-50%, -2%);
+
+    }
+
+    #about-mission {
+        top: 29%;
+        left: 50%;
+        transform: translate(-50%, -29%);
+        width: 95%;
+        background-color: none;
+    }
+
+    #about-vision {
+        top: 62%;
+        left: 50%;
+        transform: translate(-50%, -62%);
+        width: 95%;
+        background-color: none;
+    }
+
+    #about-values {
+        top: 95%;
+        left: 50%;
+        transform: translate(-50%, -95%);
+        width: 95%;
+        background-color: none;
+    }
+
+    #about-h2 h2 {
+        font-size: var(--x-medium-spacing);
+        padding: var(--spacing-0) var(--spacing-0);
+        width: max-content;
+    }    
+
+    #about-mission p, #about-vision p, #about-values p {
+        line-height: var(--x-medium-spacing);
+        padding: var(--spacing-00) var(--spacing-2);
+        color: var(--t-color-section-1);
+    }    
+
+    .donate {
+        padding: var(--spacing-1) 0;
+    }
+
+    /* Projects page only */
+    .container-title > h1 {
+        font-size: var(--x-medium-spacing);
+    }  
+    
+    #project-list > h2, .donate > h2, #signup-form > h2 {
+        font-size: var(--medium-spacing);        
+    }    
+}
+
+
+/* User choise - Light Color Scheme */
+[data-theme="light-mode"] {
+    /* Light Mode */
+    /* colors - 8 */
+
+    /* Text Colors */
+    --t-color-body: black;  
+
+    --t-color-navbar: black;
+    --t-color-nav: black;
+
+    --t-color-nav-button: rgb(170, 102, 0);
+    --t-color-nav-button-hover:  rgb(65, 48, 0);
+
+    --t-color-nav-item: black;
+    --t-color-nav-item-holver: black;
+
+    --t-color-brand: rgb(87, 55, 0);
+
+    --t-color-h1:#333;
+    --t-color-h2:#555;
+    --t-color-h3:#777;
+    --t-color-h4:#888;
+    --t-color-h5:#999;
+    --t-color-h6:#aaa;
+
+    --t-color-section-1: black;
+
+    --t-color-footer: black;
+
+    --t-color-footer-contact: rgb(93, 58, 1);
+
+    --t-color-card-title: rgb(112, 10, 10);
+
+    --t-color-card-button: black;/*rgb(91, 17, 0);    */
+
+    --t-color-input-placeholder: rgb(132, 132, 132);     
+
+    /* Background Colors */
+    --bg-color-logo: white;   
+
+    --bg-color-brand: rgb(248, 220, 137);
+
+    --bg-color-body: rgb(244, 221, 167);
+
+    --bg-color-nav-menu: rgb(249, 224, 181);
+
+    --bg-color-navbar: rgb(249, 230, 167);
+    --bg-color-nav: rgb(144, 1, 1);
+
+    --bg-color-nav-item: rgb(251, 243, 238);
+    --bg-color-nav-item-hover: rgb(250, 210, 154);
+
+    --bg-color-card-button: rgb(246, 219, 156);/*rgb(255, 234, 184);/*#edddbe;    */
+    --bg-color-card-button-hover: rgb(255, 227, 160); /*rgb(255, 234, 184);/*#eeb162; */
+    
+    --bg-color-h1:#ffffff;
+    --bg-color-h2:#ffffff;
+    --bg-color-h3:#ffffff;
+    --bg-color-h4:#ffffff;
+    --bg-color-h5:#ffffff;
+    --bg-color-h6:#ffffff;
+
+    --bg-t-color-h1-h2: #f9f3e4;
+    --bg-t-color-label-input-select: var(--bg-t-color-h1-h2);
+
+    --bg-t-section-hero: rgba(255, 255, 255, 0.812);
+    --bg-t-section-hero-hover: rgba(238, 213, 213, 0.926);
+
+    --bg-t-color-footer-contact: rgb(249, 244, 179);
+
+    --bg-color-footer-container: rgb(95, 56, 5);
+    --bg-color-footer-contact: rgb(155, 142, 0);
+
+    --bg-color-section-highlights: rgb(142, 87, 10);
+    --bg-color-section-highlights-title: #fffef1;
+    --bg-color-section-highlights-card: #f9f3e4;
+
+    --bg-color-container-project-form: rgb(185, 130, 3);
+    /* Border Colors */
+    --b-color-logo: rgb(21, 136, 162);
+    --b-color-brand: rgb(93, 58, 1);
+
+    --b-color-nav-menu: rgb(57, 59, 7);
+
+    --b-color-nav-button: rgb(160, 113, 2);
+    --b-color-nav-button-hover: rgb(65, 48, 0);    
+
+    --b-color-nav-item: rgb(202, 108, 65);
+    --b-color-nav-item-hover: rgb(161, 60, 6);    
+
+    --b-color-navbar: black;
+
+    --b-color-card-button: rgb(154, 154, 154); /*rgb(113, 112, 111);*/
+    --b-color-card-button-inner:rgb(252, 245, 239);
+    --b-color-card-button-outer:rgb(248, 242, 231);       
+
+    --b-color-card-button-hover: rgb(188, 94, 0);/*rgb(138, 41, 0);*/
+    --b-color-card-button-hover-inner: rgb(252, 206, 160); /*rgb(242, 204, 171);*/
+    --b-color-card-button-hover-outer: rgb(255, 201, 148);/*rgb(242, 204, 171); */       
+    --b-color-fieldset-1: #f9f3e4;
+
+    --b-color-h1: #ccc;
+    --b-color-h3: #eee;
+    
+    --b-color-focus: orange;   
+
+    /* Shadow Colors */
+    --shadow-color-logo: rgb(14, 73, 87);
+    --shadow-color-brand: rgb(96, 69, 0); 
+}
+
+/* User choise - Light Color Scheme */
+[data-theme="dark-mode"] {
+        /* Dark Mode */
+        /* Text Colors */
+        --t-color-body: black;  
+        --t-color-body: rgb(255, 255, 255);  
+
+        --t-color-navbar: black;
+        --t-color-navbar: rgb(255, 255, 255);        
+        --t-color-nav: black;
+        --t-color-nav: rgb(255, 255, 255);        
+
+        --t-color-nav-button: rgb(170, 102, 0);
+        --t-color-nav-button: rgb(255, 177, 61);
+        --t-color-nav-button-hover:  rgb(65, 48, 0);
+        --t-color-nav-button-hover:  rgb(255, 255, 255);
+
+        --t-color-nav-item: black;
+        --t-color-nav-item: rgb(255, 255, 255);
+        --t-color-nav-item-holver: black;
+        --t-color-nav-item-holver: rgb(255, 255, 255);
+
+        --t-color-brand: rgb(87, 55, 0);
+        --t-color-brand: rgb(255, 162, 0);
+
+        --t-color-h1:#333;
+        --t-color-h1:#ffffff;
+        --t-color-h2:#555;
+        --t-color-h2:#ffffff;
+        --t-color-h3:#777;
+        --t-color-h3:#ffffff;
+        --t-color-h4:#888;
+        --t-color-h4:#ffffff;
+        --t-color-h5:#999;
+        --t-color-h5:#ffffff;
+        --t-color-h6:#aaa;
+        --t-color-h6:#ffffff;
+
+        --t-color-section-1: black;
+        --t-color-section-1: rgb(255, 255, 255);
+
+        --t-color-footer: black;
+        --t-color-footer: rgb(255, 255, 255);
+
+        --t-color-footer-contact: rgb(93, 58, 1);
+        --t-color-footer-contact: rgb(255, 243, 152);
+
+        --t-color-card-title: rgb(112, 10, 10);
+        --t-color-card-title: rgb(255, 166, 166);
+
+        --t-color-card-button: black;/*rgb(91, 17, 0);    */
+        --t-color-card-button: rgb(255, 255, 255);/*rgb(91, 17, 0);    */
+
+        --t-color-input-placeholder: rgb(132, 132, 132);        
+        --t-color-input-placeholder: rgb(247, 200, 72);
+
+        /* Background Colors */
+        --bg-color-logo: white;   
+        --bg-color-logo: rgb(0, 0, 0);   
+
+        --bg-color-brand: rgb(248, 220, 137);
+        --bg-color-brand: rgb(91, 91, 0);
+
+        --bg-color-body: rgb(244, 221, 167);
+        --bg-color-body: rgb(113, 79, 1);
+
+        --bg-color-nav-menu: rgb(249, 224, 181);
+        --bg-color-nav-menu: rgb(142, 90, 0);
+
+        --bg-color-navbar: rgb(249, 230, 167);
+        --bg-color-navbar: rgb(113, 87, 2);
+        --bg-color-nav: rgb(144, 1, 1);
+        --bg-color-nav: rgb(242, 164, 164);
+
+        --bg-color-nav-item: rgb(251, 243, 238);
+        --bg-color-nav-item: rgb(117, 45, 0);
+        --bg-color-nav-item-hover: rgb(250, 210, 154);
+        --bg-color-nav-item-hover: rgb(170, 99, 0);
+
+        --bg-color-card-button: rgb(246, 219, 156);/*rgb(255, 234, 184);/*#edddbe;    */
+        --bg-color-card-button: rgb(118, 83, 0);
+
+        --bg-color-card-button-hover: rgb(255, 227, 160); /*rgb(255, 234, 184);/*#eeb162; */
+        --bg-color-card-button-hover: rgb(84, 59, 0);        
+        
+        --bg-color-h1:#ffffff;
+        --bg-color-h2:#ffffff;
+        --bg-color-h3:#ffffff;
+        --bg-color-h4:#ffffff;
+        --bg-color-h5:#ffffff;
+        --bg-color-h6:#ffffff;
+
+        --bg-color-h1:#000000;
+        --bg-color-h2:#000000;
+        --bg-color-h3:#000000;
+        --bg-color-h4:#000000;
+        --bg-color-h5:#000000;
+        --bg-color-h6:#000000;        
+
+        --bg-t-color-h1-h2: #f9f3e4;
+        --bg-t-color-h1-h2: #5b4201;
+        --bg-t-color-label-input-select: var(--bg-t-color-h1-h2);
+        --bg-t-color-label-input-select: var(--bg-t-color-h1-h2);
+
+        --bg-t-section-hero: rgb(255, 255, 255, 0.812);
+        --bg-t-section-hero: rgba(0, 0, 0, 0.812);
+        --bg-t-section-hero-hover: rgba(238, 213, 213, 0.926);
+        --bg-t-section-hero-hover: rgba(138, 21, 21, 0.926);
+
+        --bg-t-color-footer-contact: rgb(249, 244, 179);
+        --bg-t-color-footer-contact: rgb(72, 69, 26);
+
+        --bg-color-footer-container: rgb(95, 56, 5);
+        --bg-color-footer-container: rgb(74, 44, 5);
+        --bg-color-footer-contact: rgb(155, 142, 0);
+        --bg-color-footer-contact: rgb(82, 76, 10);
+
+        --bg-color-section-highlights: rgb(142, 87, 10);
+        --bg-color-section-highlights: rgb(174, 149, 110);
+        --bg-color-section-highlights-title: #fffef1;
+        --bg-color-section-highlights-title: #010100;
+        --bg-color-section-highlights-card: #f9f3e4;
+        --bg-color-section-highlights-card: #000000;
+
+        --bg-color-container-project-form: rgb(185, 130, 3);
+        --bg-color-container-project-form: rgb(177, 166, 139);
+        /* Border Colors */
+        --b-color-logo: rgb(21, 136, 162);
+        --b-color-logo: rgb(148, 205, 217);
+        --b-color-brand: rgb(93, 58, 1);
+        --b-color-brand: rgb(214, 186, 141);
+
+        --b-color-nav-menu: rgb(57, 59, 7);
+        --b-color-nav-menu: rgb(226, 193, 31);
+
+        --b-color-nav-button: rgb(160, 113, 2);
+        --b-color-nav-button: rgb(249, 183, 31);
+        --b-color-nav-button-hover: rgb(65, 48, 0);    
+        --b-color-nav-button-hover: rgb(252, 227, 227);    
+
+        --b-color-nav-item: rgb(202, 108, 65);
+        --b-color-nav-item: rgb(255, 221, 205);
+        --b-color-nav-item-hover: rgb(161, 60, 6);    
+        --b-color-nav-item-hover: rgb(213, 125, 77);    
+
+        --b-color-navbar: black;
+        --b-color-navbar: rgb(255, 255, 255);
+
+        --b-color-card-button: rgb(154, 154, 154); /*rgb(113, 112, 111);*/
+        --b-color-card-button: rgb(82, 82, 82); /*rgb(113, 112, 111);*/
+        --b-color-card-button-inner:rgb(252, 245, 239);
+        --b-color-card-button-inner:rgb(255, 255, 255);
+        --b-color-card-button-outer:rgb(248, 242, 231);       
+        --b-color-card-button-outer:rgb(255, 255, 255);       
+
+        --b-color-card-button-hover: rgb(188, 94, 0);/*rgb(138, 41, 0);*/
+        --b-color-card-button-hover: rgb(205, 31, 0);/*rgb(138, 41, 0);*/
+        --b-color-card-button-hover-inner: rgb(252, 206, 160); /*rgb(242, 204, 171);*/
+        --b-color-card-button-hover-inner: rgb(252, 206, 160); /*rgb(242, 204, 171);*/
+        --b-color-card-button-hover-outer: rgb(255, 201, 148);/*rgb(242, 204, 171); */    
+        --b-color-card-button-hover-outer: rgb(255, 201, 148);   
+        --b-color-fieldset-1: #f9f3e4;
+        --b-color-fieldset-1: #f6ebd0;
+
+        --b-color-h1: #ccc;
+        --b-color-h1: #050505;
+        --b-color-h3: #eee;
+        --b-color-h3: #000000;
+
+        --b-color-focus: greenyellow; 
+
+        /* Shadow Colors */
+        --shadow-color-logo: rgb(14, 73, 87);
+        --shadow-color-logo: rgb(162, 228, 245);
+        --shadow-color-brand: rgb(96, 69, 0); 
+        --shadow-color-brand: rgb(247, 198, 74); 
+}
