@@ -185,16 +185,15 @@ function hamburguerClicked(){
 function setColorScheme(displayType) {
   let titleColorScheme;
 
+  console.log(colorScheme, !colorScheme);
+
   if (!colorScheme) {
     console.log('Don\'t stored!');
     
     // Defining the new color schema
     colorScheme = "system-mode";
-
-    // Storing data
-    localStorage.setItem('color-scheme',colorScheme);
-
-  }      
+  }
+    
 
   console.log(`Stored: ${colorScheme}.`);
   console.log('Light Icons', colorSchemeLightIcons);
@@ -234,6 +233,9 @@ function setColorScheme(displayType) {
   colorSchemeButtons.forEach(colorSchemeButton => {
     colorSchemeButton.setAttribute('title', titleColorScheme);
   });     
+
+  // Storing data
+  localStorage.setItem('color-scheme', colorScheme);  
 
 }
 
