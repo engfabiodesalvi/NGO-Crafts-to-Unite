@@ -1,46 +1,154 @@
-# Ong Artesanato para Unir
-#### Autor: Fabio Toledo Bonemer De Salvi
-#### Projeto final da disciplina Desenvolvimento Front-End
+[🇧🇷 Versão Técnica (PT-BR)](#🌍-Technical-Version-(EN))
+# 🌿 Artesanato para Unir — Website Oficial
 
-## Descrição do projeto
+Este repositório contém o código-fonte do website Artesanato para Unir, um projeto social voltado à inclusão através do artesanato, conectando artesãos, apoiadores e consumidores que valorizam a produção manual sustentável.
 
-Plataforma da web desenvolvida para unir os interessados em artesanatos!\
-Possibilita a gerencia das atividades, divulgação de projetos, captação de recursos e engajameto de volutários.
+## 📚 Objetivos do Projeto
 
-## Funcionalidades Principais
+- Promover e divulgar iniciativas de artesãos independentes e coletivos.
 
-- **Área institucional:** página inicial com missão, visão e valores; histórico e conquistas da organização; equipe e estrutura organizacional; relatórios de transparência;
+- Gerar oportunidades de renda e fortalecer comunidades artesãs.
 
-## Referências nas imagens
+- Contribuir com a inclusão e a sustentabilidade através da arte.
 
-- international-origami-day-logo-design.zip
+## 🧩 Tecnologias Utilizadas
+|Tecnologia|Descrição|
+|----------|---------|
+|HTML5|	Estruturação semântica do site|
+|CSS3|	Estilização e design responsivo|
+|JavaScript| Interatividade e aprimoramento da experiência do usuário|
+|WAI-ARIA| Melhorias de acessibilidade para navegação assistiva|
+|Netlify|	Hospedagem estática e deploy contínuo|
 
-    logo.png
+> Projeto leve, totalmente estático e otimizado para dispositivos móveis.
+> O uso de atributos ARIA complementa o acesso por tecnologias assistivas, como leitores de tela.
+
+## 🏗️ Estrutura do Projeto
+
+    /\
+    ├── index.html\
+    ├── projetos.html\
+    ├── cadastro.html\
+    ├── assets/\
+    │   ├── css/\
+    │   ├── img/\
+    │   └── js/\
+    └── README.md
+
+
+## 🚀 Como Acessar
+
+O site está publicado e disponível em produção:\
+🔗 https://artesanatoparaunir.netlify.app/
+
+## 🔧 Executar localmente
+
+    git clone https://github.com/engfabiodesalvi/NGO-Crafts-to-Unite.git
+    cd NGO-Crafts-to-Unite
+
+
+Abra o index.html no seu navegador.
+
+## ♿ Boas práticas e recursos de acessibilidade adotadas
+
+- HTML com estrutura acessível
+
+- Layout responsivo (mobile-first)
+
+- Carregamento rápido e otimizado
+
+- Elementos HTML semânticos
+
+- Navegação responsiva e intitiva
+
+- Atrbutos **ARIA** como:
+    - `aria-label` para botões sem texto
+    - `role` para reforçar elementos interativos
+    - `aria-expanded` em menus dinâmicos
+    - `aria-hidden` para garantir leitura correta em mídias
+
+> Melhorias contínuas estão planejadas.
+
+## 📞 Contato
+
+📧 contato@artesanatoparaunir.org.br (engfabidesalvi@gmail.com)
     
-    https://www.freepik.com/author/brgfx
+📍 Araraquara — SP, Brasil
 
-- manoj-kulkarni-WsCbZNBQEjk-unsplash.jpg
+## 🪪 Licença
 
-    Foto de <a href="https://unsplash.com/pt-br/@mnjpkulkarni?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Manoj Kulkarni</a> na <a href="https://unsplash.com/pt-br/fotografias/uma-pessoa-fazendo-um-vaso-na-roda-de-um-oleiro-WsCbZNBQEjk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+Todos os direitos reservados © Artesanato para Unir
 
-- earl-wilcox--aebrWVmr80-unsplash.jpg
+---
+---
 
-    Foto de <a href="https://unsplash.com/pt-br/@earl_plannerzone?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Earl Wilcox</a> na <a href="https://unsplash.com/pt-br/fotografias/pessoa-segurando-pote-de-barro-redondo--aebrWVmr80?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-      
-- cristi-tohatan-XIBIC21QeZQ-unsplash.jpg
+[🌍 Technical Version (EN)](#🇧🇷-Versão-Técnica-(PT-BR))
+## 🌿 Artesanato para Unir — Official Website
 
-    Foto de <a href="https://unsplash.com/pt-br/@cristi_tohatan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Cristi Tohatan</a> na <a href="https://unsplash.com/pt-br/fotografias/quatro-pessoas-sentadas-perto-da-estrada-XIBIC21QeZQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+This repository contains the source code for Artesanato para Unir, a social project focused on inclusion through handcrafted arts, providing opportunities and visibility for local artisans.
 
-- quino-al-jsWVItac5Tw-unsplash.jpg
+## 🧩 Technologies Used
+|Technology|    Purpose|
+|----------|-----------|
+|HTML5|	Semantic layout and page structure|
+|CSS3|	Styling and responsive visual design|
+|JavaScript|	Interactivity and enhanced UX|
+|WAI-ARIA| Assistive accessibility attributes|
+|Netlify|	Static hosting and continuous deployment|
 
-    Foto de <a href="https://unsplash.com/pt-br/@quinoal?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Quino Al</a> na <a href="https://unsplash.com/pt-br/fotografias/pessoa-que-faz-panela-de-barro-com-argila-jsWVItac5Tw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+> Lightweight and optimized for mobile performance.
+> ARIA enhances access via screen readers and similar assistive technologies.
 
-- jessica-tan-i0bSx789ITU-unsplash.jpg
+🏗️ Project Structure
 
-    Foto de <a href="https://unsplash.com/pt-br/@whaleitsjessica?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jessica Tan</a> na <a href="https://unsplash.com/pt-br/fotografias/um-close-up-de-alguns-dados-i0bSx789ITU?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-      
+    /\
+    ├── index.html\
+    ├── projects.html\
+    ├── join.html\
+    ├── assets/\
+    │   ├── css/\
+    │   ├── img/\
+    │   └── js/\
+    └── README.md
 
-- annie-spratt-TywjkDHf0Ps-unsplash.jpg
+## 🚀 Live Website
 
-    Foto de <a href="https://unsplash.com/pt-br/@anniespratt?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Annie Spratt</a> na <a href="https://unsplash.com/pt-br/fotografias/pessoa-fazendo-artesanato-TywjkDHf0Ps?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-      
+🔗 https://artesanatoparaunir.netlify.app/
+
+🔧 Run Locally
+
+    git clone https://github.com/engfabiodesalvi/NGO-Crafts-to-Unite.gitt
+    cd NGO-Crafts-to-Unite
+
+
+> Then open index.html in your browser.
+
+## ♿ Accessibility Practices
+
+- Semantic and screen-reader-friendly HTML
+
+- Responsive mobile-first layout
+
+- Fast loading pages
+
+- Semantic headings and structure
+
+- Mobile-first and low-barrier navigation
+
+- ARIA attributes for:
+    - aria-label on non-text buttons
+    - Landmark roles (e.g., role="navigation")
+    - Dynamic state announcements (aria-expanded)
+    - Hidden elements (aria-hidden) for screen readers
+
+> Ongoing accessibility improvements are expected.
+
+## 📞 Contact
+
+📧 contato@artesanatoparaunir.org.br (engfabiodesalvi@gmail)
+
+📍 Araraquara — São Paulo, Brazil
+
+## 🪪 License
+
+All rights reserved © Artesanato para Unir
