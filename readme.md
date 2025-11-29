@@ -1,4 +1,5 @@
-[🇧🇷 Versão Técnica (PT-BR)](#🌍-Technical-Version-(EN))
+### [🌍 Technical Version (EN)](#🇧🇷-Versão-Técnica-(PT-BR))
+
 # 🌿 Artesanato para Unir — Website Oficial
 
 Este repositório contém o código-fonte do website Artesanato para Unir, um projeto social voltado à inclusão através do artesanato, conectando artesãos, apoiadores e consumidores que valorizam a produção manual sustentável.
@@ -81,8 +82,8 @@ Todos os direitos reservados © Artesanato para Unir
 
 ---
 ---
+### [🇧🇷 Versão Técnica (PT-BR)](#🌍-Technical-Version-(EN))
 
-[🌍 Technical Version (EN)](#🇧🇷-Versão-Técnica-(PT-BR))
 ## 🌿 Artesanato para Unir — Official Website
 
 This repository contains the source code for Artesanato para Unir, a social project focused on inclusion through handcrafted arts, providing opportunities and visibility for local artisans.
