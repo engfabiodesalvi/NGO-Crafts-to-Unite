@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Artesanato para Unir — Início</title>
     <meta name="description" content="ONG Artesanato para unir — projetos sociais, voluntariado e doações">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style-minify.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
-    <script src="./js/app.js" defer></script>
+    <script src="./js/app-minify.js" defer></script>
 </head>
 
 <body>
@@ -29,24 +29,36 @@
                         <span>Artesanato para Unir</span>
                     </a>
                     <div>
-                        <button class="color-mode-row" aria-label="Define o thema de cores do site">
-                            <span class="material-symbols-outlined" id="light-mode-row">light_mode</span>
-                            <span class="material-symbols-outlined" id="dark-mode-row">dark_mode</span>
-                            <span class="material-symbols-outlined" id="system-mode-row">computer</span>
+                        <button class="color-mode-row" aria-label="Muda o thema de cores do site" aria-live="polite">
+                            <span class="material-symbols-outlined" id="light-mode-row"
+                                  aria-hidden="true">light_mode</span>
+                            <span class="material-symbols-outlined" id="dark-mode-row"
+                                  aria-hidden="true">dark_mode</span>
+                            <span class="material-symbols-outlined" id="contrast-mode-row"
+                                  aria-hidden="true">contrast</span>
+                            <span class="material-symbols-outlined" id="system-mode-row"
+                                  aria-hidden="true">computer</span>
+                            <!-- Screen Reader Only -->
+                            <span class="sr-only" id="theme-state-row"></span>
                         </button>
                     </div>
                 </div>
                 <div>
-                    <button class="color-mode-col" aria-label="Define o thema de cores do site">
-                        <span class="material-symbols-outlined" id="light-mode-col">light_mode</span>
-                        <span class="material-symbols-outlined" id="dark-mode-col">dark_mode</span>
-                        <span class="material-symbols-outlined" id="system-mode-col">computer</span>
+                    <button class="color-mode-col" aria-label="Muda o thema de cores do site" aria-live="polite">
+                        <span class="material-symbols-outlined" id="light-mode-col" aria-hidden="true">light_mode</span>
+                        <span class="material-symbols-outlined" id="dark-mode-col" aria-hidden="true">dark_mode</span>
+                        <span class="material-symbols-outlined" id="contrast-mode-col"
+                              aria-hidden="true">contrast</span>
+                        <span class="material-symbols-outlined" id="system-mode-col" aria-hidden="true">computer</span>
+                        <!-- Screen Reader Only -->
+                        <span class="sr-only" id="theme-state-col">="polite">ola</span>
                     </button>
                     <button class="hamburguer" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menu">
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                        <span class="close">X</span>
+                        <!-- aria-hidden-> This element should be ignored by screen readers -->
+                        <span class="bar" aria-hidden="true"></span>
+                        <span class="bar" aria-hidden="true"></span>
+                        <span class="bar" aria-hidden="true"></span>
+                        <span class="close" aria-hidden="true">X</span>
                     </button>
                 </div>
                 <!-- use class "active" to show menu -->
@@ -66,7 +78,7 @@
 
     <main>
         <section class="hero" aria-labelledby="hero-title">
-            <img src="./img/quino-al-jsWVItac5Tw-unsplash.jpg"
+            <img src="./img/quino-al-jsWVItac5Tw-unsplash-min.jpg"
                  alt="Artesão fazendo um vaso de barro sobre uma base rotativa" width="300" loading="lazy">
 
             <div id="hero-content-h1">
@@ -81,7 +93,7 @@
         </section>
 
         <section class="about" aria-labelledby="about-title">
-            <img src="./img/annie-spratt-TywjkDHf0Ps-unsplash.jpg"
+            <img src="./img/annie-spratt-TywjkDHf0Ps-unsplash-min.jpg"
                  alt="Artesão fazendo um vaso de barro sobre uma base rotativa" width="300" loading="lazy">
             <div id="about-h2">
                 <h2 id="about-title">Missão, Visão e Valores</h2>
@@ -106,7 +118,7 @@
             <div>
                 <h2 id="highlights-title">Nossos destaques</h2>
                 <ul class="cards">
-                <!-- Os destaques serão renderizados via JS a partir do localStorage ou de uma variavel simulando um repositório (ou simulando uma API)  -->
+                    <!-- Os destaques serão renderizados via JS a partir do localStorage ou de uma variavel simulando um repositório (ou simulando uma API)  -->
 
                 </ul>
             </div>

@@ -3,6 +3,9 @@
 // Document element
 const htmlElement = document.documentElement;
 
+// Computed style of the html element
+const computedStyle = getComputedStyle(htmlElement);    
+
 // Menu class
 const menu = document.querySelector("#main-nav");
 // Hamburguer button class
@@ -19,7 +22,7 @@ const ulHighlightsCard = document.querySelector(".cards");
 const highlightsCardRepository = `{
   "highlight1": {
     "img": {
-      "src": "./img/earl-wilcox--aebrWVmr80-unsplash.jpg",
+      "src": "./img/earl-wilcox--aebrWVmr80-unsplash-min.jpg",
       "width": 200,
       "alt": "Projeto de capacitação"
     },
@@ -28,7 +31,7 @@ const highlightsCardRepository = `{
   },
   "highlight2": {
     "img": {
-      "src": "./img/cristi-tohatan-XIBIC21QeZQ-unsplash.jpg",
+      "src": "./img/cristi-tohatan-XIBIC21QeZQ-unsplash-min.jpg",
       "width": 200,
       "alt": "Equipe voluntária"
     },
@@ -44,7 +47,7 @@ const ulCardsProject = document.querySelector(".cards-project");
 const cardsProjectRepository = `{
   "project1": {
     "img": {
-      "src": "../img/quino-al-jsWVItac5Tw-unsplash.jpg",
+      "src": "../img/quino-al-jsWVItac5Tw-unsplash-min.jpg",
       "width": 200,
       "alt": "Confecção de vaso de barro - 1"
     },
@@ -53,7 +56,7 @@ const cardsProjectRepository = `{
   },
   "project2": {
     "img": {
-      "src": "../img/annie-spratt-TywjkDHf0Ps-unsplash.jpg",
+      "src": "../img/annie-spratt-TywjkDHf0Ps-unsplash-min.jpg",
       "width": 200,
       "alt": "Modelagem de objetos em biscuit."
     },
@@ -62,7 +65,7 @@ const cardsProjectRepository = `{
   },
   "project3": {
     "img": {
-      "src": "../img/earl-wilcox--aebrWVmr80-unsplash.jpg",
+      "src": "../img/earl-wilcox--aebrWVmr80-unsplash-min.jpg",
       "width": 200,
       "alt": "Confecção de vasos de barro - 2."
     },
@@ -71,7 +74,7 @@ const cardsProjectRepository = `{
   },
   "project4": {
     "img": {
-      "src": "../img/jessica-tan-i0bSx789ITU-unsplash.jpg",
+      "src": "../img/jessica-tan-i0bSx789ITU-unsplash-min.jpg",
       "width": 200,
       "alt": "Cozinha divertida."
     },
@@ -80,7 +83,7 @@ const cardsProjectRepository = `{
   },
   "project5": {
     "img": {
-      "src": "../img/juego-tangram-diferentes-tipos-juego-de-madera.jpg",
+      "src": "../img/juego-tangram-diferentes-tipos-juego-de-madera-min.jpg",
       "width": 200,
       "alt": "Jogos divertidos de montar (tangrans de vários formatos)."
     },
@@ -99,8 +102,12 @@ const colorSchemeButtons = document.querySelectorAll(".color-mode-row, .color-mo
 const colorSchemeLightIcons = document.querySelectorAll("#light-mode-row, #light-mode-col");
 // Color scheme dark icons
 const colorSchemeDarkIcons = document.querySelectorAll("#dark-mode-row, #dark-mode-col");
+// Color scheme contrast icons
+const colorSchemeContrastIcons = document.querySelectorAll("#contrast-mode-row, #contrast-mode-col");
 // Color scheme System icons
 const colorSchemeSystemIcons = document.querySelectorAll("#system-mode-row, #system-mode-col");
+// Text from the color theme status
+const textColorThemeStatus = document.querySelectorAll("#theme-state-row, #theme-state-col");
 
 // PageYOffSet
 let prevScrollpos = window.pageYOffset;
@@ -108,32 +115,44 @@ let prevScrollpos = window.pageYOffset;
 // Retrieving data
 let colorScheme = localStorage.getItem('color-scheme');
 
+// Determine Mobile / Descktop screen
+const isMobileScreen = window.matchMedia('(min-width: 480px)');
 
 // function to turn on/off the menu
 function toggleMenu() {
-  console.log(barsHamburguer, closeHamburguer);
+  //console.log(barsHamburguer, closeHamburguer);
 
   if (hamburguer.getAttribute("aria-expanded") === "true") {
     // Turn menu off
     menu.classList.remove("active");
+    // menu.setAttribute('aria-label', 'Abrir menu');
+    // The menu is hidden
+    menu.setAttribute('aria-hidden', true);
     // Set hamburguer aria-expanded attibute to false
     hamburguer.setAttribute("aria-expanded", false);
+    // Set aria-label to Open menu
+    hamburguer.setAttribute('aria-label', 'Abrir menu');
   } else {
     // Turn menu on
     menu.classList.add("active");
+    //menu.setAttribute('aria-label', 'Fechar menu');
+    // The menu is visible
+    menu.setAttribute('aria-hidden', false);    
     // Set aria-expanded attibute to true
     hamburguer.setAttribute("aria-expanded", true);
+    // Set aria-label to Close menu
+    hamburguer.setAttribute('aria-label', 'Fechar menu');    
   }
 
   // Update menu visibility
   showHiddenMenu();
 
   // For developer analysis
-  console.log(
-    "function toggleMenu()\n",
-    "hamburguer.getAttribute\(\"aria-expanded\"\):", hamburguer.getAttribute("aria-expanded"), "\n",
-    "hamburguer.getAttribute\(\"aria-expanded\"\) === \"true\":", hamburguer.getAttribute("aria-expanded") === "true"
-  );
+  // console.log(
+  //   "function toggleMenu()\n",
+  //   "hamburguer.getAttribute\(\"aria-expanded\"\):", hamburguer.getAttribute("aria-expanded"), "\n",
+  //   "hamburguer.getAttribute\(\"aria-expanded\"\) === \"true\":", hamburguer.getAttribute("aria-expanded") === "true"
+  // );
 }
 
 function showMenu() {
@@ -173,11 +192,11 @@ function showHiddenMenu() {
 
 // Hamburguer menu button cliked!
 function hamburguerClicked(){    
-    console.log(
-    "Hamburguer menu button clicked!\n",
-    "hamburguer.getAttribute\(\"aria-expanded\"\):", hamburguer.getAttribute("aria-expanded"), "\n",
-    "hamburguer.getAttribute\(\"aria-expanded\"\) === \"true\":", hamburguer.getAttribute("aria-expanded") === "true"
-    );    
+    // console.log(
+    // "Hamburguer menu button clicked!\n",
+    // "hamburguer.getAttribute\(\"aria-expanded\"\):", hamburguer.getAttribute("aria-expanded"), "\n",
+    // "hamburguer.getAttribute\(\"aria-expanded\"\) === \"true\":", hamburguer.getAttribute("aria-expanded") === "true"
+    // );    
     toggleMenu();
 }
 
@@ -185,20 +204,22 @@ function hamburguerClicked(){
 function setColorScheme(displayType) {
   let titleColorScheme;
 
-  console.log(colorScheme, !colorScheme);
+  //console.log(colorScheme, !colorScheme);
 
   if (!colorScheme) {
-    console.log('Don\'t stored!');
+    //console.log('Don\'t stored!');
     
     // Defining the new color schema
     colorScheme = "system-mode";
   }
     
 
-  console.log(`Stored: ${colorScheme}.`);
-  console.log('Light Icons', colorSchemeLightIcons);
-  console.log('Dark Icons', colorSchemeDarkIcons);
-  console.log('System Icons', colorSchemeSystemIcons);
+  //console.log(`Stored: ${colorScheme}.`);
+  //console.log('Light Icons', colorSchemeLightIcons);
+  //console.log('Dark Icons', colorSchemeDarkIcons);
+  //console.log('System Icons', colorSchemeSystemIcons);
+
+  console.log(textColorThemeStatus);
 
   switch(colorScheme) {
     case 'light-mode':
@@ -207,7 +228,15 @@ function setColorScheme(displayType) {
       })
       titleColorScheme = 'Modo claro';
       // Set the theme
-      htmlElement.setAttribute('data-theme', 'light-mode');        
+      htmlElement.setAttribute('data-theme', 'light-mode');    
+      // Set theme-status
+      textColorThemeStatus.forEach(textColorElement => {
+        textColorElement.innerHTML = 'Tema atual: modo claro';
+      });      
+      // Modify the aria-label attribute of the theme change buttons.   
+      colorSchemeButtons.forEach(colorSchemeButton => {
+        colorSchemeButton.setAttribute('aria-label', 'Alterar para modo escuro');
+      }); 
       break;
 
     case 'dark-mode':
@@ -216,7 +245,32 @@ function setColorScheme(displayType) {
       })
       titleColorScheme = 'Modo escuro';
       // Set the theme
-      htmlElement.setAttribute('data-theme', 'dark-mode');             
+      htmlElement.setAttribute('data-theme', 'dark-mode');  
+      // Set theme-status
+      textColorThemeStatus.forEach(textColorElement => {
+        textColorElement.innerHTML = 'Tema atual: modo escuro';
+      });      
+      // Modify the aria-label attribute of the theme change buttons.   
+      colorSchemeButtons.forEach(colorSchemeButton => {
+        colorSchemeButton.setAttribute('aria-label', 'Alterar para modo contraste');
+      });             
+      break;        
+
+    case 'contrast-mode':
+      colorSchemeContrastIcons.forEach(colorSchemeDarkIcon => {
+        colorSchemeDarkIcon.style.display = displayType;
+      })
+      titleColorScheme = 'Modo contraste';
+      // Set the theme
+      htmlElement.setAttribute('data-theme', 'contrast-mode');       
+      // Set theme-status
+      textColorThemeStatus.forEach(textColorElement => {
+        textColorElement.innerHTML = 'Tema atual: modo contraste';
+      }); 
+      // Modify the aria-label attribute of the theme change buttons.        
+      colorSchemeButtons.forEach(colorSchemeButton => {
+        colorSchemeButton.setAttribute('aria-label', 'Alterar para modo do sistema');
+      });                          
       break;        
 
     case 'system-mode':
@@ -227,6 +281,14 @@ function setColorScheme(displayType) {
       titleColorScheme = 'Modo do dispositivo';    
       // Set the theme
       htmlElement.removeAttribute('data-theme');             
+      // Set theme-status
+      textColorThemeStatus.forEach(textColorElement => {
+        textColorElement.innerHTML = 'Tema atual: modo do sistema';
+      }); 
+      // Modify the aria-label attribute of the theme change buttons.            
+      colorSchemeButtons.forEach(colorSchemeButton => {
+        colorSchemeButton.setAttribute('aria-label', 'Alterar para modo claro');
+      });           
       break;        
   }
 
@@ -248,7 +310,11 @@ function setColorSchemeClicked() {
         break;
       
       case 'dark-mode':
-        colorScheme = "system-mode";        
+        colorScheme = 'contrast-mode';        
+        break;
+      
+      case 'contrast-mode':
+        colorScheme = 'system-mode';
         break;
         
       case 'system-mode':
@@ -267,25 +333,25 @@ function setColorSchemeClicked() {
 // Function to add items to the highlights section
 function AddItemsHighlightsSection() {  
   const parsedHighlightsCard = JSON.parse(highlightsCardRepository);
-  console.log(parsedHighlightsCard);
+  //(parsedHighlightsCard);
   
-  let liHighlightsCard = "";
-  //parsedCardHighlights
+  let liHighlightsCard = "";  
+  // tabindex, role and aria-label are for interactive cards
   for (const key in parsedHighlightsCard) {
       liHighlightsCard += `
-      <li class="card">
+      <li class="card" tabindex="0" role="button" aria-label="Ver detalhes de ${parsedHighlightsCard[key].h3}">
           <img src="${parsedHighlightsCard[key].img.src}" width="${parsedHighlightsCard[key].img.width}" alt="${parsedHighlightsCard[key].img.alt}"
                 loading="lazy">
           <div>
               <h3>${parsedHighlightsCard[key].h3}</h3>
               <p>${parsedHighlightsCard[key].p}</p>
-              <div class="card-item">
+              <div class="card-item">                
                   <a href="#">Saiba mais</a>
               </div>
           </div>
       </li>`
   }
-  console.log(liHighlightsCard);
+  //console.log(liHighlightsCard);
   ulHighlightsCard.innerHTML = liHighlightsCard;
 
 }  
@@ -293,14 +359,15 @@ function AddItemsHighlightsSection() {
 // Function to add items to the projects section
 function AddItemsProjectsSection() {  
   const parsedProjectsCard = JSON.parse(cardsProjectRepository);
-  console.log(parsedProjectsCard);
+  //console.log(parsedProjectsCard);
   
   let liProjectsCard = "";
   //parsedCardHighlights
   for (const key in parsedProjectsCard) {
     if (key !== "empty" ) {
+      // tabindex, role and aria-label are for interactive cards
       liProjectsCard += `
-      <li class="card-project">
+      <li class="card-project" tabindex="0" role="button" aria-label="Ver detalhes do ${parsedProjectsCard[key].h6}">
           <img src="${parsedProjectsCard[key].img.src}" width="${parsedProjectsCard[key].img.width}" alt="${parsedProjectsCard[key].img.alt}"
                 loading="lazy">
           <div>
@@ -320,7 +387,7 @@ function AddItemsProjectsSection() {
             </li>`     
     }
   }
-  console.log(liProjectsCard);
+  //console.log(liProjectsCard);
   ulCardsProject.innerHTML = liProjectsCard;
 }  
 
@@ -336,14 +403,16 @@ function addItemsProjectSelect() {
     }  
   }
   optionProject += `<option value="ong">Deixar a critério da ONG</option>`
-  console.log(optionProject);
+  //console.log(optionProject);
   projectSelect.innerHTML = optionProject;
 }
 
 // Listen for an event after loading DOM content.
 document.addEventListener("DOMContentLoaded", (event) => {
+
   menu.addEventListener("click", function (e) {
-    console.log(`${e.target} - ${e.target.nodeName}`);
+
+    //console.log(`${e.target} - ${e.target.nodeName}`);
 
     // Check if the clicked element (e.target) is a link
     if (e.target && e.target.nodeName === "A") {
@@ -357,25 +426,24 @@ document.addEventListener("DOMContentLoaded", (event) => {
       // Perform different actions based on the clicked item
       switch (action) {
         case "inicio":
-          console.log("Inicio link clicked! Load inicio  content.");
+          //console.log("Inicio link clicked! Load inicio  content.");
           // To navigate for target
           window.location.href = e.target;
           break;
         case "projetos":
-          console.log("Projetos link ckicked! Load about content.");
+          //console.log("Projetos link ckicked! Load about content.");
           // To navigate for target
           window.location.href = e.target;
           break;
         case "cadastro":
-          console.log("Cadastro link clicked! Load contact content.");
+          //console.log("Cadastro link clicked! Load contact content.");
           // To navigate for target
           window.location.href = e.target;
           break;
 
         default:
-          console.log(`${action} link clicked! Load ${action} content.`);
+          //console.log(`${action} link clicked! Load ${action} content.`);
           break;
-
       }
     }
   });
@@ -383,10 +451,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
   // Change the top position of the navigation bar while scrolling.
   window.onscroll = function() {
     let currentScrollPos = window.pageYOffset;
+ 
     // Computed style of the html element
-    const computedStyle = window.getComputedStyle(htmlElement);  
+    //const computedStyle = window.getComputedStyle(htmlElement);    
+
     // Value of scroll-padding-top
-    const scrollPaddingTopValue = computedStyle.scrollPaddingTop;  
+    //const scrollPaddingTopValue = computedStyle.scrollPaddingTop;  
 
     const heightRef = document.querySelector('.navbar').offsetHeight;
 
@@ -426,12 +496,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
 }); 
 
 // Hello message!
-console.log("Hi! This is the PraticaIII Project!");
+//console.log("Hi! This is the PraticaIII Project!");
 
 // Hamburguer Menu button click event listener
 hamburguer.addEventListener("click", hamburguerClicked);
 
-console.log(colorSchemeButtons);
+//console.log(colorSchemeButtons);
 // Color scheme button click event listener 
 colorSchemeButtons.forEach(colorSchemeButton => {
   colorSchemeButton.addEventListener('click', setColorSchemeClicked);
@@ -458,3 +528,30 @@ if (projectSelect)
   addItemsProjectSelect();
 
 //localStorage.removeItem('color-scheme');
+
+// Defining NAV Menu ARIA attributes in diferents layouts
+(function() {
+  window.onresize = setAriaAttributesNavMenu;
+  window.onload = setAriaAttributesNavMenu;
+
+  function setAriaAttributesNavMenu() {
+    let innerWidth = window.innerWidth;
+    let innerHeight = window.innerHeight;
+
+    //console.log(`Window size: {width: ${myWidth}, height: ${myHeight}}`);
+
+    // Check screen
+    if (innerWidth <= 480) {
+      // Mobile screen
+      hamburguer.removeAttribute('aria-hidden');
+      menu.setAttribute('aria-hidden', true);
+    } else {
+      // Desktop screen
+      menu.removeAttribute('aria-hidden');
+      hamburguer.setAttribute('aria-hidden', 'true');
+      hamburguer.setAttribute('aria-expanded', 'false');
+    }
+    
+  }
+})()
+
