@@ -1,4 +1,4 @@
-### [🌍 Technical Version (EN)](#🇧🇷-Versão-Técnica-(PT-BR))
+### [English version](#Versão-em-português)
 
 # 🌿 Artesanato para Unir — Website Oficial
 
@@ -82,7 +82,7 @@ Todos os direitos reservados © Artesanato para Unir
 
 ---
 ---
-### [🇧🇷 Versão Técnica (PT-BR)](#🌍-Technical-Version-(EN))
+### [Versão em português](#English-version)
 
 ## 🌿 Artesanato para Unir — Official Website
 
