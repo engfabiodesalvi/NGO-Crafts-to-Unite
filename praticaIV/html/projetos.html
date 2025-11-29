@@ -29,24 +29,36 @@
                         <span>Artesanato para Unir</span>
                     </a>
                     <div>
-                        <button class="color-mode-row" aria-label="Define o thema de cores do site">
-                            <span class="material-symbols-outlined" id="light-mode-row">light_mode</span>
-                            <span class="material-symbols-outlined" id="dark-mode-row">dark_mode</span>
-                            <span class="material-symbols-outlined" id="system-mode-row">computer</span>
+                        <button class="color-mode-row" aria-label="Define o thema de cores do site" aria-live="polite">
+                            <span class="material-symbols-outlined" id="light-mode-row"
+                                  aria-hidden="true">light_mode</span>
+                            <span class="material-symbols-outlined" id="dark-mode-row"
+                                  aria-hidden="true">dark_mode</span>
+                            <span class="material-symbols-outlined" id="contrast-mode-row"
+                                  aria-hidden="true">contrast</span>
+                            <span class="material-symbols-outlined" id="system-mode-row"
+                                  aria-hidden="true">computer</span>
+                            <!-- Screen Reader Only -->
+                            <span class="sr-only" id="theme-state-row"></span>
                         </button>
                     </div>
                 </div>
                 <div>
-                    <button class="color-mode-col" aria-label="Define o thema de cores do site">
-                        <span class="material-symbols-outlined" id="light-mode-col">light_mode</span>
-                        <span class="material-symbols-outlined" id="dark-mode-col">dark_mode</span>
-                        <span class="material-symbols-outlined" id="system-mode-col">computer</span>
+                    <button class="color-mode-col" aria-label="Define o thema de cores do site" aria-live="polite">
+                        <span class="material-symbols-outlined" id="light-mode-col" aria-hidden="true">light_mode</span>
+                        <span class="material-symbols-outlined" id="dark-mode-col" aria-hidden="true">dark_mode</span>
+                        <span class="material-symbols-outlined" id="contrast-mode-col"
+                              aria-hidden="true">contrast</span>
+                        <span class="material-symbols-outlined" id="system-mode-col" aria-hidden="true">computer</span>
+                        <!-- Screen Reader Only -->
+                        <span class="sr-only" id="theme-state-col">="polite">ola</span>
                     </button>
                     <button class="hamburguer" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menu">
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                        <span class="close">X</span>
+                        <!-- aria-hidden-> This element should be ignored by screen readers -->
+                        <span class="bar" aria-hidden="true"></span>
+                        <span class="bar" aria-hidden="true"></span>
+                        <span class="bar" aria-hidden="true"></span>
+                        <span class="close" aria-hidden="true">X</span>
                     </button>
                 </div>
                 <!-- use class "active" to show menu -->
