@@ -22,7 +22,7 @@ const ulHighlightsCard = document.querySelector(".cards");
 const highlightsCardRepository = `{
   "highlight1": {
     "img": {
-      "src": "./img/earl-wilcox--aebrWVmr80-unsplash.jpg",
+      "src": "./img/earl-wilcox--aebrWVmr80-unsplash-min.jpg",
       "width": 200,
       "alt": "Projeto de capacitação"
     },
@@ -31,7 +31,7 @@ const highlightsCardRepository = `{
   },
   "highlight2": {
     "img": {
-      "src": "./img/cristi-tohatan-XIBIC21QeZQ-unsplash.jpg",
+      "src": "./img/cristi-tohatan-XIBIC21QeZQ-unsplash-min.jpg",
       "width": 200,
       "alt": "Equipe voluntária"
     },
@@ -47,7 +47,7 @@ const ulCardsProject = document.querySelector(".cards-project");
 const cardsProjectRepository = `{
   "project1": {
     "img": {
-      "src": "../img/quino-al-jsWVItac5Tw-unsplash.jpg",
+      "src": "../img/quino-al-jsWVItac5Tw-unsplash-min.jpg",
       "width": 200,
       "alt": "Confecção de vaso de barro - 1"
     },
@@ -56,7 +56,7 @@ const cardsProjectRepository = `{
   },
   "project2": {
     "img": {
-      "src": "../img/annie-spratt-TywjkDHf0Ps-unsplash.jpg",
+      "src": "../img/annie-spratt-TywjkDHf0Ps-unsplash-min.jpg",
       "width": 200,
       "alt": "Modelagem de objetos em biscuit."
     },
@@ -65,7 +65,7 @@ const cardsProjectRepository = `{
   },
   "project3": {
     "img": {
-      "src": "../img/earl-wilcox--aebrWVmr80-unsplash.jpg",
+      "src": "../img/earl-wilcox--aebrWVmr80-unsplash-min.jpg",
       "width": 200,
       "alt": "Confecção de vasos de barro - 2."
     },
@@ -74,7 +74,7 @@ const cardsProjectRepository = `{
   },
   "project4": {
     "img": {
-      "src": "../img/jessica-tan-i0bSx789ITU-unsplash.jpg",
+      "src": "../img/jessica-tan-i0bSx789ITU-unsplash-min.jpg",
       "width": 200,
       "alt": "Cozinha divertida."
     },
@@ -83,7 +83,7 @@ const cardsProjectRepository = `{
   },
   "project5": {
     "img": {
-      "src": "../img/juego-tangram-diferentes-tipos-juego-de-madera.jpg",
+      "src": "../img/juego-tangram-diferentes-tipos-juego-de-madera-min.jpg",
       "width": 200,
       "alt": "Jogos divertidos de montar (tangrans de vários formatos)."
     },
